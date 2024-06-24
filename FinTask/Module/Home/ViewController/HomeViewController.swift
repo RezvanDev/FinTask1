@@ -15,6 +15,13 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .green
         return view
     }()
+    
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "label"
+        
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
