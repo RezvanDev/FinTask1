@@ -17,9 +17,11 @@ class TabBarViewController: UITabBarController {
         (UIImage(systemName: "gearshape"), "Настройки")
     ]
     
+    private var tabButtons: [UIButton] = []
+    
     private lazy var tabBarView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = AppColors.tabBarGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -30,6 +32,7 @@ class TabBarViewController: UITabBarController {
             let sender = sender.sender as? UIButton
         else { return }
         
+        self.updateButtonColors(selectedButton: sender)
         self.selectedIndex = sender.tag
     }
     
@@ -40,16 +43,16 @@ class TabBarViewController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         selectedIndex = 2
+        updateButtonColors(selectedButton: tabButtons[selectedIndex])
     }
 }
 
 // MARK: -- Setup layer
 private extension TabBarViewController {
     func setup() {
-        view.backgroundColor = .red
-        tabBar.isHidden = true
         setupTabBarButton()
         setControllers()
+        
     }
     
     // setup tab button
@@ -62,8 +65,9 @@ private extension TabBarViewController {
         
         tabs.enumerated().forEach { index, tab in
             guard let image = tab.image else { return }
-                        let tabButton = createTabBarButton(icon: image, title: tab.title, tag: index)
-            
+                                   
+            let tabButton = createTabBarButton(icon: image, title: tab.title, tag: index)
+            tabButtons.append(tabButton)
             stackView.addArrangedSubview(tabButton)
         }
         
@@ -90,7 +94,7 @@ private extension TabBarViewController {
         
         let button = UIButton(configuration: config, primaryAction: selectedItem)
         button.tag = tag
-        button.tintColor = .white
+        button.tintColor = AppColors.lightGrayMain
         return button
     }
     
@@ -108,10 +112,16 @@ private extension TabBarViewController {
             stack.bottomAnchor.constraint(equalTo: tabBarView.bottomAnchor, constant: -20)
         ])
     }
-    
+
     // Set view controller
     func setControllers() {
         setViewControllers([FinanceViewController(), TaskViewController(), HomeViewController(), AnalyticViewController(), SettingViewController()], animated: true)
     }
+    
+    // Update button colors
+        func updateButtonColors(selectedButton: UIButton) {
+            tabButtons.forEach { $0.tintColor = .lightGray }
+            selectedButton.tintColor = AppColors.mainGreen
+        }
 }
 
