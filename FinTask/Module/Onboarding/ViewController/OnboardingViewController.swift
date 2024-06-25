@@ -18,7 +18,7 @@ class OnboardingViewController: UIViewController {
     //setup mainView
     private lazy var greenViewMain: UIView = {
         let viewMain = UIView()
-        viewMain.backgroundColor = .green
+        viewMain.backgroundColor = UIColor(red: 0/255, green: 208/255, blue: 158/255, alpha: 1)
         viewMain.translatesAutoresizingMaskIntoConstraints = false
         return viewMain
     }()
