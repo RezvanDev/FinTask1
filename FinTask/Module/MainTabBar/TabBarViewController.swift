@@ -11,7 +11,7 @@ class TabBarViewController: UITabBarController {
     
     private let tabs: [(image: UIImage?, title: String)] = [
         (UIImage(systemName: "creditcard.and.123"), "Финансы"),
-        (UIImage(systemName: "lightbulb.min"), "Задачи"),
+        (UIImage(systemName: "folder"), "Задачи"),
         (UIImage(systemName: "house"), "Главная"),
         (UIImage(systemName: "eye"), "Аналитика"),
         (UIImage(systemName: "gearshape"), "Настройки")
@@ -65,6 +65,7 @@ private extension TabBarViewController {
         
         tabs.enumerated().forEach { index, tab in
             guard let image = tab.image else { return }
+                                   
             let tabButton = createTabBarButton(icon: image, title: tab.title, tag: index)
             tabButtons.append(tabButton)
             stackView.addArrangedSubview(tabButton)
