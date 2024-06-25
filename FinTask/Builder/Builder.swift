@@ -9,9 +9,14 @@ import UIKit
 
 protocol BuilderProtocol {
     static func createTabBarController() -> UIViewController
+    static func createOnboardingViewController() -> UIViewController
 }
 
 class Builder: BuilderProtocol {
+    static func createOnboardingViewController() -> UIViewController {
+        let onboardingView = OnboardingViewController()
+        return onboardingView
+    }
     
     static func createTabBarController() -> UIViewController {
         let tabBarView = TabBarViewController()
