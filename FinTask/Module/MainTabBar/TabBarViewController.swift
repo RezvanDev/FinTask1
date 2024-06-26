@@ -115,7 +115,7 @@ private extension TabBarViewController {
 
     // Set view controller
     func setControllers() {
-        setViewControllers([FinanceViewController(), TaskViewController(), HomeViewController(), AnalyticViewController(), SettingViewController()], animated: true)
+        setViewControllers([FinanceViewController(), HomeViewController(), AnalyticViewController(), SettingViewController()], animated: true)
     }
     
     // Update button colors
