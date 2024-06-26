@@ -12,9 +12,10 @@ import CoreLocation
 class StorageManager {
     
     static let shared = StorageManager()
-    private let realm = try! Realm()
+    private var realm = try! Realm()
     private let geocoder = CLGeocoder()
     
+
     // Get user
     func getUser() -> User? {
         return realm.objects(User.self).first

@@ -241,7 +241,3 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 
-
-#Preview() {
-    HomeViewController()
-}

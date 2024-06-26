@@ -89,6 +89,3 @@ class HomeCollectionViewCell: UICollectionViewCell, CellProtocols {
     
 }
 
-#Preview() {
-    HomeCollectionViewCell()
-}

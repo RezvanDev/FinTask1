@@ -38,6 +38,7 @@ class Income: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var amount: Double = 0.0
     @objc dynamic var date: Date = Date()
+    @objc dynamic var image: String = ""
     @objc dynamic var note: String = ""
     
     override static func primaryKey() -> String? {
@@ -49,6 +50,7 @@ class Expense: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var amount: Double = 0.0
     @objc dynamic var date: Date = Date()
+    @objc dynamic var image: String = ""
     @objc dynamic var note: String = ""
     
     override static func primaryKey() -> String? {
@@ -78,7 +80,9 @@ class MonthlyPayment: Object {
 class Procedure: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
+    @objc dynamic var image: String = ""
     @objc dynamic var amount: Double = 0.0
+    
     
     override static func primaryKey() -> String? {
         return "id"
