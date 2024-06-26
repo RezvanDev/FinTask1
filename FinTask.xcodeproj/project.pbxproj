@@ -1,4 +1,3 @@
-// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -23,12 +22,29 @@
 		543913E12C2AAD93006A2075 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E02C2AAD93006A2075 /* Protocols.swift */; };
 		543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */; };
 		543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E52C2ABCAF006A2075 /* AppColors.swift */; };
-		755B12D3806570699AAF1398 /* Pods_FinTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C9761F6144E3511EBC4AEB /* Pods_FinTask.framework */; };
+		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
+		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
+		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
+		54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */; };
+		54BFBEBA2C2C1D3B00379920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54BFBEB92C2C1D3B00379920 /* RealmSwift */; };
+		54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C8A9112C2C390000AF2D6D /* LimitViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		54BFBEA42C2BFC6900379920 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		23C67A4646D8BEE0D4DC7FC6 /* Pods-FinTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinTask.release.xcconfig"; path = "Target Support Files/Pods-FinTask/Pods-FinTask.release.xcconfig"; sourceTree = "<group>"; };
 		541AC7A32C2835A400AFA81C /* FinTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		541AC7A62C2835A400AFA81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		541AC7A82C2835A400AFA81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,8 +62,11 @@
 		543913E02C2AAD93006A2075 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		543913E52C2ABCAF006A2075 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		72172BAF5B46764EE9412A7C /* Pods-FinTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinTask.debug.xcconfig"; path = "Target Support Files/Pods-FinTask/Pods-FinTask.debug.xcconfig"; sourceTree = "<group>"; };
-		F8C9761F6144E3511EBC4AEB /* Pods_FinTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
+		54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewCell.swift; sourceTree = "<group>"; };
+		54C8A9112C2C390000AF2D6D /* LimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,21 +74,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				755B12D3806570699AAF1398 /* Pods_FinTask.framework in Frameworks */,
+				54BFBEBA2C2C1D3B00379920 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E7C9E4CE7AC9C64C4904532 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F8C9761F6144E3511EBC4AEB /* Pods_FinTask.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		223E3B202C2A2E0F005B3FD2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,9 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
-				543913D42C296C0B006A2075 /* Home */,
 				543913D02C296BE9006A2075 /* Setting */,
 				543913CC2C296BC8006A2075 /* Analytics */,
+				543913D42C296C0B006A2075 /* Home */,
+				54C8A90F2C2C38DE00AF2D6D /* Limit */,
 				543913C42C296B2C006A2075 /* Finance */,
 				22BD300A2C2871DB00945318 /* MainTabBar */,
 			);
@@ -112,8 +124,6 @@
 			children = (
 				541AC7A52C2835A400AFA81C /* FinTask */,
 				541AC7A42C2835A400AFA81C /* Products */,
-				F869411B97DC3D2B1948AF46 /* Pods */,
-				1E7C9E4CE7AC9C64C4904532 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +169,7 @@
 		543913C42C296B2C006A2075 /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				54BFBEB52C2C17D700379920 /* View */,
 				543913C52C296B45006A2075 /* ViewController */,
 			);
 			path = Finance;
@@ -226,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				543913DA2C299FB2006A2075 /* HomeModel.swift */,
+				54BFBE922C2BF45000379920 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				543913DD2C2AA783006A2075 /* HomeCollectionViewCell.swift */,
+				54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -243,6 +256,7 @@
 			children = (
 				543913E22C2ABC8A006A2075 /* Extensions */,
 				543913E02C2AAD93006A2075 /* Protocols.swift */,
+				54BFBE902C2BF43C00379920 /* StorageManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -256,13 +270,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F869411B97DC3D2B1948AF46 /* Pods */ = {
+		54BFBEB52C2C17D700379920 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				72172BAF5B46764EE9412A7C /* Pods-FinTask.debug.xcconfig */,
-				23C67A4646D8BEE0D4DC7FC6 /* Pods-FinTask.release.xcconfig */,
+				54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */,
 			);
-			path = Pods;
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C8A90F2C2C38DE00AF2D6D /* Limit */ = {
+			isa = PBXGroup;
+			children = (
+				54C8A9102C2C38EA00AF2D6D /* ViewController */,
+			);
+			path = Limit;
+			sourceTree = "<group>";
+		};
+		54C8A9102C2C38EA00AF2D6D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54C8A9112C2C390000AF2D6D /* LimitViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,16 +301,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 541AC7B72C2835A500AFA81C /* Build configuration list for PBXNativeTarget "FinTask" */;
 			buildPhases = (
-				CE1C91F6B41AB00C6C155A1E /* [CP] Check Pods Manifest.lock */,
 				541AC79F2C2835A400AFA81C /* Sources */,
 				541AC7A02C2835A400AFA81C /* Frameworks */,
 				541AC7A12C2835A400AFA81C /* Resources */,
+				54BFBEA42C2BFC6900379920 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FinTask;
+			packageProductDependencies = (
+				54BFBEB92C2C1D3B00379920 /* RealmSwift */,
+			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +342,9 @@
 				Base,
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
+			packageReferences = (
+				54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -331,31 +366,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		CE1C91F6B41AB00C6C155A1E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FinTask-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		541AC79F2C2835A400AFA81C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -365,14 +375,19 @@
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
+				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
 				543913D32C296C00006A2075 /* SettingViewController.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
+				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
+				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
+				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
+				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
 				543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */,
 			);
@@ -444,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -501,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -513,7 +528,6 @@
 		};
 		541AC7B82C2835A500AFA81C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72172BAF5B46764EE9412A7C /* Pods-FinTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -522,6 +536,8 @@
 				DEVELOPMENT_TEAM = 9W625278YK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinTask/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Разрешите доступ к вашему местоположению для определения валюты на основе вашего текущего местоположения.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -546,7 +562,6 @@
 		};
 		541AC7B92C2835A500AFA81C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C67A4646D8BEE0D4DC7FC6 /* Pods-FinTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -555,6 +570,8 @@
 				DEVELOPMENT_TEAM = 9W625278YK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinTask/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Разрешите доступ к вашему местоположению для определения валюты на основе вашего текущего местоположения.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -599,6 +616,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		54BFBEB92C2C1D3B00379920 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 541AC79B2C2835A400AFA81C /* Project object */;
 }

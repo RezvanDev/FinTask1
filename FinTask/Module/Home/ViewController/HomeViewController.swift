@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    //mock data
+    // Data
     let homeModelCellMockData = HomeModelCellMockData()
     let homeModelDate = HomeModelDate()
     
@@ -74,6 +74,7 @@ class HomeViewController: UIViewController {
         collection.delegate = self
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseId)
+        collection.register(HomeCollectionViewCellLast.self, forCellWithReuseIdentifier: HomeCollectionViewCellLast.reuseId)
         return collection
     }()
     
@@ -117,6 +118,7 @@ private extension HomeViewController {
         setupLabelsOnViewBackground()
         setupCollectionView()
         setupViewTime()
+        setupHeaderDate()
     }
     
     // setup constraints header view background
@@ -208,6 +210,12 @@ private extension HomeViewController {
             timeLabel.trailingAnchor.constraint(equalTo: viewTime.trailingAnchor, constant: 5)
         ])
     }
+    
+    func setupHeaderDate() {
+        // guard let user = StorageManager.shared.getUser() else { return }
+        // сделать чтобы данные в header загружались
+        // countTextOnViewBackground.text = user.wallets.
+    }
 }
 
 // MARK: -- UICollectionViewDataSource, UICollectionViewDelegate
@@ -217,12 +225,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as! HomeCollectionViewCell
-        let provaider = homeModelCellMockData.homeModelCells
-        cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title)
-        return cell
+        if indexPath.row != 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as! HomeCollectionViewCell
+            
+            let provaider = homeModelCellMockData.homeModelCells
+            let data: [Double] = [StorageManager.shared.totalIncome(), StorageManager.shared.totalExpense(), StorageManager.shared.totalSavings()]
+            
+            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title, data: String(data[indexPath.row]))
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath)
+            return cell
+        }
     }
 }
-
 
 

@@ -11,7 +11,7 @@ class TabBarViewController: UITabBarController {
     
     private let tabs: [(image: UIImage?, title: String)] = [
         (UIImage(systemName: "creditcard.and.123"), "Финансы"),
-        (UIImage(systemName: "folder"), "Задачи"),
+        (UIImage(systemName: "folder"), "Лимиты"),
         (UIImage(systemName: "house"), "Главная"),
         (UIImage(systemName: "eye"), "Аналитика"),
         (UIImage(systemName: "gearshape"), "Настройки")
@@ -115,7 +115,14 @@ private extension TabBarViewController {
 
     // Set view controller
     func setControllers() {
-        setViewControllers([FinanceViewController(), TaskViewController(), HomeViewController(), AnalyticViewController(), SettingViewController()], animated: true)
+        let controllers = [
+            UINavigationController(rootViewController: FinanceViewController()),
+            UINavigationController(rootViewController: LimitViewController()),
+            UINavigationController(rootViewController:  HomeViewController()),
+            UINavigationController(rootViewController: AnalyticViewController()),
+            UINavigationController(rootViewController: SettingViewController())
+        ]
+        setViewControllers([controllers[0], controllers[1], controllers[2], controllers[3], controllers[4]], animated: true)
     }
     
     // Update button colors
