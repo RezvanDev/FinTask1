@@ -24,8 +24,10 @@
 		543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E52C2ABCAF006A2075 /* AppColors.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
-		54BFBEAD2C2C014600379920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54BFBEAC2C2C014600379920 /* RealmSwift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
+		54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */; };
+		54BFBEBA2C2C1D3B00379920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54BFBEB92C2C1D3B00379920 /* RealmSwift */; };
+		54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C8A9112C2C390000AF2D6D /* LimitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +65,8 @@
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
+		54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewCell.swift; sourceTree = "<group>"; };
+		54C8A9112C2C390000AF2D6D /* LimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54BFBEAD2C2C014600379920 /* RealmSwift in Frameworks */,
+				54BFBEBA2C2C1D3B00379920 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
-				543913D42C296C0B006A2075 /* Home */,
 				543913D02C296BE9006A2075 /* Setting */,
 				543913CC2C296BC8006A2075 /* Analytics */,
+				543913D42C296C0B006A2075 /* Home */,
+				54C8A90F2C2C38DE00AF2D6D /* Limit */,
 				543913C42C296B2C006A2075 /* Finance */,
 				22BD300A2C2871DB00945318 /* MainTabBar */,
 			);
@@ -164,6 +169,7 @@
 		543913C42C296B2C006A2075 /* Finance */ = {
 			isa = PBXGroup;
 			children = (
+				54BFBEB52C2C17D700379920 /* View */,
 				543913C52C296B45006A2075 /* ViewController */,
 			);
 			path = Finance;
@@ -264,6 +270,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		54BFBEB52C2C17D700379920 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54C8A90F2C2C38DE00AF2D6D /* Limit */ = {
+			isa = PBXGroup;
+			children = (
+				54C8A9102C2C38EA00AF2D6D /* ViewController */,
+			);
+			path = Limit;
+			sourceTree = "<group>";
+		};
+		54C8A9102C2C38EA00AF2D6D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54C8A9112C2C390000AF2D6D /* LimitViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,7 +312,7 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				54BFBEAC2C2C014600379920 /* RealmSwift */,
+				54BFBEB92C2C1D3B00379920 /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -313,7 +343,7 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				54BFBEAB2C2C014600379920 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -345,10 +375,12 @@
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
+				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
 				543913D32C296C00006A2075 /* SettingViewController.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
+				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
@@ -427,7 +459,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -484,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -510,7 +542,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,7 +576,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,7 +618,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54BFBEAB2C2C014600379920 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -597,9 +629,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54BFBEAC2C2C014600379920 /* RealmSwift */ = {
+		54BFBEB92C2C1D3B00379920 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54BFBEAB2C2C014600379920 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
