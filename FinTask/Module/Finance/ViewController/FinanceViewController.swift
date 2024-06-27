@@ -29,12 +29,45 @@ class FinanceViewController: UIViewController {
         return lbl
     }()
     
+    private lazy var buttonMenu: UIButton = {
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        button.addTarget(self, action: #selector(buttonMenuTap), for: .touchUpInside)
+        button.backgroundColor = .green
+        button.layer.cornerRadius = 20
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+    
+    private lazy var buttonIncome: UIButton = {
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
+        button.backgroundColor = AppColors.mainGreen
+        button.tintColor = .white
+        button.layer.cornerRadius = 20
+        button.alpha = 0
+        return button
+    }()
+    
+    private lazy var buttonExpense: UIButton = {
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        button.setImage(UIImage(systemName: "square.and.arrow.down"), for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .red
+        button.layer.cornerRadius = 20
+        
+        button.alpha = 0
+        return button
+    }()
+    
     private var sections: [(date: Date, items: [Any])] = []
+    private var buttonsAreVisible = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         fetchData()
+        setupButtons()
     }
 }
 
@@ -102,12 +135,39 @@ private extension FinanceViewController {
         tableView.reloadData()
     }
     
-    
     // Format date
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
+    }
+    
+    // Setup buttons
+    func setupButtons() {
+        view.addSubview(buttonExpense)
+        view.addSubview(buttonIncome)
+        view.addSubview(buttonMenu)
+    }
+}
+
+// MARK: -- Obj methods
+private extension FinanceViewController {
+    @objc func buttonMenuTap() {
+        buttonsAreVisible.toggle()
+        
+        UIView.animate(withDuration: 0.3) {
+            if self.buttonsAreVisible {
+                self.buttonIncome.alpha = 1
+                self.buttonExpense.alpha = 1
+                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88 - 50, width: 40, height: 40)
+                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88 - 100, width: 40, height: 40)
+            } else {
+                self.buttonIncome.alpha = 0
+                self.buttonExpense.alpha = 0
+                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88, width: 40, height: 40)
+                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88, width: 40, height: 40)
+            }
+        }
     }
 }
 
@@ -153,7 +213,7 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-
+    
 }
 
 

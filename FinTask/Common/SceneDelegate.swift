@@ -18,7 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        window.rootViewController = UINavigationController(rootViewController: Builder.createTabBarController())// Builder.createOnboardingViewController()
+//        var viewController: UIViewController?
+//        if UserDefaults.standard.bool(forKey: "firstLaunch2") == false {
+//            UserDefaults.standard.set(true, forKey: "firstLaunch2")
+//            viewController = Builder.createOnboardingViewController()
+//        } else {
+//            viewController = Builder.createTabBarController()
+//        }
+//        guard let viewController else { return }
+        
+        window.rootViewController = UINavigationController(rootViewController: Builder.createOnboardingViewController())
         self.window = window
         window.makeKeyAndVisible()
         
