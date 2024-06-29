@@ -26,17 +26,32 @@ class Wallet: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var nameCurrency: String = ""
     @objc dynamic var currentFunds: Double = 0.0
-    let categories = List<Category>()
+    let categoriesIncome = List<CategoryIncome>()
+    let categoriesExpense = List<CategoryExpense>()
     
     override static func primaryKey() -> String? {
         return "id"
     }
 }
 
-class Category: Object {
+class CategoryIncome: Object {
+    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
     let incomes = List<Income>()
-    let expenses = List<Expense>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+class CategoryExpense: Object {
+    @objc dynamic var id: String = UUID().uuidString
+    @objc dynamic var name: String = ""
+    let incomes = List<Expense>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
  
 class Income: Object {

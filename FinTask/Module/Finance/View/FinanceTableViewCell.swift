@@ -61,15 +61,21 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with category: Category, data: AnyObject) {
+    func configure(with category: Any, data: AnyObject) {
+        if let category = category as? CategoryIncome {
+            categoryTitle.text = category.name
+        } else if let category = category as? CategoryExpense {
+            categoryTitle.text = category.name
+        }
         
-        categoryTitle.text = category.name
-        note.text = data.note
-        moneyCount.text = String(data.amount)
+        if let income = data as? Income {
+            note.text = income.note
+            moneyCount.text = String(income.amount)
+        } else if let expense = data as? Expense {
+            note.text = expense.note
+            moneyCount.text = String(expense.amount)
+        }
     }
-    
-    
-    
     
     private func setup() {
         addSubview(imageIcon)
