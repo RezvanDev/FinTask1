@@ -15,7 +15,6 @@ class StorageManager {
     private var realm = try! Realm()
     private let geocoder = CLGeocoder()
     
-    
     // Get user
     func getUser() -> User? {
         return realm.objects(User.self).first
@@ -28,7 +27,7 @@ class StorageManager {
         var totalIncome: Double = 0.0
         
         for wallet in user.wallets {
-            for category in wallet.categories {
+            for category in wallet.categoriesIncome {
                 totalIncome += category.incomes.reduce(0.0) { $0 + $1.amount }
             }
         }
@@ -42,8 +41,8 @@ class StorageManager {
         var totalExpense: Double = 0.0
         
         for wallet in user.wallets {
-            for category in wallet.categories {
-                totalExpense += category.expenses.reduce(0.0) { $0 + $1.amount }
+            for category in wallet.categoriesExpense {
+                totalExpense += category.incomes.reduce(0.0) { $0 + $1.amount }
             }
         }
         return totalExpense
@@ -56,13 +55,13 @@ class StorageManager {
     }
     
     // Get sorted incomes
-    func fetchSortedGroupedIncomes() -> [Date: [(category: Category, items: [Income])]] {
+    func fetchSortedGroupedIncomes() -> [Date: [(category: CategoryIncome, items: [Income])]] {
         guard let user = getUser() else { return [:] }
         
-        var groupedIncomes: [Date: [(category: Category, items: [Income])]] = [:]
+        var groupedIncomes: [Date: [(category: CategoryIncome, items: [Income])]] = [:]
         
         for wallet in user.wallets {
-            for category in wallet.categories {
+            for category in wallet.categoriesIncome {
                 let incomes = category.incomes
                 for income in incomes {
                     let date = Calendar.current.startOfDay(for: income.date)
@@ -80,14 +79,14 @@ class StorageManager {
     }
     
     // Get sorted expenses
-    func fetchSortedGroupedExpenses() -> [Date: [(category: Category, items: [Expense])]] {
+    func fetchSortedGroupedExpenses() -> [Date: [(category: CategoryExpense, items: [Expense])]] {
         guard let user = getUser() else { return [:] }
         
-        var groupedExpenses: [Date: [(category: Category, items: [Expense])]] = [:]
+        var groupedExpenses: [Date: [(category: CategoryExpense, items: [Expense])]] = [:]
         
         for wallet in user.wallets {
-            for category in wallet.categories {
-                let expenses = category.expenses
+            for category in wallet.categoriesExpense {
+                let expenses = category.incomes
                 for expense in expenses {
                     let date = Calendar.current.startOfDay(for: expense.date)
                     if var expensesForDate = groupedExpenses[date] {
@@ -102,7 +101,6 @@ class StorageManager {
         return groupedExpenses
     }
     
-    
     // Create user first time. When user login in app
     func createInitialUserIfNeeded(locationManager: CLLocationManager) {
         let userExists = realm.objects(User.self).first != nil
@@ -113,7 +111,6 @@ class StorageManager {
         
         let wallet = Wallet()
         wallet.name = "Default Wallet"
-        
         
         determineCurrencyForCurrentLocation(locationManager: locationManager) { currency in
             if let currency = currency {
@@ -129,6 +126,7 @@ class StorageManager {
             }
         }
     }
+    
     // find geo user
     private func determineCurrencyForCurrentLocation(locationManager: CLLocationManager, completion: @escaping (String?) -> Void) {
         guard let location = locationManager.location else {

@@ -44,6 +44,7 @@ class FinanceViewController: UIViewController {
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.backgroundColor = AppColors.mainGreen
         button.tintColor = .white
+        button.addTarget(self, action: #selector(buttonGoToNewOperation), for: .touchUpInside)
         button.layer.cornerRadius = 20
         button.alpha = 0
         return button
@@ -55,7 +56,7 @@ class FinanceViewController: UIViewController {
         button.tintColor = .white
         button.backgroundColor = .red
         button.layer.cornerRadius = 20
-        
+        button.addTarget(self, action: #selector(buttonGoToNewOperation), for: .touchUpInside)
         button.alpha = 0
         return button
     }()
@@ -102,36 +103,30 @@ private extension FinanceViewController {
         let groupedIncomes = StorageManager.shared.fetchSortedGroupedIncomes()
         let groupedExpenses = StorageManager.shared.fetchSortedGroupedExpenses()
         
-        var allItems: [(date: Date, items: [(category: Category, items: [Any])])] = []
+        var allItems: [(date: Date, items: [(category: Any, items: [Any])])] = []
         
         // Combine and group by date and category
         let allDates = Set(groupedIncomes.keys).union(Set(groupedExpenses.keys))
         
         for date in allDates {
-            var dateItems: [(category: Category, items: [Any])] = []
+            var dateItems: [(category: Any, items: [Any])] = []
             
             if let incomesForDate = groupedIncomes[date] {
-                for (category, incomes) in incomesForDate {
-                    dateItems.append((category: category, items: incomes))
+                for income in incomesForDate {
+                    dateItems.append((category: income.category, items: income.items))
                 }
             }
             
             if let expensesForDate = groupedExpenses[date] {
-                for (category, expenses) in expensesForDate {
-                    dateItems.append((category: category, items: expenses))
+                for expense in expensesForDate {
+                    dateItems.append((category: expense.category, items: expense.items))
                 }
             }
-            
-            // Sort items within each category by date descending
-            dateItems.sort { $0.category.name < $1.category.name }
             
             allItems.append((date: date, items: dateItems))
         }
         
-        // Sort by date descending
-        allItems.sort { $0.date > $1.date }
-        
-        sections = allItems
+        sections = allItems.sorted(by: { $0.date > $1.date })
         tableView.reloadData()
     }
     
@@ -169,6 +164,16 @@ private extension FinanceViewController {
             }
         }
     }
+    
+    @objc func buttonGoToNewOperation(sender: UIButton) {
+        let vc = NewOperationViewController()
+        if sender == buttonExpense {
+            vc.isExpense = true
+        } else {
+            vc.isExpense = false
+        }
+        present(vc, animated: true)
+    }
 }
 
 // MARK: -- UITableViewDelegate, UITableViewDataSource
@@ -186,17 +191,13 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         
         let item = sections[indexPath.section].items[indexPath.row]
         
-        if let (category, incomes) = item as? (category: Category, items: [Income]) {
-            // Configure cell with income data
-            if let income = incomes.first {
-                cell.configure(with: category, data: income)
-            }
-        } else if let (category, expenses) = item as? (category: Category, items: [Expense]) {
-            // Configure cell with expense data
-            if let expense = expenses.first {
-                cell.configure(with: category, data: expense)
-            }
+        if let incomeItem = item as? (category: CategoryIncome, items: [Income]), let income = incomeItem.items.first {
+            cell.configure(with: incomeItem.category, data: income)
+        } else if let expenseItem = item as? (category: CategoryExpense, items: [Expense]), let expense = expenseItem.items.first {
+            cell.configure(with: expenseItem.category, data: expense)
         }
+        
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -213,7 +214,9 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
 }
 
 
