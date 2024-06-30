@@ -120,7 +120,7 @@ private extension TabBarViewController {
             UINavigationController(rootViewController: LimitViewController()),
             UINavigationController(rootViewController:  HomeViewController()),
             UINavigationController(rootViewController: AnalyticViewController()),
-            UINavigationController(rootViewController: SettingViewController())
+            UINavigationController(rootViewController: SettingsViewController())
         ]
         setViewControllers([controllers[0], controllers[1], controllers[2], controllers[3], controllers[4]], animated: true)
     }
