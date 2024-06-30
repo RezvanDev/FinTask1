@@ -22,7 +22,6 @@ class StorageManager {
     // Get all expense categories
     func getAllExpenseCategories() -> [CategoryExpense] {
         guard let user = getUser() else { return [] }
-        
         var allExpenseCategories: [CategoryExpense] = []
         
         for wallet in user.wallets {

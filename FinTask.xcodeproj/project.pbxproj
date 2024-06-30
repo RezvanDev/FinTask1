@@ -14,7 +14,8 @@
 		541AC7B02C2835A500AFA81C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541AC7AF2C2835A500AFA81C /* Assets.xcassets */; };
 		541AC7B32C2835A500AFA81C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 541AC7B22C2835A500AFA81C /* Base */; };
 		541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C7D2E2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift */; };
-		541C7D302C31336200928483 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54BFBEB92C2C1D3B00379920 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		541C7D382C315A9D00928483 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 541C7D372C315A9D00928483 /* RealmSwift */; };
+		541C7D392C315AB200928483 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 541C7D372C315A9D00928483 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		543913C22C295944006A2075 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913C12C295944006A2075 /* Builder.swift */; };
 		543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913C62C296B8B006A2075 /* FinanceViewController.swift */; };
 		543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913CE2C296BE3006A2075 /* AnalyticViewController.swift */; };
@@ -30,7 +31,6 @@
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
 		54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */; };
-		54BFBEBA2C2C1D3B00379920 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54BFBEB92C2C1D3B00379920 /* RealmSwift */; };
 		54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C8A9112C2C390000AF2D6D /* LimitViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				541C7D302C31336200928483 /* RealmSwift in Embed Frameworks */,
+				541C7D392C315AB200928483 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54BFBEBA2C2C1D3B00379920 /* RealmSwift in Frameworks */,
+				541C7D382C315A9D00928483 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +353,7 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				54BFBEB92C2C1D3B00379920 /* RealmSwift */,
+				541C7D372C315A9D00928483 /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -384,7 +384,7 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				541C7D362C315A9D00928483 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -661,7 +661,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		541C7D362C315A9D00928483 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -672,9 +672,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54BFBEB92C2C1D3B00379920 /* RealmSwift */ = {
+		541C7D372C315A9D00928483 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54BFBEB82C2C1D3B00379920 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 541C7D362C315A9D00928483 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

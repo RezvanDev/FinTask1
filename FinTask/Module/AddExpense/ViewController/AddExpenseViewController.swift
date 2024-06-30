@@ -109,8 +109,9 @@ class AddExpenseViewController: UIViewController {
     }()
     private lazy var buttonBottomShieldView: UIButton = {
         let button = UIButton()
-        button.setTitle("Готово", for: .normal)
-        button.backgroundColor = AppColors.lightGreen
+        button.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = AppColors.lightGreenForButtonInButtomShield.withAlphaComponent(0.2)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -120,10 +121,10 @@ class AddExpenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchExpenseCategories()
         setup()
         setupKeyboardNotifications()
         setupTapGesture()
-        fetchExpenseCategories()
     }
     
     deinit {
@@ -264,7 +265,9 @@ private extension AddExpenseViewController {
             stackVBottomShieldView.leadingAnchor.constraint(equalTo: bottomShieldView.leadingAnchor, constant: 40),
             stackVBottomShieldView.widthAnchor.constraint(equalToConstant: 250),
             
-            buttonBottomShieldView.centerYAnchor.constraint(equalTo: stackVBottomShieldView.centerYAnchor),
+            buttonBottomShieldView.centerYAnchor.constraint(equalTo: stackVBottomShieldView.centerYAnchor, constant: 5),
+            buttonBottomShieldView.heightAnchor.constraint(equalToConstant: 40),
+            buttonBottomShieldView.widthAnchor.constraint(equalToConstant: 70),
             buttonBottomShieldView.trailingAnchor.constraint(equalTo: bottomShieldView.trailingAnchor, constant: -20),
             
             tfBottomShieldView.topAnchor.constraint(equalTo: titleBottomShieldView.bottomAnchor, constant: 10),
@@ -352,7 +355,7 @@ extension AddExpenseViewController {
 // MARK: -- UICollectionViewDelegate, UICollectionViewDataSource
 extension AddExpenseViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return expenseCategories.count
+        return  expenseCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
