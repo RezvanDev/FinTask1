@@ -32,6 +32,9 @@ class ExpenseCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .red
+        
+        view.layer.borderWidth = 3.0  // Толщина бордюра
+        view.layer.borderColor = UIColor.clear.cgColor
         view.layer.cornerRadius = 24
         return view
     }()
@@ -54,6 +57,7 @@ class ExpenseCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
         title.text = category.name
         image.image = UIImage(systemName: category.image)
         viewMain.backgroundColor = colorsForView.randomElement()
+        viewMain.layer.borderColor = UIColor.clear.cgColor
     }
     
     private func setup() {
@@ -80,4 +84,14 @@ class ExpenseCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
         ])
     }
     
+    override var isSelected: Bool {
+            didSet {
+                // При изменении isSelected, обновляем цвет бордюра viewMain
+                if isSelected {
+                    viewMain.layer.borderColor = AppColors.mainGreen.cgColor
+                } else {
+                    viewMain.layer.borderColor = UIColor.clear.cgColor
+                }
+            }
+        }
 }

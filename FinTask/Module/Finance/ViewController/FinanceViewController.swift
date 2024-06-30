@@ -168,9 +168,16 @@ private extension FinanceViewController {
     @objc func buttonGoToNewOperation(sender: UIButton) {
         var vc = UIViewController()
         if sender == buttonExpense {
-            vc = AddExpenseViewController()
+            let addExpenseVC = AddExpenseViewController()
+            addExpenseVC.reloadDataFinanceViewController = {[weak self] res in
+                if res {
+                    self?.fetchData()
+                    self?.tableView.reloadData()
+                }
+            }
+            vc = addExpenseVC
         } else {
-          
+            
         }
         present(vc, animated: true)
     }

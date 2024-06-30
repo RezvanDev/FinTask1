@@ -10,11 +10,36 @@ import RealmSwift
 import CoreLocation
 
 class StorageManager {
-    
     static let shared = StorageManager()
     private var realm = try! Realm()
     private let geocoder = CLGeocoder()
-    
+}
+
+
+// MARK: -- Set methods
+extension StorageManager {
+    // Method to create a new expense for a given category ID
+    func createExpense(for categoryId: String, amount: Double, date: Date, note: String?) {
+            guard let user = getUser() else { return }
+            
+            for wallet in user.wallets {
+                if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
+                    let expense = Expense()
+                    expense.amount = amount
+                    expense.date = date
+                    expense.note = note
+                    
+                    try! realm.write {
+                        category.incomes.append(expense)
+                    }
+                    break
+                }
+            }
+    }
+}
+
+// MARK: -- Get methods
+extension StorageManager {
     // Get user
     func getUser() -> User? {
         return realm.objects(User.self).first
@@ -111,7 +136,11 @@ class StorageManager {
         }
         return groupedExpenses
     }
-    
+}
+
+
+// MARK: -- Launch first time
+extension StorageManager {
     // Create user first time. When user login in app
     func createInitialUserIfNeeded(locationManager: CLLocationManager) {
         let userExists = realm.objects(User.self).first != nil
