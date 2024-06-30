@@ -37,6 +37,7 @@ class Wallet: Object {
 class CategoryIncome: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
+    @objc dynamic var image: String = ""
     let incomes = List<Income>()
     
     override static func primaryKey() -> String? {
@@ -47,6 +48,7 @@ class CategoryIncome: Object {
 class CategoryExpense: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
+    @objc dynamic var image: String = ""
     let incomes = List<Expense>()
     
     override static func primaryKey() -> String? {

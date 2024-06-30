@@ -30,32 +30,32 @@ class FinanceViewController: UIViewController {
     }()
     
     private lazy var buttonMenu: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 50 - 20, y: view.bounds.height - 50 - 88, width: 50, height: 50))
         button.addTarget(self, action: #selector(buttonMenuTap), for: .touchUpInside)
         button.backgroundColor = .green
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 25
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = .white
         return button
     }()
     
     private lazy var buttonIncome: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 50 - 20, y: view.bounds.height - 50 - 88, width: 50, height: 50))
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.backgroundColor = AppColors.mainGreen
         button.tintColor = .white
         button.addTarget(self, action: #selector(buttonGoToNewOperation), for: .touchUpInside)
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 25
         button.alpha = 0
         return button
     }()
     
     private lazy var buttonExpense: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 50 - 20, y: view.bounds.height - 50 - 88, width: 50, height: 50))
         button.setImage(UIImage(systemName: "square.and.arrow.down"), for: .normal)
         button.tintColor = .white
         button.backgroundColor = .red
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 25
         button.addTarget(self, action: #selector(buttonGoToNewOperation), for: .touchUpInside)
         button.alpha = 0
         return button
@@ -154,23 +154,23 @@ private extension FinanceViewController {
             if self.buttonsAreVisible {
                 self.buttonIncome.alpha = 1
                 self.buttonExpense.alpha = 1
-                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88 - 50, width: 40, height: 40)
-                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88 - 100, width: 40, height: 40)
+                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88 - 75, width: 50, height: 50)
+                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88 - 150, width: 50, height: 50)
             } else {
                 self.buttonIncome.alpha = 0
                 self.buttonExpense.alpha = 0
-                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88, width: 40, height: 40)
-                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88, width: 40, height: 40)
+                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88, width: 50, height: 50)
+                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88, width: 50, height: 50)
             }
         }
     }
     
     @objc func buttonGoToNewOperation(sender: UIButton) {
-        let vc = NewOperationViewController()
+        var vc = UIViewController()
         if sender == buttonExpense {
-            vc.isExpense = true
+            vc = AddExpenseViewController()
         } else {
-            vc.isExpense = false
+          
         }
         present(vc, animated: true)
     }

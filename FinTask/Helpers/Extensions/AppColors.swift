@@ -13,4 +13,7 @@ enum AppColors {
     static let tabBarGray = UIColor().rgb(r: 253, g: 253, b: 253)
     static let lightGreen = UIColor().rgb(r: 241, g: 255, b: 243)
     static let mediumGreen = UIColor().rgb(r: 223, g: 247, b: 226)
+    
+    static let arrayColors = [UIColor().rgb(r: 255, g: 163, b: 37), UIColor().rgb(r: 255, g: 83, b: 66), UIColor().rgb(r: 176, g: 117, b: 83), UIColor().rgb(r: 255, g: 207, b: 51)]
+    
 }
