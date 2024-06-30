@@ -27,6 +27,8 @@
 		545D08722C317A3E005F19CE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D08712C317A3E005F19CE /* Alerts.swift */; };
 		545D08752C3183D7005F19CE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 545D08742C3183D7005F19CE /* RealmSwift */; };
 		545D08762C3183E3005F19CE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 545D08742C3183D7005F19CE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D08792C318783005F19CE /* AddIncomeViewController.swift */; };
+		545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */; };
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
@@ -70,6 +72,8 @@
 		543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		543913E52C2ABCAF006A2075 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		545D08712C317A3E005F19CE /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		545D08792C318783005F19CE /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
+		545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				545D08772C31876E005F19CE /* AddIncome */,
 				547C8D9F2C2D7DCC008EA96D /* AddExpense */,
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
 				543913D02C296BE9006A2075 /* Setting */,
@@ -304,6 +309,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		545D08772C31876E005F19CE /* AddIncome */ = {
+			isa = PBXGroup;
+			children = (
+				545D087B2C318899005F19CE /* View */,
+				545D08782C318776005F19CE /* ViewController */,
+			);
+			path = AddIncome;
+			sourceTree = "<group>";
+		};
+		545D08782C318776005F19CE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				545D08792C318783005F19CE /* AddIncomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		545D087B2C318899005F19CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		547C8D9F2C2D7DCC008EA96D /* AddExpense */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,11 +446,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */,
+				545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */,
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
 				541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
+				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
 				543913D32C296C00006A2075 /* SettingViewController.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,

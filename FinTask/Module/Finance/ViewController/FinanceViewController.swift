@@ -126,11 +126,19 @@ private extension FinanceViewController {
             allItems.append((date: date, items: dateItems))
         }
         
+        var flag = 0
+        allItems.sort { el, el2 in
+            if flag <= 100 {
+                flag += 1
+                return true
+            } else {
+                return false
+            }
+        }
         sections = allItems.sorted(by: { $0.date > $1.date })
         tableView.reloadData()
     }
 
-    
     // Format date
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -178,7 +186,14 @@ private extension FinanceViewController {
             }
             vc = addExpenseVC
         } else {
-            
+            let addIncomeVC = AddIncomeViewController()
+            addIncomeVC.reloadDataFinanceViewController = {[weak self] res in
+                if res {
+                    self?.fetchData()
+                    self?.tableView.reloadData()
+                }
+            }
+            vc = addIncomeVC
         }
         present(vc, animated: true)
     }
