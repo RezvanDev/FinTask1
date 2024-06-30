@@ -62,7 +62,7 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with category: Any, data: AnyObject) {
+    func configure(with category: Any, data: AnyObject, currency: String) {
         if let category = category as? CategoryIncome {
             imageIcon.image = UIImage(systemName: category.image)
             categoryTitle.text = category.name
@@ -73,10 +73,10 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
         
         if let income = data as? Income {
             note.text = income.note
-            moneyCount.text = String(income.amount)
+            moneyCount.text = String(Int(income.amount)) + " " + currency
         } else if let expense = data as? Expense {
             note.text = expense.note
-            moneyCount.text = "-\(String(expense.amount))"
+            moneyCount.text = "-\(String(Int(expense.amount)))" + " " + currency
         }
     }
     

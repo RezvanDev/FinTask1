@@ -91,21 +91,44 @@ extension StorageManager {
     }
     
     // Get sorted incomes
-    func fetchSortedGroupedIncomes() -> [Date: [(category: CategoryIncome, items: [Income])]] {
+//    func fetchSortedGroupedIncomes() -> [Date: [(category: CategoryIncome, items: [Income])]] {
+//        guard let user = getUser() else { return [:] }
+//        
+//        var groupedIncomes: [Date: [(category: CategoryIncome, items: [Income])]] = [:]
+//        
+//        for wallet in user.wallets {
+//            for category in wallet.categoriesIncome {
+//                let incomes = category.incomes
+//                for income in incomes {
+//                    let date = Calendar.current.startOfDay(for: income.date)
+//                    if var incomesForDate = groupedIncomes[date] {
+//                        incomesForDate.append((category: category, items: [income]))
+//                        groupedIncomes[date] = incomesForDate
+//                    } else {
+//                        groupedIncomes[date] = [(category: category, items: [income])]
+//                    }
+//                }
+//            }
+//        }
+//        
+//        return groupedIncomes
+//    }
+    func fetchSortedGroupedIncomes() -> [Date: [(category: CategoryIncome, items: [Income], currency: String)]] {
         guard let user = getUser() else { return [:] }
         
-        var groupedIncomes: [Date: [(category: CategoryIncome, items: [Income])]] = [:]
+        var groupedIncomes: [Date: [(category: CategoryIncome, items: [Income], currency: String)]] = [:]
         
         for wallet in user.wallets {
+            let currency = wallet.nameCurrency
             for category in wallet.categoriesIncome {
                 let incomes = category.incomes
                 for income in incomes {
                     let date = Calendar.current.startOfDay(for: income.date)
                     if var incomesForDate = groupedIncomes[date] {
-                        incomesForDate.append((category: category, items: [income]))
+                        incomesForDate.append((category: category, items: [income], currency: currency))
                         groupedIncomes[date] = incomesForDate
                     } else {
-                        groupedIncomes[date] = [(category: category, items: [income])]
+                        groupedIncomes[date] = [(category: category, items: [income], currency: currency)]
                     }
                 }
             }
@@ -115,25 +138,48 @@ extension StorageManager {
     }
     
     // Get sorted expenses
-    func fetchSortedGroupedExpenses() -> [Date: [(category: CategoryExpense, items: [Expense])]] {
+//    func fetchSortedGroupedExpenses() -> [Date: [(category: CategoryExpense, items: [Expense])]] {
+//        guard let user = getUser() else { return [:] }
+//        
+//        var groupedExpenses: [Date: [(category: CategoryExpense, items: [Expense])]] = [:]
+//        
+//        for wallet in user.wallets {
+//            for category in wallet.categoriesExpense {
+//                let expenses = category.incomes
+//                for expense in expenses {
+//                    let date = Calendar.current.startOfDay(for: expense.date)
+//                    if var expensesForDate = groupedExpenses[date] {
+//                        expensesForDate.append((category: category, items: [expense]))
+//                        groupedExpenses[date] = expensesForDate
+//                    } else {
+//                        groupedExpenses[date] = [(category: category, items: [expense])]
+//                    }
+//                }
+//            }
+//        }
+//        return groupedExpenses
+//    }
+    func fetchSortedGroupedExpenses() -> [Date: [(category: CategoryExpense, items: [Expense], currency: String)]] {
         guard let user = getUser() else { return [:] }
         
-        var groupedExpenses: [Date: [(category: CategoryExpense, items: [Expense])]] = [:]
+        var groupedExpenses: [Date: [(category: CategoryExpense, items: [Expense], currency: String)]] = [:]
         
         for wallet in user.wallets {
+            let currency = wallet.nameCurrency
             for category in wallet.categoriesExpense {
                 let expenses = category.incomes
                 for expense in expenses {
                     let date = Calendar.current.startOfDay(for: expense.date)
                     if var expensesForDate = groupedExpenses[date] {
-                        expensesForDate.append((category: category, items: [expense]))
+                        expensesForDate.append((category: category, items: [expense], currency: currency))
                         groupedExpenses[date] = expensesForDate
                     } else {
-                        groupedExpenses[date] = [(category: category, items: [expense])]
+                        groupedExpenses[date] = [(category: category, items: [expense], currency: currency)]
                     }
                 }
             }
         }
+        
         return groupedExpenses
     }
 }
