@@ -61,7 +61,7 @@ class Income: Object {
     @objc dynamic var amount: Double = 0.0
     @objc dynamic var date: Date = Date()
     @objc dynamic var image: String = ""
-    @objc dynamic var note: String = ""
+    @objc dynamic var note: String? = ""
     
     override static func primaryKey() -> String? {
         return "id"
@@ -73,7 +73,7 @@ class Expense: Object {
     @objc dynamic var amount: Double = 0.0
     @objc dynamic var date: Date = Date()
     @objc dynamic var image: String = ""
-    @objc dynamic var note: String = ""
+    @objc dynamic var note: String? = ""
     
     override static func primaryKey() -> String? {
         return "id"

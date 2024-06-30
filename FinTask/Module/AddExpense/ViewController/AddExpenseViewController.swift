@@ -11,11 +11,15 @@ class AddExpenseViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
+    private var tapGesture: UITapGestureRecognizer?
     
     private var noteTFBottomConstraint: NSLayoutConstraint!
     private var bottomViewHeightConstraint: NSLayoutConstraint!
     
     private var expenseCategories: [CategoryExpense] = []
+    private var currentCategory: CategoryExpense?
+    
+    var reloadDataFinanceViewController: ((Bool) -> ())?
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
@@ -46,6 +50,8 @@ class AddExpenseViewController: UIViewController {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.placeholder = "test"
+        tf.inputAccessoryView = createToolbar()
+        tf.delegate = self
         return tf
     }()
     private lazy var stackV: UIStackView = {
@@ -104,7 +110,10 @@ class AddExpenseViewController: UIViewController {
     private lazy var tfBottomShieldView: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.placeholder = "Впишите сумму"
+        tf.delegate = self
+        tf.inputAccessoryView = createToolbar()
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Cумма трат"
         return tf
     }()
     private lazy var buttonBottomShieldView: UIButton = {
@@ -114,6 +123,7 @@ class AddExpenseViewController: UIViewController {
         button.backgroundColor = AppColors.lightGreenForButtonInButtomShield.withAlphaComponent(0.2)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(buttonSendExpense), for: .touchUpInside)
         return button
     }()
     
@@ -231,12 +241,12 @@ private extension AddExpenseViewController {
     func setupBottomView() {
         view.addSubview(bottomShieldView)
         
-        bottomViewHeightConstraint = bottomShieldView.heightAnchor.constraint(equalToConstant: view.frame.height * 0.18)
+        bottomViewHeightConstraint = bottomShieldView.heightAnchor.constraint(equalToConstant: (view.frame.height * 0.18) + 20)
         bottomViewHeightConstraint.isActive = true
         NSLayoutConstraint.activate([
             bottomShieldView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             bottomShieldView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            bottomShieldView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            bottomShieldView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 20),
         ])
     }
     
@@ -264,6 +274,7 @@ private extension AddExpenseViewController {
             stackVBottomShieldView.topAnchor.constraint(equalTo: bottomShieldView.topAnchor, constant: 30),
             stackVBottomShieldView.leadingAnchor.constraint(equalTo: bottomShieldView.leadingAnchor, constant: 40),
             stackVBottomShieldView.widthAnchor.constraint(equalToConstant: 250),
+            
             
             buttonBottomShieldView.centerYAnchor.constraint(equalTo: stackVBottomShieldView.centerYAnchor, constant: 5),
             buttonBottomShieldView.heightAnchor.constraint(equalToConstant: 40),
@@ -299,8 +310,24 @@ private extension AddExpenseViewController {
     
     // gesture
     func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.addGestureRecognizer(tapGesture)
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture!)
+        tapGesture?.isEnabled = false
+    }
+}
+
+// MARK: -- Set expense
+private extension AddExpenseViewController {
+    func setExpense() {
+        if currentCategory == nil {
+            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Выберите категорию траты", presenter: self)
+        }
+        if tfBottomShieldView.text == "" {
+            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма трат", presenter: self)
+        } else {
+            StorageManager.shared.createExpense(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: noteTF.text)
+                reloadDataFinanceViewController?(true)
+        }
     }
 }
 
@@ -318,8 +345,7 @@ extension AddExpenseViewController {
         
         // Check which text field is active
         if tfBottomShieldView.isFirstResponder {
-            print("tfBottomShieldView is first responder")
-            bottomViewHeightConstraint.constant = newBottomViewHeight
+            bottomViewHeightConstraint.constant = newBottomViewHeight + 50
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
             }
@@ -333,6 +359,7 @@ extension AddExpenseViewController {
             if !scrollView.bounds.contains(textFieldFrame) {
                 scrollView.scrollRectToVisible(textFieldFrame, animated: true)
             }
+            tapGesture?.isEnabled = true
         }
     }
     
@@ -342,13 +369,18 @@ extension AddExpenseViewController {
         scrollView.scrollIndicatorInsets = contentInsets
         
         UIView.animate(withDuration: 0.3) {
-            self.bottomViewHeightConstraint.constant = self.view.frame.height * 0.18 // Restore to original height
+            self.bottomViewHeightConstraint.constant = (self.view.frame.height * 0.18) + 30 // Restore to original height
             self.view.layoutIfNeeded()
         }
+        tapGesture?.isEnabled = false
     }
     
     @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    @objc private func buttonSendExpense() {
+        setExpense()
     }
 }
 
@@ -363,5 +395,32 @@ extension AddExpenseViewController: UICollectionViewDelegate, UICollectionViewDa
         let category = expenseCategories[indexPath.item]
         cell.configure(with: category)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = expenseCategories[indexPath.item]
+        currentCategory = category
+    }
+}
+
+// MARK: -- UITextFieldDelegate
+extension AddExpenseViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    private func createToolbar() -> UIToolbar {
+           let toolbar = UIToolbar()
+           let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+           let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+           toolbar.items = [flexSpace, doneButton]
+           toolbar.sizeToFit()
+           return toolbar
+       }
+    
+    @objc private func doneButtonTapped() {
+        noteTF.resignFirstResponder()
+        tfBottomShieldView.resignFirstResponder() // Закрытие клавиатуры при нажатии на кнопку "Готово"
     }
 }

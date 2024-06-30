@@ -14,6 +14,7 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
     private lazy var imageIcon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "folder")
+        image.tintColor = .black
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = image.bounds.height / 2
         return image
@@ -63,8 +64,10 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
     
     func configure(with category: Any, data: AnyObject) {
         if let category = category as? CategoryIncome {
+            imageIcon.image = UIImage(systemName: category.image)
             categoryTitle.text = category.name
         } else if let category = category as? CategoryExpense {
+            imageIcon.image = UIImage(systemName: category.image)
             categoryTitle.text = category.name
         }
         
