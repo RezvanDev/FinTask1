@@ -24,6 +24,7 @@ class ExpenseCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
         let image = UIImageView()
         image.image = UIImage(systemName: "folder")
         image.contentMode = .scaleAspectFit
+        image.tintColor = .black
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
