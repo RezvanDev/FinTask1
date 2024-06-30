@@ -19,6 +19,18 @@ class StorageManager {
     func getUser() -> User? {
         return realm.objects(User.self).first
     }
+    // Get all expense categories
+    func getAllExpenseCategories() -> [CategoryExpense] {
+        guard let user = getUser() else { return [] }
+        
+        var allExpenseCategories: [CategoryExpense] = []
+        
+        for wallet in user.wallets {
+            allExpenseCategories += wallet.categoriesExpense
+        }
+        
+        return allExpenseCategories
+    }
     
     // Method to calculate total income
     func totalIncome() -> Double {
@@ -119,6 +131,28 @@ class StorageManager {
                 wallet.nameCurrency = "USD" // default USD
             }
             wallet.currentFunds = 0.0
+            
+            // Add default categories for incomes
+            let categoriesIncome = ["Работа": "doc", "Фриланс": "network", "Подарок": "gift", "Банк": "creditcard"]
+            for (categoryName, categoryImage) in categoriesIncome {
+                let category = CategoryIncome()
+                category.name = categoryName
+                category.image = categoryImage
+                try! self.realm.write {
+                    wallet.categoriesIncome.append(category)
+                }
+            }
+            
+            // Add default categories for expenses
+            let categoriesExpense = ["Развлечения": "cart", "Транспорт": "car", "Бизнес": "banknote.fill", "Продукты": "carrot", "Переводы": "dollarsign.arrow.circlepath", "Подарки": "gift", "Еда": "fork.knife"]
+            for  (categoryName, categoryImage) in categoriesExpense {
+                let category = CategoryExpense()
+                category.name = categoryName
+                category.image = categoryImage
+                try! self.realm.write {
+                    wallet.categoriesExpense.append(category)
+                }
+            }
             
             try! self.realm.write {
                 self.realm.add(user)

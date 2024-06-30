@@ -13,6 +13,8 @@
 		541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7AA2C2835A400AFA81C /* TabBarViewController.swift */; };
 		541AC7B02C2835A500AFA81C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541AC7AF2C2835A500AFA81C /* Assets.xcassets */; };
 		541AC7B32C2835A500AFA81C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 541AC7B22C2835A500AFA81C /* Base */; };
+		541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C7D2E2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift */; };
+		541C7D302C31336200928483 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54BFBEB92C2C1D3B00379920 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		543913C22C295944006A2075 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913C12C295944006A2075 /* Builder.swift */; };
 		543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913C62C296B8B006A2075 /* FinanceViewController.swift */; };
 		543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913CE2C296BE3006A2075 /* AnalyticViewController.swift */; };
@@ -23,7 +25,7 @@
 		543913E12C2AAD93006A2075 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E02C2AAD93006A2075 /* Protocols.swift */; };
 		543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */; };
 		543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E52C2ABCAF006A2075 /* AppColors.swift */; };
-		547C8DA12C2D7E11008EA96D /* NewOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* NewOperationViewController.swift */; };
+		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -39,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				541C7D302C31336200928483 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,6 +57,7 @@
 		541AC7AF2C2835A500AFA81C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		541AC7B22C2835A500AFA81C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		541AC7B42C2835A500AFA81C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		541C7D2E2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		543913C12C295944006A2075 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		543913C62C296B8B006A2075 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		543913CE2C296BE3006A2075 /* AnalyticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		543913E02C2AAD93006A2075 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		543913E52C2ABCAF006A2075 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
-		547C8DA02C2D7E11008EA96D /* NewOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOperationViewController.swift; sourceTree = "<group>"; };
+		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -103,7 +107,7 @@
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				547C8D9F2C2D7DCC008EA96D /* AddedOperation */,
+				547C8D9F2C2D7DCC008EA96D /* AddExpense */,
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
 				543913D02C296BE9006A2075 /* Setting */,
 				543913CC2C296BC8006A2075 /* Analytics */,
@@ -151,6 +155,29 @@
 				541AC7B42C2835A500AFA81C /* Info.plist */,
 			);
 			path = FinTask;
+			sourceTree = "<group>";
+		};
+		541C7D2B2C2FE7E400928483 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		541C7D2C2C2FE7ED00928483 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				541C7D2E2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		541C7D2D2C2FE7F000928483 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		543913C02C295935006A2075 /* Builder */ = {
@@ -274,12 +301,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		547C8D9F2C2D7DCC008EA96D /* AddedOperation */ = {
+		547C8D9F2C2D7DCC008EA96D /* AddExpense */ = {
 			isa = PBXGroup;
 			children = (
-				547C8DA02C2D7E11008EA96D /* NewOperationViewController.swift */,
+				541C7D2D2C2FE7F000928483 /* Model */,
+				541C7D2C2C2FE7ED00928483 /* View */,
+				541C7D2B2C2FE7E400928483 /* ViewController */,
 			);
-			path = AddedOperation;
+			path = AddExpense;
 			sourceTree = "<group>";
 		};
 		54BFBEB52C2C17D700379920 /* View */ = {
@@ -385,7 +414,8 @@
 			files = (
 				541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */,
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
-				547C8DA12C2D7E11008EA96D /* NewOperationViewController.swift in Sources */,
+				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
+				541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,

@@ -73,7 +73,7 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
             moneyCount.text = String(income.amount)
         } else if let expense = data as? Expense {
             note.text = expense.note
-            moneyCount.text = String(expense.amount)
+            moneyCount.text = "-\(String(expense.amount))"
         }
     }
     

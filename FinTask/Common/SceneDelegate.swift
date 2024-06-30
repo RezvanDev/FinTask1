@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
+       
         // check is have user, or fist time in app
         if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
             UserDefaults.standard.set(true, forKey: "firstLaunch")
