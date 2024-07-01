@@ -18,27 +18,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-//        var viewController: UIViewController?
-//        if UserDefaults.standard.bool(forKey: "firstLaunch2") == false {
-//            UserDefaults.standard.set(true, forKey: "firstLaunch2")
-//            viewController = Builder.createOnboardingViewController()
-//        } else {
-//            viewController = Builder.createTabBarController()
-//        }
-//        guard let viewController else { return }
+        var viewController: UIViewController?
+        if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
+            UserDefaults.standard.set(true, forKey: "firstLaunch")
+            viewController = Builder.createOnboardingViewController()
+        } else {
+            viewController = Builder.createTabBarController()
+        }
+        guard let viewController else { return }
         
-        window.rootViewController = UINavigationController(rootViewController: Builder.createOnboardingViewController())
+        window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        
-        // check is have user, or fist time in app
-        if UserDefaults.standard.bool(forKey: "firstLaunch") == false {
-            UserDefaults.standard.set(true, forKey: "firstLaunch")
-            StorageManager.shared.createInitialUserIfNeeded(locationManager: locationManager)
-        }
+        StorageManager.shared.createInitialUserIfNeeded(locationManager: locationManager)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

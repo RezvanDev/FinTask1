@@ -1,13 +1,13 @@
 //
-//  NewOperationViewController.swift
+//  AddIncomeViewController.swift
 //  FinTask
 //
-//  Created by Иван Незговоров on 27.06.2024.
+//  Created by Иван Незговоров on 30.06.2024.
 //
 
 import UIKit
 
-class AddExpenseViewController: UIViewController {
+class AddIncomeViewController: UIViewController {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -16,14 +16,14 @@ class AddExpenseViewController: UIViewController {
     private var noteTFBottomConstraint: NSLayoutConstraint!
     private var bottomViewHeightConstraint: NSLayoutConstraint!
     
-    private var expenseCategories: [CategoryExpense] = []
-    private var currentCategory: CategoryExpense?
+    private var incomesCategories: [CategoryIncome] = []
+    private var currentCategory: CategoryIncome?
     
     var reloadDataFinanceViewController: ((Bool) -> ())?
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Расход"
+        lbl.text = "Доход"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
@@ -43,7 +43,7 @@ class AddExpenseViewController: UIViewController {
         collection.dataSource = self
         collection.delegate = self
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.register(ExpenseCategoryCollectionViewCell.self, forCellWithReuseIdentifier: ExpenseCategoryCollectionViewCell.reuseId)
+        collection.register(IncomeCategoryCollectionViewCell.self, forCellWithReuseIdentifier: IncomeCategoryCollectionViewCell.reuseId)
         return collection
     }()
     private lazy var noteTF: UITextField = {
@@ -113,7 +113,7 @@ class AddExpenseViewController: UIViewController {
         tf.delegate = self
         tf.inputAccessoryView = createToolbar()
         tf.keyboardType = .numberPad
-        tf.placeholder = "Cумма трат"
+        tf.placeholder = "Cумма прибыли"
         return tf
     }()
     private lazy var buttonBottomShieldView: UIButton = {
@@ -123,7 +123,7 @@ class AddExpenseViewController: UIViewController {
         button.backgroundColor = AppColors.lightGreenForButtonInButtomShield.withAlphaComponent(0.2)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonSendExpense), for: .touchUpInside)
+        button.addTarget(self, action: #selector(buttonSendIncome), for: .touchUpInside)
         return button
     }()
     
@@ -143,7 +143,7 @@ class AddExpenseViewController: UIViewController {
 }
 
 // MARK: -- SetupLayer
-private extension AddExpenseViewController {
+private extension AddIncomeViewController {
     //setup
     func setup() {
         view.backgroundColor = .white
@@ -201,7 +201,7 @@ private extension AddExpenseViewController {
     // setup CollectionView constraints
     func setupCollectionView() {
         contentView.addSubview(mainCollection)
-        let collectionHeight = ceil(Double(expenseCategories.count)/4) * 100   // Calculate collection view height based on its content
+        let collectionHeight = ceil(Double(incomesCategories.count)/4) * 100   // Calculate collection view height based on its content
         
         NSLayoutConstraint.activate([
             mainCollection.topAnchor.constraint(equalTo: titleMain.bottomAnchor, constant: 20),
@@ -290,15 +290,15 @@ private extension AddExpenseViewController {
 }
 
 // MARK: -- Fetch data
-private extension AddExpenseViewController {
+private extension AddIncomeViewController {
     func fetchExpenseCategories() {
-        expenseCategories = StorageManager.shared.getAllExpenseCategories()
+        incomesCategories = StorageManager.shared.getAllIncomeCategories()
         mainCollection.reloadData()
     }
 }
 
 // MARK: -- Keyboard Handling
-private extension AddExpenseViewController {
+private extension AddIncomeViewController {
     func setupKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -317,15 +317,15 @@ private extension AddExpenseViewController {
 }
 
 // MARK: -- Set expense
-private extension AddExpenseViewController {
-    func setExpense() {
+private extension AddIncomeViewController {
+    func setIncome() {
         if currentCategory == nil {
-            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Выберите категорию траты", presenter: self)
+            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Выберите категорию прибыли", presenter: self)
         }
         if tfBottomShieldView.text == "" {
-            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма трат", presenter: self)
+            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма прибыли", presenter: self)
         } else {
-            StorageManager.shared.createExpense(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: noteTF.text)
+            StorageManager.shared.createIncome(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: tfBottomShieldView.text)
             reloadDataFinanceViewController?(true)
             dismiss(animated: true)
         }
@@ -333,7 +333,7 @@ private extension AddExpenseViewController {
 }
 
 // MARK: -- OBJC
-extension AddExpenseViewController {
+extension AddIncomeViewController {
     @objc func datePickerChange(_ sender: UIDatePicker) {
         print(sender.date)
     }
@@ -380,32 +380,32 @@ extension AddExpenseViewController {
         view.endEditing(true)
     }
     
-    @objc private func buttonSendExpense() {
-        setExpense()
+    @objc private func buttonSendIncome() {
+        setIncome()
     }
 }
 
 // MARK: -- UICollectionViewDelegate, UICollectionViewDataSource
-extension AddExpenseViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AddIncomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  expenseCategories.count
+        return  incomesCategories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExpenseCategoryCollectionViewCell.reuseId, for: indexPath) as! ExpenseCategoryCollectionViewCell
-        let category = expenseCategories[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IncomeCategoryCollectionViewCell.reuseId, for: indexPath) as! IncomeCategoryCollectionViewCell
+        let category = incomesCategories[indexPath.item]
         cell.configure(with: category)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let category = expenseCategories[indexPath.item]
+        let category = incomesCategories[indexPath.item]
         currentCategory = category
     }
 }
 
 // MARK: -- UITextFieldDelegate
-extension AddExpenseViewController: UITextFieldDelegate {
+extension AddIncomeViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
