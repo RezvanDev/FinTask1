@@ -120,9 +120,9 @@ private extension TabBarViewController {
             LimitViewController(),
             HomeViewController(),
             AnalyticViewController(),
-            //SettingsViewController()
+            SettingsViewController()
         ]
-        setViewControllers([controllers[0], controllers[1], controllers[2], controllers[3]], /*controllers[4]]*/ animated: true)
+        setViewControllers([controllers[0], controllers[1], controllers[2], controllers[3], controllers[4]], animated: true)
     }
     
     // Update button colors
