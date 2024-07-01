@@ -47,7 +47,7 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
     private lazy var moneyCount: UILabel = {
         let lbl = UILabel()
         lbl.text = "0.0$"
-        lbl.font = UIFont.systemFont(ofSize: 17, weight: .medium)
+        lbl.font = UIFont.systemFont(ofSize: 15, weight: .light)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl

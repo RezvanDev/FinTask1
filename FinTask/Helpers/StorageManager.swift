@@ -15,6 +15,21 @@ class StorageManager {
     private let geocoder = CLGeocoder()
 }
 
+// MARK: -- Update methods
+extension StorageManager {
+    func updateCategoryLimit(categoryId: String, newLimit: Double) {
+            guard let user = getUser() else { return }
+            
+            for wallet in user.wallets {
+                if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
+                    try! realm.write {
+                        category.limits = newLimit
+                    }
+                    break
+                }
+            }
+        }
+}
 
 // MARK: -- Set methods
 extension StorageManager {
@@ -30,7 +45,7 @@ extension StorageManager {
                     expense.note = note
                     
                     try! realm.write {
-                        category.incomes.append(expense)
+                        category.expenses.append(expense)
                     }
                     break
                 }
@@ -107,7 +122,7 @@ extension StorageManager {
         
         for wallet in user.wallets {
             for category in wallet.categoriesExpense {
-                totalExpense += category.incomes.reduce(0.0) { $0 + $1.amount }
+                totalExpense += category.expenses.reduce(0.0) { $0 + $1.amount }
             }
         }
         return totalExpense
@@ -153,7 +168,7 @@ extension StorageManager {
         for wallet in user.wallets {
             let currency = wallet.nameCurrency
             for category in wallet.categoriesExpense {
-                let expenses = category.incomes
+                let expenses = category.expenses
                 for expense in expenses {
                     let date = Calendar.current.startOfDay(for: expense.date)
                     if var expensesForDate = groupedExpenses[date] {

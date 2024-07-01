@@ -29,6 +29,7 @@
 		545D08762C3183E3005F19CE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 545D08742C3183D7005F19CE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D08792C318783005F19CE /* AddIncomeViewController.swift */; };
 		545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */; };
+		545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */; };
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
@@ -74,6 +75,7 @@
 		545D08712C317A3E005F19CE /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		545D08792C318783005F19CE /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitTableViewCell.swift; sourceTree = "<group>"; };
 		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -334,6 +336,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		545D087E2C32C28E005F19CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		547C8D9F2C2D7DCC008EA96D /* AddExpense */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +365,7 @@
 		54C8A90F2C2C38DE00AF2D6D /* Limit */ = {
 			isa = PBXGroup;
 			children = (
+				545D087E2C32C28E005F19CE /* View */,
 				54C8A9102C2C38EA00AF2D6D /* ViewController */,
 			);
 			path = Limit;
@@ -461,6 +472,7 @@
 				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
+				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,

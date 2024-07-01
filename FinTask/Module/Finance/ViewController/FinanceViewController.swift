@@ -24,7 +24,8 @@ class FinanceViewController: UIViewController {
     private lazy var historyTitle: UILabel = {
         let lbl = UILabel()
         lbl.text = "История"
-        lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         return lbl
     }()
@@ -76,8 +77,19 @@ class FinanceViewController: UIViewController {
 private extension FinanceViewController {
     func setup() {
         view.backgroundColor = .white
+        setupHistoryTitle()
         setupCollection()
-        setupNavBar()
+    }
+    
+    // Setup history title
+    func setupHistoryTitle() {
+        view.addSubview(historyTitle)
+        
+        NSLayoutConstraint.activate([
+            historyTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            historyTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        ])
+
     }
     
     // setup collection
@@ -85,18 +97,13 @@ private extension FinanceViewController {
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: historyTitle.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
-    // Setup Navigation Bar
-    func setupNavBar() {
-        let barButtonItem = UIBarButtonItem(customView: historyTitle)
-        navigationItem.leftBarButtonItem = barButtonItem
-    }
     
     // fetch Data()
     private func fetchData() {
