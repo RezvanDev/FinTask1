@@ -23,7 +23,7 @@ class SettingsViewController: UITableViewController {
         view.backgroundColor = .white
         view.addSubview(settingsTitle)
         
-        //settingsTitle contraints
+        //settingsTitle constraints
         NSLayoutConstraint.activate([
             settingsTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             settingsTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
@@ -41,7 +41,6 @@ class SettingsViewController: UITableViewController {
         return lbl
     }()
     
-    //возращает количество ячеек
     override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         return settingsCell.count
     }
