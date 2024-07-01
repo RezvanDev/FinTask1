@@ -14,6 +14,7 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
     private lazy var imageIcon: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "folder")
+        image.tintColor = .black
         image.translatesAutoresizingMaskIntoConstraints = false
         image.layer.cornerRadius = image.bounds.height / 2
         return image
@@ -61,15 +62,23 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with category: Category, data: AnyObject) {
+    func configure(with category: Any, data: AnyObject) {
+        if let category = category as? CategoryIncome {
+            imageIcon.image = UIImage(systemName: category.image)
+            categoryTitle.text = category.name
+        } else if let category = category as? CategoryExpense {
+            imageIcon.image = UIImage(systemName: category.image)
+            categoryTitle.text = category.name
+        }
         
-        categoryTitle.text = category.name
-        note.text = data.note
-        moneyCount.text = String(data.amount)
+        if let income = data as? Income {
+            note.text = income.note
+            moneyCount.text = String(income.amount)
+        } else if let expense = data as? Expense {
+            note.text = expense.note
+            moneyCount.text = "-\(String(expense.amount))"
+        }
     }
-    
-    
-    
     
     private func setup() {
         addSubview(imageIcon)

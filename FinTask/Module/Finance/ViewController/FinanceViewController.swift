@@ -30,32 +30,33 @@ class FinanceViewController: UIViewController {
     }()
     
     private lazy var buttonMenu: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 50 - 20, y: view.bounds.height - 50 - 88, width: 50, height: 50))
         button.addTarget(self, action: #selector(buttonMenuTap), for: .touchUpInside)
         button.backgroundColor = .green
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 25
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.tintColor = .white
         return button
     }()
     
     private lazy var buttonIncome: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 50 - 20, y: view.bounds.height - 50 - 88, width: 50, height: 50))
         button.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         button.backgroundColor = AppColors.mainGreen
         button.tintColor = .white
-        button.layer.cornerRadius = 20
+        button.addTarget(self, action: #selector(buttonGoToNewOperation), for: .touchUpInside)
+        button.layer.cornerRadius = 25
         button.alpha = 0
         return button
     }()
     
     private lazy var buttonExpense: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 40 - 20, y: view.bounds.height - 40 - 88, width: 40, height: 40))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 50 - 20, y: view.bounds.height - 50 - 88, width: 50, height: 50))
         button.setImage(UIImage(systemName: "square.and.arrow.down"), for: .normal)
         button.tintColor = .white
         button.backgroundColor = .red
-        button.layer.cornerRadius = 20
-        
+        button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(buttonGoToNewOperation), for: .touchUpInside)
         button.alpha = 0
         return button
     }()
@@ -102,36 +103,30 @@ private extension FinanceViewController {
         let groupedIncomes = StorageManager.shared.fetchSortedGroupedIncomes()
         let groupedExpenses = StorageManager.shared.fetchSortedGroupedExpenses()
         
-        var allItems: [(date: Date, items: [(category: Category, items: [Any])])] = []
+        var allItems: [(date: Date, items: [(category: Any, items: [Any])])] = []
         
         // Combine and group by date and category
         let allDates = Set(groupedIncomes.keys).union(Set(groupedExpenses.keys))
         
         for date in allDates {
-            var dateItems: [(category: Category, items: [Any])] = []
+            var dateItems: [(category: Any, items: [Any])] = []
             
             if let incomesForDate = groupedIncomes[date] {
-                for (category, incomes) in incomesForDate {
-                    dateItems.append((category: category, items: incomes))
+                for income in incomesForDate {
+                    dateItems.append((category: income.category, items: income.items))
                 }
             }
             
             if let expensesForDate = groupedExpenses[date] {
-                for (category, expenses) in expensesForDate {
-                    dateItems.append((category: category, items: expenses))
+                for expense in expensesForDate {
+                    dateItems.append((category: expense.category, items: expense.items))
                 }
             }
-            
-            // Sort items within each category by date descending
-            dateItems.sort { $0.category.name < $1.category.name }
             
             allItems.append((date: date, items: dateItems))
         }
         
-        // Sort by date descending
-        allItems.sort { $0.date > $1.date }
-        
-        sections = allItems
+        sections = allItems.sorted(by: { $0.date > $1.date })
         tableView.reloadData()
     }
     
@@ -159,15 +154,32 @@ private extension FinanceViewController {
             if self.buttonsAreVisible {
                 self.buttonIncome.alpha = 1
                 self.buttonExpense.alpha = 1
-                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88 - 50, width: 40, height: 40)
-                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88 - 100, width: 40, height: 40)
+                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88 - 75, width: 50, height: 50)
+                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88 - 150, width: 50, height: 50)
             } else {
                 self.buttonIncome.alpha = 0
                 self.buttonExpense.alpha = 0
-                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88, width: 40, height: 40)
-                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 40 - 20, y: self.view.bounds.height - 40 - 88, width: 40, height: 40)
+                self.buttonIncome.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88, width: 50, height: 50)
+                self.buttonExpense.frame = CGRect(x: self.view.bounds.width - 50 - 20, y: self.view.bounds.height - 50 - 88, width: 50, height: 50)
             }
         }
+    }
+    
+    @objc func buttonGoToNewOperation(sender: UIButton) {
+        var vc = UIViewController()
+        if sender == buttonExpense {
+            let addExpenseVC = AddExpenseViewController()
+            addExpenseVC.reloadDataFinanceViewController = {[weak self] res in
+                if res {
+                    self?.fetchData()
+                    self?.tableView.reloadData()
+                }
+            }
+            vc = addExpenseVC
+        } else {
+            
+        }
+        present(vc, animated: true)
     }
 }
 
@@ -186,17 +198,13 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         
         let item = sections[indexPath.section].items[indexPath.row]
         
-        if let (category, incomes) = item as? (category: Category, items: [Income]) {
-            // Configure cell with income data
-            if let income = incomes.first {
-                cell.configure(with: category, data: income)
-            }
-        } else if let (category, expenses) = item as? (category: Category, items: [Expense]) {
-            // Configure cell with expense data
-            if let expense = expenses.first {
-                cell.configure(with: category, data: expense)
-            }
+        if let incomeItem = item as? (category: CategoryIncome, items: [Income]), let income = incomeItem.items.first {
+            cell.configure(with: incomeItem.category, data: income)
+        } else if let expenseItem = item as? (category: CategoryExpense, items: [Expense]), let expense = expenseItem.items.first {
+            cell.configure(with: expenseItem.category, data: expense)
         }
+        
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -213,7 +221,9 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
 }
 
 
