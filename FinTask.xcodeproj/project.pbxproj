@@ -7,22 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2205A8DC2C31F3D20048435A /* Pods_FinTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58926D1E07DB3CEEB304F500 /* Pods_FinTask.framework */; };
-		2205A8DD2C31F3D20048435A /* Pods_FinTask.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58926D1E07DB3CEEB304F500 /* Pods_FinTask.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */; };
-		22A545B32C3172310061FF0C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A545B22C3172310061FF0C /* SettingsTableViewCell.swift */; };
-		22A545B52C3172B80061FF0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A545B42C3172B80061FF0C /* SettingsViewController.swift */; };
 		541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A62C2835A400AFA81C /* AppDelegate.swift */; };
 		541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A82C2835A400AFA81C /* SceneDelegate.swift */; };
 		541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7AA2C2835A400AFA81C /* TabBarViewController.swift */; };
 		541AC7B02C2835A500AFA81C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 541AC7AF2C2835A500AFA81C /* Assets.xcassets */; };
 		541AC7B32C2835A500AFA81C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 541AC7B22C2835A500AFA81C /* Base */; };
 		541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541C7D2E2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift */; };
-		541C7D382C315A9D00928483 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 541C7D372C315A9D00928483 /* RealmSwift */; };
-		541C7D392C315AB200928483 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 541C7D372C315A9D00928483 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		543913C22C295944006A2075 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913C12C295944006A2075 /* Builder.swift */; };
 		543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913C62C296B8B006A2075 /* FinanceViewController.swift */; };
 		543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913CE2C296BE3006A2075 /* AnalyticViewController.swift */; };
+		543913D32C296C00006A2075 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913D22C296C00006A2075 /* SettingViewController.swift */; };
 		543913D72C296C18006A2075 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913D62C296C18006A2075 /* HomeViewController.swift */; };
 		543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913DA2C299FB2006A2075 /* HomeModel.swift */; };
 		543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913DD2C2AA783006A2075 /* HomeCollectionViewCell.swift */; };
@@ -30,6 +25,11 @@
 		543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */; };
 		543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543913E52C2ABCAF006A2075 /* AppColors.swift */; };
 		545D08722C317A3E005F19CE /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D08712C317A3E005F19CE /* Alerts.swift */; };
+		545D08752C3183D7005F19CE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 545D08742C3183D7005F19CE /* RealmSwift */; };
+		545D08762C3183E3005F19CE /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 545D08742C3183D7005F19CE /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D08792C318783005F19CE /* AddIncomeViewController.swift */; };
+		545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */; };
+		545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */; };
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
@@ -45,6 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				545D08762C3183E3005F19CE /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,8 +54,6 @@
 
 /* Begin PBXFileReference section */
 		223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		22A545B22C3172310061FF0C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		22A545B42C3172B80061FF0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		541AC7A32C2835A400AFA81C /* FinTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		541AC7A62C2835A400AFA81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		541AC7A82C2835A400AFA81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		543913C12C295944006A2075 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		543913C62C296B8B006A2075 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		543913CE2C296BE3006A2075 /* AnalyticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticViewController.swift; sourceTree = "<group>"; };
+		543913D22C296C00006A2075 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		543913D62C296C18006A2075 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		543913DA2C299FB2006A2075 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		543913DD2C2AA783006A2075 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -73,15 +73,15 @@
 		543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		543913E52C2ABCAF006A2075 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		545D08712C317A3E005F19CE /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		545D08792C318783005F19CE /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
+		545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitTableViewCell.swift; sourceTree = "<group>"; };
 		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
 		54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewCell.swift; sourceTree = "<group>"; };
 		54C8A9112C2C390000AF2D6D /* LimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitViewController.swift; sourceTree = "<group>"; };
-		58926D1E07DB3CEEB304F500 /* Pods_FinTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70E288D23DE4847B8399F83A /* Pods-FinTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinTask.release.xcconfig"; path = "Target Support Files/Pods-FinTask/Pods-FinTask.release.xcconfig"; sourceTree = "<group>"; };
-		B2379ED17CE0A9F2736B7AC9 /* Pods-FinTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinTask.debug.xcconfig"; path = "Target Support Files/Pods-FinTask/Pods-FinTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545D08752C3183D7005F19CE /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,17 +112,10 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		22762AD22C30BE94002987D1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				22A545B22C3172310061FF0C /* SettingsTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				545D08772C31876E005F19CE /* AddIncome */,
 				547C8D9F2C2D7DCC008EA96D /* AddExpense */,
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
 				543913D02C296BE9006A2075 /* Setting */,
@@ -142,21 +136,11 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
-		514BD538DFC162BCEC25A200 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				58926D1E07DB3CEEB304F500 /* Pods_FinTask.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		541AC79A2C2835A400AFA81C = {
 			isa = PBXGroup;
 			children = (
 				541AC7A52C2835A400AFA81C /* FinTask */,
 				541AC7A42C2835A400AFA81C /* Products */,
-				EAD6D752B613675D4FAD0E7D /* Pods */,
-				514BD538DFC162BCEC25A200 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -258,7 +242,6 @@
 		543913D02C296BE9006A2075 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				22762AD22C30BE94002987D1 /* View */,
 				543913D12C296BED006A2075 /* ViewController */,
 			);
 			path = Setting;
@@ -267,7 +250,7 @@
 		543913D12C296BED006A2075 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				22A545B42C3172B80061FF0C /* SettingsViewController.swift */,
+				543913D22C296C00006A2075 /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -328,6 +311,39 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		545D08772C31876E005F19CE /* AddIncome */ = {
+			isa = PBXGroup;
+			children = (
+				545D087B2C318899005F19CE /* View */,
+				545D08782C318776005F19CE /* ViewController */,
+			);
+			path = AddIncome;
+			sourceTree = "<group>";
+		};
+		545D08782C318776005F19CE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				545D08792C318783005F19CE /* AddIncomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		545D087B2C318899005F19CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		545D087E2C32C28E005F19CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		547C8D9F2C2D7DCC008EA96D /* AddExpense */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +365,7 @@
 		54C8A90F2C2C38DE00AF2D6D /* Limit */ = {
 			isa = PBXGroup;
 			children = (
+				545D087E2C32C28E005F19CE /* View */,
 				54C8A9102C2C38EA00AF2D6D /* ViewController */,
 			);
 			path = Limit;
@@ -362,15 +379,6 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		EAD6D752B613675D4FAD0E7D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B2379ED17CE0A9F2736B7AC9 /* Pods-FinTask.debug.xcconfig */,
-				70E288D23DE4847B8399F83A /* Pods-FinTask.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -378,12 +386,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 541AC7B72C2835A500AFA81C /* Build configuration list for PBXNativeTarget "FinTask" */;
 			buildPhases = (
-				AD825CAF4B3EDB30AE7EE461 /* [CP] Check Pods Manifest.lock */,
 				541AC79F2C2835A400AFA81C /* Sources */,
 				541AC7A02C2835A400AFA81C /* Frameworks */,
 				541AC7A12C2835A400AFA81C /* Resources */,
 				54BFBEA42C2BFC6900379920 /* Embed Frameworks */,
-				5C75A37ACDF84EED7FB0753A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,7 +397,7 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				541C7D372C315A9D00928483 /* RealmSwift */,
+				545D08742C3183D7005F19CE /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -422,7 +428,7 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				541C7D362C315A9D00928483 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				545D08732C3183D7005F19CE /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -445,73 +451,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5C75A37ACDF84EED7FB0753A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FinTask/Pods-FinTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FinTask/Pods-FinTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinTask/Pods-FinTask-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AD825CAF4B3EDB30AE7EE461 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FinTask-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		541AC79F2C2835A400AFA81C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */,
+				545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */,
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
 				541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
-				22A545B52C3172B80061FF0C /* SettingsViewController.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
+				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
+				543913D32C296C00006A2075 /* SettingViewController.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
 				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
+				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
 				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
+				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,
 				543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,7 +535,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -630,7 +598,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -651,7 +619,6 @@
 		};
 		541AC7B82C2835A500AFA81C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2379ED17CE0A9F2736B7AC9 /* Pods-FinTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -686,7 +653,6 @@
 		};
 		541AC7B92C2835A500AFA81C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70E288D23DE4847B8399F83A /* Pods-FinTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -743,7 +709,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		541C7D362C315A9D00928483 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		545D08732C3183D7005F19CE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -754,9 +720,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		541C7D372C315A9D00928483 /* RealmSwift */ = {
+		545D08742C3183D7005F19CE /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 541C7D362C315A9D00928483 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 545D08732C3183D7005F19CE /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

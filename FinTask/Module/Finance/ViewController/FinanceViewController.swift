@@ -24,7 +24,8 @@ class FinanceViewController: UIViewController {
     private lazy var historyTitle: UILabel = {
         let lbl = UILabel()
         lbl.text = "История"
-        lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         return lbl
     }()
@@ -76,8 +77,19 @@ class FinanceViewController: UIViewController {
 private extension FinanceViewController {
     func setup() {
         view.backgroundColor = .white
+        setupHistoryTitle()
         setupCollection()
-        setupNavBar()
+    }
+    
+    // Setup history title
+    func setupHistoryTitle() {
+        view.addSubview(historyTitle)
+        
+        NSLayoutConstraint.activate([
+            historyTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            historyTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        ])
+
     }
     
     // setup collection
@@ -85,51 +97,55 @@ private extension FinanceViewController {
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.topAnchor.constraint(equalTo: historyTitle.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
-    // Setup Navigation Bar
-    func setupNavBar() {
-        let barButtonItem = UIBarButtonItem(customView: historyTitle)
-        navigationItem.leftBarButtonItem = barButtonItem
-    }
     
     // fetch Data()
     private func fetchData() {
         let groupedIncomes = StorageManager.shared.fetchSortedGroupedIncomes()
         let groupedExpenses = StorageManager.shared.fetchSortedGroupedExpenses()
         
-        var allItems: [(date: Date, items: [(category: Any, items: [Any])])] = []
+        var allItems: [(date: Date, items: [(category: Any, items: [Any], currency: String)])] = []
         
         // Combine and group by date and category
         let allDates = Set(groupedIncomes.keys).union(Set(groupedExpenses.keys))
         
         for date in allDates {
-            var dateItems: [(category: Any, items: [Any])] = []
+            var dateItems: [(category: Any, items: [Any], currency: String)] = []
             
             if let incomesForDate = groupedIncomes[date] {
                 for income in incomesForDate {
-                    dateItems.append((category: income.category, items: income.items))
+                    dateItems.append((category: income.category, items: income.items, currency: income.currency))
                 }
             }
             
             if let expensesForDate = groupedExpenses[date] {
                 for expense in expensesForDate {
-                    dateItems.append((category: expense.category, items: expense.items))
+                    dateItems.append((category: expense.category, items: expense.items, currency: expense.currency))
                 }
             }
             
             allItems.append((date: date, items: dateItems))
         }
         
+        var flag = 0
+        allItems.sort { el, el2 in
+            if flag <= 100 {
+                flag += 1
+                return true
+            } else {
+                return false
+            }
+        }
         sections = allItems.sorted(by: { $0.date > $1.date })
         tableView.reloadData()
     }
-    
+
     // Format date
     func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
@@ -177,7 +193,14 @@ private extension FinanceViewController {
             }
             vc = addExpenseVC
         } else {
-            
+            let addIncomeVC = AddIncomeViewController()
+            addIncomeVC.reloadDataFinanceViewController = {[weak self] res in
+                if res {
+                    self?.fetchData()
+                    self?.tableView.reloadData()
+                }
+            }
+            vc = addIncomeVC
         }
         present(vc, animated: true)
     }
@@ -195,18 +218,18 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FinanceTableViewCell.reuseId, for: indexPath) as! FinanceTableViewCell
-        
-        let item = sections[indexPath.section].items[indexPath.row]
-        
-        if let incomeItem = item as? (category: CategoryIncome, items: [Income]), let income = incomeItem.items.first {
-            cell.configure(with: incomeItem.category, data: income)
-        } else if let expenseItem = item as? (category: CategoryExpense, items: [Expense]), let expense = expenseItem.items.first {
-            cell.configure(with: expenseItem.category, data: expense)
-        }
-        
-        cell.selectionStyle = .none
-        
-        return cell
+           
+           let item = sections[indexPath.section].items[indexPath.row]
+           
+           if let incomeItem = item as? (category: CategoryIncome, items: [Income], currency: String), let income = incomeItem.items.first {
+               cell.configure(with: incomeItem.category, data: income, currency: incomeItem.currency)
+           } else if let expenseItem = item as? (category: CategoryExpense, items: [Expense], currency: String), let expense = expenseItem.items.first {
+               cell.configure(with: expenseItem.category, data: expense, currency: expenseItem.currency)
+           }
+           
+           cell.selectionStyle = .none
+           
+           return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -49,7 +49,8 @@ class CategoryExpense: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
     @objc dynamic var image: String = ""
-    let incomes = List<Expense>()
+    @objc dynamic var limits: Double = 0.0
+    let expenses = List<Expense>()
     
     override static func primaryKey() -> String? {
         return "id"

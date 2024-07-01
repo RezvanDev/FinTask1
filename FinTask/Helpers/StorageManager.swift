@@ -15,6 +15,21 @@ class StorageManager {
     private let geocoder = CLGeocoder()
 }
 
+// MARK: -- Update methods
+extension StorageManager {
+    func updateCategoryLimit(categoryId: String, newLimit: Double) {
+            guard let user = getUser() else { return }
+            
+            for wallet in user.wallets {
+                if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
+                    try! realm.write {
+                        category.limits = newLimit
+                    }
+                    break
+                }
+            }
+        }
+}
 
 // MARK: -- Set methods
 extension StorageManager {
@@ -30,7 +45,25 @@ extension StorageManager {
                     expense.note = note
                     
                     try! realm.write {
-                        category.incomes.append(expense)
+                        category.expenses.append(expense)
+                    }
+                    break
+                }
+            }
+    }
+    
+    func createIncome(for categoryId: String, amount: Double, date: Date, note: String?) {
+            guard let user = getUser() else { return }
+            
+            for wallet in user.wallets {
+                if let category = wallet.categoriesIncome.first(where: { $0.id == categoryId }) {
+                    let income = Income()
+                    income.amount = amount
+                    income.date = date
+                    income.note = note
+                    
+                    try! realm.write {
+                        category.incomes.append(income)
                     }
                     break
                 }
@@ -56,6 +89,17 @@ extension StorageManager {
         return allExpenseCategories
     }
     
+    func getAllIncomeCategories() -> [CategoryIncome] {
+        guard let user = getUser() else { return [] }
+        var allIncomesCategories: [CategoryIncome] = []
+        
+        for wallet in user.wallets {
+            allIncomesCategories += wallet.categoriesIncome
+        }
+        
+        return allIncomesCategories
+    }
+    
     // Method to calculate total income
     func totalIncome() -> Double {
         guard let user = getUser() else { return 0.0 }
@@ -78,7 +122,7 @@ extension StorageManager {
         
         for wallet in user.wallets {
             for category in wallet.categoriesExpense {
-                totalExpense += category.incomes.reduce(0.0) { $0 + $1.amount }
+                totalExpense += category.expenses.reduce(0.0) { $0 + $1.amount }
             }
         }
         return totalExpense
@@ -91,21 +135,22 @@ extension StorageManager {
     }
     
     // Get sorted incomes
-    func fetchSortedGroupedIncomes() -> [Date: [(category: CategoryIncome, items: [Income])]] {
+    func fetchSortedGroupedIncomes() -> [Date: [(category: CategoryIncome, items: [Income], currency: String)]] {
         guard let user = getUser() else { return [:] }
         
-        var groupedIncomes: [Date: [(category: CategoryIncome, items: [Income])]] = [:]
+        var groupedIncomes: [Date: [(category: CategoryIncome, items: [Income], currency: String)]] = [:]
         
         for wallet in user.wallets {
+            let currency = wallet.nameCurrency
             for category in wallet.categoriesIncome {
                 let incomes = category.incomes
                 for income in incomes {
                     let date = Calendar.current.startOfDay(for: income.date)
                     if var incomesForDate = groupedIncomes[date] {
-                        incomesForDate.append((category: category, items: [income]))
+                        incomesForDate.append((category: category, items: [income], currency: currency))
                         groupedIncomes[date] = incomesForDate
                     } else {
-                        groupedIncomes[date] = [(category: category, items: [income])]
+                        groupedIncomes[date] = [(category: category, items: [income], currency: currency)]
                     }
                 }
             }
@@ -115,25 +160,27 @@ extension StorageManager {
     }
     
     // Get sorted expenses
-    func fetchSortedGroupedExpenses() -> [Date: [(category: CategoryExpense, items: [Expense])]] {
+    func fetchSortedGroupedExpenses() -> [Date: [(category: CategoryExpense, items: [Expense], currency: String)]] {
         guard let user = getUser() else { return [:] }
         
-        var groupedExpenses: [Date: [(category: CategoryExpense, items: [Expense])]] = [:]
+        var groupedExpenses: [Date: [(category: CategoryExpense, items: [Expense], currency: String)]] = [:]
         
         for wallet in user.wallets {
+            let currency = wallet.nameCurrency
             for category in wallet.categoriesExpense {
-                let expenses = category.incomes
+                let expenses = category.expenses
                 for expense in expenses {
                     let date = Calendar.current.startOfDay(for: expense.date)
                     if var expensesForDate = groupedExpenses[date] {
-                        expensesForDate.append((category: category, items: [expense]))
+                        expensesForDate.append((category: category, items: [expense], currency: currency))
                         groupedExpenses[date] = expensesForDate
                     } else {
-                        groupedExpenses[date] = [(category: category, items: [expense])]
+                        groupedExpenses[date] = [(category: category, items: [expense], currency: currency)]
                     }
                 }
             }
         }
+        
         return groupedExpenses
     }
 }
