@@ -22,6 +22,8 @@ class SettingsViewController: UITableViewController {
         
         view.backgroundColor = .white
         view.addSubview(settingsTitle)
+//        view.addSubview(vStack)
+        //vStack constraints
         
         //settingsTitle constraints
         NSLayoutConstraint.activate([
@@ -49,7 +51,8 @@ class SettingsViewController: UITableViewController {
             return UITableViewCell()
         }
         let item = settingsCell[indexPath.row]
-        //cell.configure(item)
+//        cell.configure(item)
+//        vStack.addArrangedSubview(item)
         return cell
     }
 }
