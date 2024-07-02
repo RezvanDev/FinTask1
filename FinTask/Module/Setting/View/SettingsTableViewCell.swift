@@ -11,19 +11,27 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
     
     static var reuseId: String = "SettingsTableViewCell"
     
-    private lazy var chevronIcon: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "chevron.right")
-        imageView.contentMode = .scaleAspectFill
-        imageView.tintColor = .gray
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+    private lazy var iconImage: UIImageView = {
+        let icon = UIImageView()
+        icon.image = UIImage(systemName: "folder")
+        icon.tintColor = .black
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        return icon
     }()
+    
+//    private lazy var chevronIcon: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(systemName: "chevron.right")
+//        imageView.contentMode = .scaleAspectFill
+//        imageView.tintColor = .gray
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
     
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Test"
-        lbl.font = .systemFont(ofSize: 20, weight: .regular)
+        lbl.font = .systemFont(ofSize: 20, weight: .bold)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -39,27 +47,38 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
     }
     
     private func setupCell() {
-        [chevronIcon, titleLabel].forEach {
+        [/*chevronIcon,*/ iconImage, titleLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
+        backgroundColor = AppColors.lightGrayMain
+        // 1  Нужно чтобы были не ячейки а секции и в каждой секции ячейка
         NSLayoutConstraint.activate([
-            chevronIcon.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16),
-            chevronIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -16),
-            chevronIcon.heightAnchor.constraint(equalToConstant: 30),
-            chevronIcon.widthAnchor.constraint(equalToConstant: 30),
+            //chevron constraints(unusible)
+//            chevronIcon.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16),
+//            chevronIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+//            chevronIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -25),
+//            chevronIcon.heightAnchor.constraint(equalToConstant: 10),
+//            chevronIcon.widthAnchor.constraint(equalToConstant: 5),
             
             //title label constraints
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 80),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             
-            //
+            //iconImage constraints
+            iconImage.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            iconImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            iconImage.heightAnchor.constraint(equalToConstant: 35),
+            iconImage.widthAnchor.constraint(equalToConstant: 35)
         ])
     }
     
     func configure(contact: (image: UIImage?, title: String)) {
+        print(contact.title)
+        iconImage.image = contact.image
+        titleLabel.text = contact.title
         
     }
     
-}
+}//recognizer

@@ -10,11 +10,11 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     private lazy var settingsCell: [(image: UIImage?, title: String)] = [
-        (UIImage(systemName: "wallet"),"Категории расходов"),
-        (UIImage(systemName: "chart.bar"),"Категории расходов"),
+        (UIImage(systemName: "square.and.arrow.up"),"Категории расходов"),
+        (UIImage(systemName: "square.and.arrow.down"),"Категории доходов"),
         (UIImage(systemName: "dollarsign.circle"),"Валюта по умолчанию"),
         (UIImage(systemName: "globe"),"Язык интерфейса"),
-        (UIImage(systemName: "sliders.horizontal"),"Дополнительно")
+        (UIImage(named: "sliders"),"Дополнительно")
     ]
     
     override func viewDidLoad() {
@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         view.backgroundColor = .white
         view.addSubview(settingsTitle)
         view.addSubview(tableView)
+        
         //settingsTitle constraints
         NSLayoutConstraint.activate([
             settingsTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
@@ -30,9 +31,9 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             //table constraints
             tableView.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 16),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tableView.heightAnchor.constraint(equalToConstant: 500)
         ])
         
     }
@@ -52,19 +53,52 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         tbView.delegate = self
         tbView.dataSource = self
         tbView.translatesAutoresizingMaskIntoConstraints = false
+        tbView.layer.cornerRadius = 20
+        tbView.isScrollEnabled = false
         return tbView
     }()
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        settingsCell.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingsCell.count
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseId, for: indexPath) as? SettingsTableViewCell else {
             return UITableViewCell()
         }
-        let item = settingsCell[indexPath.row]
+        let item = settingsCell[indexPath.section]
+        
+        //rounded edges
+        if indexPath.section == 4 ? true: false {
+            let cornerRadius: CGFloat = 20.0
+            let maskPath = UIBezierPath(roundedRect: cell.bounds,
+                                        byRoundingCorners: [.bottomLeft, .bottomRight],
+                                        cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = maskPath.cgPath
+            cell.layer.mask = maskLayer
+        }
+        
         cell.configure(contact: item)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 5
+    }
+    
 }
