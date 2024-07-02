@@ -11,51 +11,55 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
     
     static var reuseId: String = "SettingsTableViewCell"
     
-    private lazy var imageIcon: UIImageView = {
+    private lazy var chevronIcon: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "chevron.right")
         imageView.contentMode = .scaleAspectFill
         imageView.tintColor = .gray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    private lazy var vStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = 5
-        stack.alignment = .leading
-        stack.distribution = .fill
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
+    
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.font = .systemFont(ofSize: 10, weight: .bold)
+        lbl.text = "Test"
+        lbl.font = .systemFont(ofSize: 20, weight: .regular)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
     
-    private lazy var arrowImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "chevron.right"))
-        imageView.tintColor = .systemBlue
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView() {
-        
+    private func setupCell() {
+        [chevronIcon, titleLabel].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
+        }
+        NSLayoutConstraint.activate([
+            chevronIcon.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16),
+            chevronIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -16),
+            chevronIcon.heightAnchor.constraint(equalToConstant: 30),
+            chevronIcon.widthAnchor.constraint(equalToConstant: 30),
+            
+            //title label constraints
+            titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 8),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+            
+            //
+        ])
     }
     
-    func setup(image: UIImage?, title: String) {
-        //setup the elements
+    func configure(contact: (image: UIImage?, title: String)) {
+        
     }
     
 }
