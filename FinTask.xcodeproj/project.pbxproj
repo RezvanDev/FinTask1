@@ -96,6 +96,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22002EFD2C346B1A00921172 /* PremiumSubViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PremiumSubViewController;
+			sourceTree = "<group>";
+		};
 		223E3B202C2A2E0F005B3FD2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +249,7 @@
 		543913D02C296BE9006A2075 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				22002EFD2C346B1A00921172 /* PremiumSubViewController */,
 				54B69DD82C32FD0200C2BD4E /* View */,
 				543913D12C296BED006A2075 /* ViewController */,
 			);

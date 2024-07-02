@@ -23,6 +23,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         view.backgroundColor = .white
         view.addSubview(settingsTitle)
         view.addSubview(tableView)
+        view.addSubview(mainView)
+//        view.addSubview(imageView)
         
         //settingsTitle constraints
         NSLayoutConstraint.activate([
@@ -30,10 +32,24 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             settingsTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
             //table constraints
-            tableView.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 16),
+            tableView.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 180),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            tableView.heightAnchor.constraint(equalToConstant: 500)
+            tableView.heightAnchor.constraint(equalToConstant: 500),
+            
+            //mainView constraints
+            mainView.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 16),
+            mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            mainView.heightAnchor.constraint(equalToConstant: 150),
+            
+            //crownImage constraints
+//            imageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 6),
+//            imageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10),
+//            imageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -50),
+//            imageView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10),
+//            imageView.heightAnchor.constraint(equalToConstant: 50),
+//            imageView.widthAnchor.constraint(equalToConstant: 50)
         ])
         
     }
@@ -56,6 +72,24 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         tbView.layer.cornerRadius = 20
         tbView.isScrollEnabled = false
         return tbView
+    }()
+    
+    //setup mainView
+    private lazy var mainView: UIView = {
+        let mainObj = UIView()
+        mainObj.backgroundColor = .lightGray
+        mainObj.translatesAutoresizingMaskIntoConstraints = false
+        mainObj.layer.cornerRadius = 20
+        return mainObj
+    }()
+    
+    //setup imageView
+    private lazy var imageView: UIImageView = {
+        let mainImg = UIImageView()
+        mainImg.image = UIImage(named: "crown")
+        mainImg.translatesAutoresizingMaskIntoConstraints = false
+        mainImg.contentMode = .scaleAspectFill
+        return mainImg
     }()
     
     func numberOfSections(in tableView: UITableView) -> Int {
