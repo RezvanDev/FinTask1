@@ -9,6 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private var totalIncome: Double?
+    private var totalExpense: Double?
+    private var totalSaving: Double?
+    
     // Data
     let homeModelCellMockData = HomeModelCellMockData()
     let homeModelDate = HomeModelDate()
@@ -74,6 +78,7 @@ class HomeViewController: UIViewController {
         collection.delegate = self
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseId)
+        collection.register(HomeCollectionCollectionViewCellSecondLast.self, forCellWithReuseIdentifier: HomeCollectionCollectionViewCellSecondLast.reuseId)
         collection.register(HomeCollectionViewCellLast.self, forCellWithReuseIdentifier: HomeCollectionViewCellLast.reuseId)
         return collection
     }()
@@ -106,6 +111,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         timeLabel.text = homeModelDate.timeUntilEndOfDay()
+        fetchData()
     }
 }
 
@@ -114,6 +120,7 @@ private extension HomeViewController {
     
     func setup() {
         view.backgroundColor = .white
+        fetchData()
         setupConstraintsHeaderViewBackground()
         setupHeaderView()
         setupLabelsOnViewBackground()
@@ -219,6 +226,15 @@ private extension HomeViewController {
     }
 }
 
+// MARK: Fetch data
+private extension HomeViewController {
+    func fetchData() {
+        totalIncome = StorageManager.shared.totalIncome()
+        totalExpense = StorageManager.shared.totalExpense()
+        totalSaving = StorageManager.shared.totalSavings()
+    }
+}
+
 // MARK: -- UICollectionViewDataSource, UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -226,28 +242,40 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row != 3 {
+        if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionCollectionViewCellSecondLast.reuseId, for: indexPath) as! HomeCollectionCollectionViewCellSecondLast
+            let provaider = homeModelCellMockData.homeModelCells
+            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title, data: String(totalSaving ?? 0))
+            return cell
+        } else if indexPath.row == 3{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath) as! HomeCollectionViewCellLast
+            
+            return cell
+        } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as! HomeCollectionViewCell
             
             let provaider = homeModelCellMockData.homeModelCells
-            let data: [Double] = [StorageManager.shared.totalIncome(), StorageManager.shared.totalExpense(), StorageManager.shared.totalSavings()]
+            let dataInEx = [totalIncome, totalExpense]
             
-            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title, data: String(data[indexPath.row]))
-            return cell
-        } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath)
+            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title, data: String(dataInEx[indexPath.row] ?? 0) )
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var vc = UIViewController()
         if indexPath.row == 2 {
-            vc = SavingViewController()
+            let savingVC = SavingViewController()
+            savingVC.closure = { [weak self] res in
+                if res {
+                    self?.fetchData()
+                    self?.collectionView.reloadData()
+                }
+            }
+            present(savingVC, animated: true)
         } else if indexPath.row == 3 {
             
         }
-        present(vc, animated: true)
+       
     }
 }
 

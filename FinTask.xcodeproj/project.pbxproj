@@ -36,6 +36,7 @@
 		54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */; };
 		54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF82C35528400C2BD4E /* Helpers.swift */; };
 		54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */; };
+		54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -87,6 +88,7 @@
 		54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSavingViewController.swift; sourceTree = "<group>"; };
 		54B69DF82C35528400C2BD4E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSavingViewController.swift; sourceTree = "<group>"; };
+		54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCollectionViewCellSecondLast.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				543913DD2C2AA783006A2075 /* HomeCollectionViewCell.swift */,
+				54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */,
 				54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */,
 			);
 			path = View;
@@ -559,6 +562,7 @@
 				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
+				54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,
 				54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
