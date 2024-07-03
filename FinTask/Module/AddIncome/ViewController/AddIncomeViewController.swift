@@ -422,6 +422,6 @@ extension AddIncomeViewController: UITextFieldDelegate {
     
     @objc private func doneButtonTapped() {
         noteTF.resignFirstResponder()
-        tfBottomShieldView.resignFirstResponder() // Закрытие клавиатуры при нажатии на кнопку "Готово"
+        tfBottomShieldView.resignFirstResponder()
     }
 }

@@ -84,7 +84,10 @@ class Expense: Object {
 class Saving: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
-    @objc dynamic var amount: Double = 0.0
+    @objc dynamic var haveAmount: Double = 0.0
+    @objc dynamic var needAmount: Double = 0.0
+    @objc dynamic var dateStart: Date = Date()
+    @objc dynamic var dateEnd: Date = Date()
     
     override static func primaryKey() -> String? {
         return "id"

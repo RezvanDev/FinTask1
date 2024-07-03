@@ -102,6 +102,7 @@ class HomeViewController: UIViewController {
         setup()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         timeLabel.text = homeModelDate.timeUntilEndOfDay()
@@ -237,6 +238,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath)
             return cell
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var vc = UIViewController()
+        if indexPath.row == 2 {
+            vc = SavingViewController()
+        } else if indexPath.row == 3 {
+            
+        }
+        present(vc, animated: true)
     }
 }
 

@@ -30,7 +30,12 @@
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */; };
 		54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */; };
-		54B69DE72C340B4C00C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69DE62C340B4C00C2BD4E /* RealmSwift */; };
+		54B69DEA2C340C5500C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69DE92C340C5500C2BD4E /* RealmSwift */; };
+		54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */; };
+		54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */; };
+		54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */; };
+		54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF82C35528400C2BD4E /* Helpers.swift */; };
+		54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -77,6 +82,11 @@
 		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
+		54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTableViewCell.swift; sourceTree = "<group>"; };
+		54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSavingViewController.swift; sourceTree = "<group>"; };
+		54B69DF82C35528400C2BD4E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSavingViewController.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -89,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B69DE72C340B4C00C2BD4E /* RealmSwift in Frameworks */,
+				54B69DEA2C340C5500C2BD4E /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +125,9 @@
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				54B69DFA2C355A1600C2BD4E /* EditSaving */,
+				54B69DF32C3544DD00C2BD4E /* AddSaving */,
+				54B69DEB2C352C2800C2BD4E /* Saving */,
 				545D08772C31876E005F19CE /* AddIncome */,
 				547C8D9F2C2D7DCC008EA96D /* AddExpense */,
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
@@ -299,6 +312,7 @@
 				543913E02C2AAD93006A2075 /* Protocols.swift */,
 				54BFBE902C2BF43C00379920 /* StorageManager.swift */,
 				545D08712C317A3E005F19CE /* Alerts.swift */,
+				54B69DF82C35528400C2BD4E /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -363,6 +377,63 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		54B69DEB2C352C2800C2BD4E /* Saving */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF02C3530F500C2BD4E /* View */,
+				54B69DED2C352C4E00C2BD4E /* ViewController */,
+			);
+			path = Saving;
+			sourceTree = "<group>";
+		};
+		54B69DED2C352C4E00C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69DF02C3530F500C2BD4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54B69DF32C3544DD00C2BD4E /* AddSaving */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF42C3544E300C2BD4E /* ViewController */,
+			);
+			path = AddSaving;
+			sourceTree = "<group>";
+		};
+		54B69DF42C3544E300C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69DFA2C355A1600C2BD4E /* EditSaving */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DFB2C355A1B00C2BD4E /* ViewController */,
+			);
+			path = EditSaving;
+			sourceTree = "<group>";
+		};
+		54B69DFB2C355A1B00C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		54BFBEB52C2C17D700379920 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,7 +477,7 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				54B69DE62C340B4C00C2BD4E /* RealmSwift */,
+				54B69DE92C340C5500C2BD4E /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -437,7 +508,7 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				54B69DE52C340B4C00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -473,9 +544,12 @@
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
+				54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */,
 				54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
+				54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
+				54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */,
 				54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
@@ -486,9 +560,11 @@
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,
+				54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
 				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
+				54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */,
 				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,
 				543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */,
 			);
@@ -719,7 +795,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54B69DE52C340B4C00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -730,9 +806,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54B69DE62C340B4C00C2BD4E /* RealmSwift */ = {
+		54B69DE92C340C5500C2BD4E /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54B69DE52C340B4C00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
