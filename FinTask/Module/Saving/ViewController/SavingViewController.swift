@@ -10,6 +10,7 @@ import UIKit
 class SavingViewController: UIViewController {
     
     private var savings: [Saving]?
+    var closure: ((Bool) -> ())?
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
@@ -164,6 +165,7 @@ extension SavingViewController: UITableViewDelegate, UITableViewDataSource {
             if res {
                 self?.fetchSavings()
                 self?.tableView.reloadData()
+                self?.closure?(true)
             }
         }
         present(vc, animated: true)
