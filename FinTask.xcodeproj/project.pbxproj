@@ -30,13 +30,13 @@
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */; };
 		54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */; };
-		54B69DEA2C340C5500C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69DE92C340C5500C2BD4E /* RealmSwift */; };
 		54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */; };
 		54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */; };
 		54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */; };
 		54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF82C35528400C2BD4E /* Helpers.swift */; };
 		54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */; };
 		54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */; };
+		54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -101,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B69DEA2C340C5500C2BD4E /* RealmSwift in Frameworks */,
+				54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +480,7 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				54B69DE92C340C5500C2BD4E /* RealmSwift */,
+				54B69E012C357DBD00C2BD4E /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -511,7 +511,7 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -799,7 +799,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -810,9 +810,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54B69DE92C340C5500C2BD4E /* RealmSwift */ = {
+		54B69E012C357DBD00C2BD4E /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

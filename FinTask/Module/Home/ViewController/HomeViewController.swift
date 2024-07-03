@@ -9,24 +9,20 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // Data
     private var totalIncome: Double?
     private var totalExpense: Double?
-    private var totalSaving: Double?
     
-    // Data
     let homeModelCellMockData = HomeModelCellMockData()
     let homeModelDate = HomeModelDate()
     
-    // header view background
+
     private lazy var headerViewBackground: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = AppColors.mainGreen
         return view
     }()
-    
-    
-    // header view
     private lazy var headerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +44,6 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    // label on view background
     private lazy var mainTextOnViewBackground: UILabel = {
         let label = UILabel()
         label.text = "Основной счет"
@@ -66,7 +61,6 @@ class HomeViewController: UIViewController {
         return label
     }()
     
-    // collection view
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (view.bounds.width / 2) - 30, height: (view.bounds.width / 2) - 50)
@@ -83,7 +77,7 @@ class HomeViewController: UIViewController {
         return collection
     }()
     
-    // view end day
+  
     private lazy var viewTime: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -231,7 +225,6 @@ private extension HomeViewController {
     func fetchData() {
         totalIncome = StorageManager.shared.totalIncome()
         totalExpense = StorageManager.shared.totalExpense()
-        totalSaving = StorageManager.shared.totalSavings()
     }
 }
 
@@ -245,7 +238,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if indexPath.row == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionCollectionViewCellSecondLast.reuseId, for: indexPath) as! HomeCollectionCollectionViewCellSecondLast
             let provaider = homeModelCellMockData.homeModelCells
-            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title, data: String(totalSaving ?? 0))
+            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title)
             return cell
         } else if indexPath.row == 3{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath) as! HomeCollectionViewCellLast

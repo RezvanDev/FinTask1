@@ -10,6 +10,7 @@ import UIKit
 class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProtocols {
     
     static var reuseId: String = "HomeCollectionCollectionViewCellSecondLast"
+    private var savings: [Saving]?
     
     private lazy var image: UIImageView = {
         let image = UIImageView()
@@ -26,14 +27,15 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
         lbl.font = UIFont.systemFont(ofSize: 16, weight: .light)
         return lbl
     }()
-    private lazy var dataLabel: UILabel = {
-        let lbl = UILabel()
-        lbl.textColor = .black
-        lbl.numberOfLines = 0
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "test"
-        lbl.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        return lbl
+    private lazy var collectionSaving: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.delegate = self
+        collection.dataSource = self
+        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        return collection
     }()
     
     
@@ -46,17 +48,17 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(image: UIImage, text: String, data: String) {
+    func configure(image: UIImage, text: String) {
         self.image.image = image
         self.title.text = text
-        self.dataLabel.text = data
     }
     
     // setup
     private func setup() {
+        fetchData()
         addSubview(image)
         addSubview(title)
-        addSubview(dataLabel)
+        addSubview(collectionSaving)
         setupConstraints()
         setupBorders()
     }
@@ -73,8 +75,10 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
             title.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 10),
             title.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
             
-            dataLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 20),
-            dataLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            collectionSaving.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 5),
+            collectionSaving.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            collectionSaving.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            collectionSaving.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
         ])
     }
     
@@ -84,5 +88,31 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 10
     }
+}
+
+// Fetch methods
+private extension HomeCollectionCollectionViewCellSecondLast {
+    func fetchData() {
+        savings = StorageManager.shared.getSavings()
+    }
+}
+
+// MARK: -- UICollectionViewDelegate, UICollectionViewDataSource
+extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        savings?.count ?? 0
+    }
     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+              cell.backgroundColor = .gray // Placeholder color
+              return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 120, height: 80) // Adjust item size as needed
+    }
 }
