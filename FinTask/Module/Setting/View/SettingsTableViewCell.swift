@@ -47,19 +47,13 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
     }
     
     private func setupCell() {
-        [/*chevronIcon,*/ iconImage, titleLabel].forEach {
+        [iconImage, titleLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
         }
         backgroundColor = AppColors.lightGrayMain
         // 1  Нужно чтобы были не ячейки а секции и в каждой секции ячейка
         NSLayoutConstraint.activate([
-            //chevron constraints(unusible)
-//            chevronIcon.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 16),
-//            chevronIcon.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-//            chevronIcon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -25),
-//            chevronIcon.heightAnchor.constraint(equalToConstant: 10),
-//            chevronIcon.widthAnchor.constraint(equalToConstant: 5),
             
             //title label constraints
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),

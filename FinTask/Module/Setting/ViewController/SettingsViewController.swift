@@ -24,7 +24,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         view.addSubview(settingsTitle)
         view.addSubview(tableView)
         view.addSubview(mainView)
-//        view.addSubview(imageView)
+        view.addSubview(topGreenView)
+        mainView.addSubview(premiumStackView)
+        premiumStackView.addArrangedSubview(crownImageView)
+        premiumStackView.addArrangedSubview(premiumLabel)
         
         //settingsTitle constraints
         NSLayoutConstraint.activate([
@@ -32,7 +35,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             settingsTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             
             //table constraints
-            tableView.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 180),
+            tableView.topAnchor.constraint(equalTo: settingsTitle.bottomAnchor, constant: 200),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tableView.heightAnchor.constraint(equalToConstant: 500),
@@ -43,13 +46,18 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             mainView.heightAnchor.constraint(equalToConstant: 150),
             
+            //stackView constraints
+            premiumStackView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 20),
+            premiumStackView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 15),
+            premiumStackView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -16),
+            premiumStackView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -20),
+            premiumStackView.heightAnchor.constraint(equalToConstant: 100),
+            premiumStackView.widthAnchor.constraint(equalToConstant: 120),
+            
             //crownImage constraints
-//            imageView.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 6),
-//            imageView.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 10),
-//            imageView.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -50),
-//            imageView.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10),
-//            imageView.heightAnchor.constraint(equalToConstant: 50),
-//            imageView.widthAnchor.constraint(equalToConstant: 50)
+            crownImageView.heightAnchor.constraint(equalToConstant: 10),
+            crownImageView.widthAnchor.constraint(equalToConstant: 100),
+        
         ])
         
     }
@@ -77,20 +85,47 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     //setup mainView
     private lazy var mainView: UIView = {
         let mainObj = UIView()
-        mainObj.backgroundColor = .lightGray
+        mainObj.backgroundColor = AppColors.lightGrayMain
         mainObj.translatesAutoresizingMaskIntoConstraints = false
         mainObj.layer.cornerRadius = 20
         return mainObj
     }()
     
-    //setup imageView
-    private lazy var imageView: UIImageView = {
+    //setup buyPremiumLabel
+    private lazy var premiumLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Купить премиум"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textColor = .black
+        return label
+    }()
+    
+    //setup stackView
+    private lazy var premiumStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 23
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    //setup crown image
+    private lazy var crownImageView: UIImageView = {
         let mainImg = UIImageView()
         mainImg.image = UIImage(named: "crown")
         mainImg.translatesAutoresizingMaskIntoConstraints = false
         mainImg.contentMode = .scaleAspectFill
         return mainImg
     }()
+    
+    //setup topGreenView
+    private lazy var topGreenView: UIView = {
+        let greenView = UIView()
+        greenView.backgroundColor = AppColors.mainGreen
+        greenView.translatesAutoresizingMaskIntoConstraints = false
+        return greenView
+    }()
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         settingsCell.count
