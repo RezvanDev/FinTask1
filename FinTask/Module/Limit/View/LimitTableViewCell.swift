@@ -44,19 +44,19 @@ class LimitTableViewCell: UITableViewCell, CellProtocols {
         return view
     }()
     
-    private let limitView: UIView = {
+    private lazy var limitView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .lightGray
         view.layer.cornerRadius = 8
+        view.clipsToBounds = true
         return view
     }()
     
-    private let filledView: UIView = {
+    private lazy var filledView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .green
-        view.layer.cornerRadius = 8
         return view
     }()
     

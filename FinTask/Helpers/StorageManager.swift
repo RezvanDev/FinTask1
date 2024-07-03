@@ -29,6 +29,18 @@ extension StorageManager {
             }
         }
     }
+    
+    func updateSaving(savingId: String, sum: Double) {
+        guard let user = getUser() else { return }
+        if let saving = user.savings.first(where: {$0.id == savingId}) {
+            try! realm.write {
+                saving.haveAmount += sum
+                if saving.haveAmount >= saving.needAmount {
+                    user.savings.remove(at: user.savings.index(of: saving)!)
+                }
+            }
+        }
+    }
 }
 
 // MARK: -- Set methods
@@ -52,6 +64,8 @@ extension StorageManager {
         }
     }
     
+    
+    // Method to create a new income for a given category ID
     func createIncome(for categoryId: String, amount: Double, date: Date, note: String?) {
         guard let user = getUser() else { return }
         
@@ -67,6 +81,21 @@ extension StorageManager {
                 }
                 break
             }
+        }
+    }
+    
+    func createSaving(name: String, haveAmount: Double, needAmount: Double, dateStart: Date, dateEnd: Date) {
+        guard let user = getUser() else { return }
+        
+        let saving = Saving()
+        saving.name = name
+        saving.haveAmount = haveAmount
+        saving.needAmount = needAmount
+        saving.dateStart = dateStart
+        saving.dateEnd = dateEnd
+        
+        try! realm.write{
+            user.savings.append(saving)
         }
     }
 }
@@ -100,7 +129,7 @@ extension StorageManager {
         return allIncomesCategories
     }
     
-    // Method to calculate total income
+    // Method to get and  calculate total income
     func totalIncome() -> Double {
         guard let user = getUser() else { return 0.0 }
         
@@ -114,7 +143,7 @@ extension StorageManager {
         return totalIncome
     }
     
-    // Method to calculate total expense
+    // Method to get and calculate total expense
     func totalExpense() -> Double {
         guard let user = getUser() else { return 0.0 }
         
@@ -128,10 +157,22 @@ extension StorageManager {
         return totalExpense
     }
     
-    // Method to calculate total savings
+    // Method to get and  calculate total savings
     func totalSavings() -> Double {
         guard let user = getUser() else { return 0.0 }
-        return user.savings.reduce(0.0) { $0 + $1.amount }
+        return user.savings.reduce(0.0) { $0 + $1.haveAmount }
+    }
+    
+    // Method to get all savings
+    func getSavings() -> [Saving] {
+        guard let user = getUser() else { return []}
+        var allSaving: [Saving] = []
+        
+        user.savings.forEach { saving in
+            allSaving.append(saving)
+        }
+        
+        return allSaving
     }
     
     // Get sorted incomes
@@ -184,7 +225,6 @@ extension StorageManager {
         return groupedExpenses
     }
 }
-
 
 // MARK: -- Launch first time
 extension StorageManager {

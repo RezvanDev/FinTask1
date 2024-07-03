@@ -32,6 +32,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
+        // Создание user
+//        StorageManager.shared.createInitialUserIfNeeded(locationManager: self.locationManager, currency: nil)
+      
         
         window.rootViewController = viewController
         self.window = window
