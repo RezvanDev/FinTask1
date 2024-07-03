@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    private var tapGesture: UITapGestureRecognizer?
+    
     private lazy var settingsCell: [(image: UIImage?, title: String)] = [
         (UIImage(systemName: "square.and.arrow.up"),"Категории расходов"),
         (UIImage(systemName: "square.and.arrow.down"),"Категории доходов"),
@@ -29,6 +31,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         premiumStackView.addArrangedSubview(crownImageView)
         premiumStackView.addArrangedSubview(premiumLabel)
         
+        //MARK: --Constraints
         //settingsTitle constraints
         NSLayoutConstraint.activate([
             settingsTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
@@ -61,6 +64,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         ])
         
     }
+    
+    //MARK: --ViewSetup
     //main settings title
     private lazy var settingsTitle: UILabel = {
         let lbl = UILabel()
@@ -85,7 +90,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     //setup mainView
     private lazy var mainView: UIView = {
         let mainObj = UIView()
-        mainObj.backgroundColor = AppColors.lightGrayMain
+        mainObj.backgroundColor = AppColors.mainGreen
         mainObj.translatesAutoresizingMaskIntoConstraints = false
         mainObj.layer.cornerRadius = 20
         return mainObj
@@ -126,6 +131,13 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         return greenView
     }()
     
+    // setup gesture
+    func setupTapGesture() {
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture!)
+        tapGesture?.isEnabled = false
+        
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         settingsCell.count
@@ -168,6 +180,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5
+    }
+    //MARK: --Objc
+    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
 }

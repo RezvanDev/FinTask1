@@ -19,15 +19,6 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
         return icon
     }()
     
-//    private lazy var chevronIcon: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage(systemName: "chevron.right")
-//        imageView.contentMode = .scaleAspectFill
-//        imageView.tintColor = .gray
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-    
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Test"
