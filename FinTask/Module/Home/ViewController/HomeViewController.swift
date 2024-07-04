@@ -12,11 +12,13 @@ class HomeViewController: UIViewController {
     // Data
     private var totalIncome: Double?
     private var totalExpense: Double?
+    private var allSavings: [Saving]?
+    private var allWallets: [Wallet]?
     
-    let homeModelCellMockData = HomeModelCellMockData()
-    let homeModelDate = HomeModelDate()
+    private let homeModelCellMockData = HomeModelCellMockData()
+    private let homeModelDate = HomeModelDate()
     
-
+    
     private lazy var headerViewBackground: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +79,7 @@ class HomeViewController: UIViewController {
         return collection
     }()
     
-  
+    
     private lazy var viewTime: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -214,9 +216,18 @@ private extension HomeViewController {
     }
     
     func setupHeaderDate() {
-        // guard let user = StorageManager.shared.getUser() else { return }
-        // сделать чтобы данные в header загружались
-        // countTextOnViewBackground.text = user.wallets.
+        allWallets = StorageManager.shared.getAllWallets()
+        
+        let firstWallet = allWallets?.first
+        var totalExpense: Double = 0.0
+        
+        
+        for category in firstWallet!.categoriesIncome {
+            totalExpense += category.incomes.reduce(0.0) { $0 + $1.amount }
+        }
+        
+        countTextOnViewBackground.text = "\(firstWallet!.nameCurrency) \(totalExpense)"
+        
     }
 }
 
@@ -225,6 +236,7 @@ private extension HomeViewController {
     func fetchData() {
         totalIncome = StorageManager.shared.totalIncome()
         totalExpense = StorageManager.shared.totalExpense()
+        allSavings = StorageManager.shared.getSavings()
     }
 }
 
@@ -238,7 +250,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if indexPath.row == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionCollectionViewCellSecondLast.reuseId, for: indexPath) as! HomeCollectionCollectionViewCellSecondLast
             let provaider = homeModelCellMockData.homeModelCells
-            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title)
+            cell.configure(image: provaider[indexPath.row].image, text: provaider[indexPath.row].title, savings: allSavings)
             return cell
         } else if indexPath.row == 3{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath) as! HomeCollectionViewCellLast
@@ -262,13 +274,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 if res {
                     self?.fetchData()
                     self?.collectionView.reloadData()
+                    print(self?.allSavings)
                 }
             }
             present(savingVC, animated: true)
         } else if indexPath.row == 3 {
             
         }
-       
+        
     }
 }
 

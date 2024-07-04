@@ -117,6 +117,7 @@ private extension SavingViewController {
             if res {
                 self?.fetchSavings()
                 self?.tableView.reloadData()
+                self?.closure?(true)
             }
         }
         

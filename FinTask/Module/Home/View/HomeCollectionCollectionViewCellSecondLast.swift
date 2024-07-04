@@ -10,7 +10,10 @@ import UIKit
 class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProtocols {
     
     static var reuseId: String = "HomeCollectionCollectionViewCellSecondLast"
+    
     private var savings: [Saving]?
+    private var timer: Timer?
+    private var currentIndex = 0
     
     private lazy var image: UIImageView = {
         let image = UIImageView()
@@ -32,8 +35,9 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
+        collection.isScrollEnabled = false
         collection.dataSource = self
-        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collection.register(CellLastSecondCollectionViewCell.self, forCellWithReuseIdentifier: CellLastSecondCollectionViewCell.reuseId)
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -42,20 +46,24 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        startTimer()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(image: UIImage, text: String) {
+    func configure(image: UIImage, text: String, savings: [Saving]?) {
         self.image.image = image
         self.title.text = text
+        self.savings = savings
+        collectionSaving.reloadData()
     }
-    
-    // setup
-    private func setup() {
-        fetchData()
+}
+
+// Setup layer
+private extension HomeCollectionCollectionViewCellSecondLast {
+    func setup() {
         addSubview(image)
         addSubview(title)
         addSubview(collectionSaving)
@@ -64,7 +72,7 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
     }
     
     // setup constraints
-    private func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             image.topAnchor.constraint(equalTo: topAnchor, constant: 15),
             image.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
@@ -83,19 +91,37 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
     }
     
     // setup borders
-    private func setupBorders() {
+    func setupBorders() {
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 10
     }
+    
 }
 
-// Fetch methods
+
+// Timer
 private extension HomeCollectionCollectionViewCellSecondLast {
-    func fetchData() {
-        savings = StorageManager.shared.getSavings()
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(scrollToNextItem), userInfo: nil, repeats: true)
+    }
+    
+    private func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc private func scrollToNextItem() {
+        guard let savings = savings, !savings.isEmpty else { return }
+        
+        currentIndex = (currentIndex + 1) % savings.count
+        
+        let indexPath = IndexPath(item: currentIndex, section: 0)
+        collectionSaving.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }
+
 
 // MARK: -- UICollectionViewDelegate, UICollectionViewDataSource
 extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -104,15 +130,16 @@ extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-              cell.backgroundColor = .gray // Placeholder color
-              return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellLastSecondCollectionViewCell.reuseId, for: indexPath) as! CellLastSecondCollectionViewCell
+        let provaider = savings![indexPath.row]
+        cell.config(saving: provaider)
+        return cell
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 80) // Adjust item size as needed
+        return CGSize(width: 150, height: 80) // Adjust item size as needed
     }
 }

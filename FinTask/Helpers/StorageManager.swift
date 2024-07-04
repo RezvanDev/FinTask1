@@ -224,6 +224,17 @@ extension StorageManager {
         
         return groupedExpenses
     }
+    
+    func getAllWallets() -> [Wallet] {
+        guard let user = getUser() else { return []}
+        
+        var allWalets: [Wallet] = []
+        user.wallets.forEach { wallet in
+            allWalets.append(wallet)
+        }
+        
+        return allWalets
+    }
 }
 
 // MARK: -- Launch first time
