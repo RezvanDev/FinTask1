@@ -14,9 +14,6 @@ enum AppColors {
     static let lightGreen = UIColor().rgb(r: 241, g: 255, b: 243)
     static let mediumGreen = UIColor().rgb(r: 223, g: 247, b: 226)
     static let lightGreenForButtonInButtomShield = UIColor().rgb(r: 255, g: 255, b: 255)
-    
-    static let arrayColors = [UIColor().rgb(r: 255, g: 163, b: 37), UIColor().rgb(r: 255, g: 83, b: 66), UIColor().rgb(r: 176, g: 117, b: 83), UIColor().rgb(r: 255, g: 207, b: 51)]
-    
     static let grayForSavigCells = UIColor().rgb(r: 241, g: 241, b: 241)
     static let lightGrayForSavigcells = UIColor().rgb(r: 246, g: 247, b: 250)
 }
