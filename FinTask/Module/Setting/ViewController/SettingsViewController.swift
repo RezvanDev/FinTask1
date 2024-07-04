@@ -26,7 +26,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         view.addSubview(settingsTitle)
         view.addSubview(tableView)
         view.addSubview(mainView)
-        view.addSubview(topGreenView)
+        view.addSubview(clearMainView)
+        view.addSubview(supportButton)
         mainView.addSubview(premiumStackView)
         premiumStackView.addArrangedSubview(crownImageView)
         premiumStackView.addArrangedSubview(premiumLabel)
@@ -60,7 +61,19 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             //crownImage constraints
             crownImageView.heightAnchor.constraint(equalToConstant: 10),
             crownImageView.widthAnchor.constraint(equalToConstant: 100),
-        
+            
+            //clearMainView constraints
+            clearMainView.topAnchor.constraint(equalTo: view.topAnchor),
+            clearMainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            clearMainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            clearMainView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            //supportButton constraints
+            supportButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
+            supportButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            supportButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            supportButton.heightAnchor.constraint(equalToConstant: 50),
+            supportButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
         
     }
@@ -123,18 +136,29 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         return mainImg
     }()
     
-    //setup topGreenView
-    private lazy var topGreenView: UIView = {
-        let greenView = UIView()
-        greenView.backgroundColor = AppColors.mainGreen
-        greenView.translatesAutoresizingMaskIntoConstraints = false
-        return greenView
+    //setup clearMainView
+    private lazy var clearMainView: UIView = {
+        let clearView = UIView()
+        clearView.backgroundColor = .clear
+        clearView.translatesAutoresizingMaskIntoConstraints = false
+        return clearView
+    }()
+    
+    //setup supportButton
+    private lazy var supportButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Button", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = AppColors.mediumGreen
+        button.layer.cornerRadius = 20
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     // setup gesture
     func setupTapGesture() {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.addGestureRecognizer(tapGesture!)
+        clearMainView.addGestureRecognizer(tapGesture!)
         tapGesture?.isEnabled = false
         
     }
@@ -183,7 +207,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     //MARK: --Objc
     @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
-        view.endEditing(true)
+        let vc = HomeViewController()
+        present(vc, animated: true)
     }
     
 }
