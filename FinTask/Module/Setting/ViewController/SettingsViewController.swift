@@ -27,6 +27,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         view.addSubview(tableView)
         view.addSubview(mainView)
         view.addSubview(clearMainView)
+        view.addSubview(supportButton)
         mainView.addSubview(premiumStackView)
         premiumStackView.addArrangedSubview(crownImageView)
         premiumStackView.addArrangedSubview(premiumLabel)
@@ -65,7 +66,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             clearMainView.topAnchor.constraint(equalTo: view.topAnchor),
             clearMainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             clearMainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            clearMainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            clearMainView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            //supportButton constraints
+            supportButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
+            supportButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            supportButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            supportButton.heightAnchor.constraint(equalToConstant: 50),
+            supportButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
         
     }
@@ -134,6 +142,17 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         clearView.backgroundColor = .clear
         clearView.translatesAutoresizingMaskIntoConstraints = false
         return clearView
+    }()
+    
+    //setup supportButton
+    private lazy var supportButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Button", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = AppColors.mediumGreen
+        button.layer.cornerRadius = 20
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     // setup gesture
