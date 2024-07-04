@@ -60,10 +60,9 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
     }
     
     func configure(contact: (image: UIImage?, title: String)) {
-        print(contact.title)
         iconImage.image = contact.image
         titleLabel.text = contact.title
         
     }
     
-}//recognizer
+}
