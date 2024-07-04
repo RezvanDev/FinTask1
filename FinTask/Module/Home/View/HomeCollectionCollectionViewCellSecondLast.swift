@@ -38,7 +38,7 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
         collection.dataSource = self
         collection.isPagingEnabled = true
         collection.showsHorizontalScrollIndicator = false
-        collection.register(CellLastSecondCollectionViewCell.self, forCellWithReuseIdentifier: CellLastSecondCollectionViewCell.reuseId)
+        collection.register(SavingHomeCollectionViewCell.self, forCellWithReuseIdentifier: SavingHomeCollectionViewCell.reuseId)
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
     }()
@@ -106,7 +106,7 @@ extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellLastSecondCollectionViewCell.reuseId, for: indexPath) as! CellLastSecondCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SavingHomeCollectionViewCell.reuseId, for: indexPath) as! SavingHomeCollectionViewCell
         let provaider = savings![indexPath.row]
         cell.config(saving: provaider)
         return cell

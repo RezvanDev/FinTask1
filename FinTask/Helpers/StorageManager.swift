@@ -98,6 +98,19 @@ extension StorageManager {
             user.savings.append(saving)
         }
     }
+    
+    func createMonthlyPayments(name: String, summ: Double, date: Date) {
+        guard let user = getUser() else { return }
+        
+        let monthlyPayment = MonthlyPayment()
+        monthlyPayment.name = name
+        monthlyPayment.amount = summ
+        monthlyPayment.date = date
+        
+        try! realm.write {
+            user.monthlyPayment.append(monthlyPayment)
+        }
+    }
 }
 
 // MARK: -- Get methods
@@ -225,6 +238,7 @@ extension StorageManager {
         return groupedExpenses
     }
     
+    // Get all wallets
     func getAllWallets() -> [Wallet] {
         guard let user = getUser() else { return []}
         
@@ -234,6 +248,17 @@ extension StorageManager {
         }
         
         return allWalets
+    }
+    
+    func getAllMonthlyPayment() -> [MonthlyPayment] {
+        guard let user = getUser() else { return []}
+        
+        var allMonthlyPayment: [MonthlyPayment] = []
+        user.monthlyPayment.forEach { mp in
+            allMonthlyPayment.append(mp)
+        }
+        
+        return allMonthlyPayment
     }
 }
 

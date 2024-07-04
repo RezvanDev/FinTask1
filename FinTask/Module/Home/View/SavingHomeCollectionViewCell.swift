@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CellLastSecondCollectionViewCell: UICollectionViewCell, CellProtocols{
+class SavingHomeCollectionViewCell: UICollectionViewCell, CellProtocols{
     
     static var reuseId: String = "CellLastSecondCollectionViewCell"
     

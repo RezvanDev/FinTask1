@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     private var totalExpense: Double?
     private var allSavings: [Saving]?
     private var allWallets: [Wallet]?
+    private var allMonthlyPayments: [MonthlyPayment]?
     
     private let homeModelCellMockData = HomeModelCellMockData()
     private let homeModelDate = HomeModelDate()
@@ -109,6 +110,7 @@ class HomeViewController: UIViewController {
         timeLabel.text = homeModelDate.timeUntilEndOfDay()
         fetchData()
     }
+    
 }
 
 // MARK: -- Set layer
@@ -237,6 +239,8 @@ private extension HomeViewController {
         totalIncome = StorageManager.shared.totalIncome()
         totalExpense = StorageManager.shared.totalExpense()
         allSavings = StorageManager.shared.getSavings()
+        allMonthlyPayments = StorageManager.shared.getAllMonthlyPayment()
+        collectionView.reloadData()
     }
 }
 
@@ -254,7 +258,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         } else if indexPath.row == 3{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCellLast.reuseId, for: indexPath) as! HomeCollectionViewCellLast
-            
+            cell.configure(monthlyPayments: allMonthlyPayments ?? [])
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseId, for: indexPath) as! HomeCollectionViewCell
@@ -278,7 +282,14 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             }
             present(savingVC, animated: true)
         } else if indexPath.row == 3 {
-            
+            let monthlyPaymentVC = MonthlyPaymentViewController()
+            monthlyPaymentVC.closure = { [weak self] res in
+                if res {
+                    self?.fetchData()
+                    self?.collectionView.reloadData()
+                }
+            }
+            present(monthlyPaymentVC, animated: true)
         }
         
     }
