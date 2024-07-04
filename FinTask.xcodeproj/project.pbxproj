@@ -42,6 +42,10 @@
 		54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */; };
 		54B69E112C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */; };
 		54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */; };
+		54B69E172C36BC0600C2BD4E /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E162C36BC0600C2BD4E /* DGChartsDynamic */; };
+		54B69E182C36BF7800C2BD4E /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E162C36BC0600C2BD4E /* DGChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		54B69E192C36BF7900C2BD4E /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		54B69E1B2C36C39400C2BD4E /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -56,6 +60,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				54B69E192C36BF7900C2BD4E /* RealmSwift in Embed Frameworks */,
+				54B69E182C36BF7800C2BD4E /* DGChartsDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -99,6 +105,7 @@
 		54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentTableViewCell.swift; sourceTree = "<group>"; };
 		54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyPaymentViewController.swift; sourceTree = "<group>"; };
 		54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyPaymentHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B69E172C36BC0600C2BD4E /* DGChartsDynamic in Frameworks */,
 				54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +347,7 @@
 			children = (
 				543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */,
 				543913E52C2ABCAF006A2075 /* AppColors.swift */,
+				54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +545,7 @@
 			name = FinTask;
 			packageProductDependencies = (
 				54B69E012C357DBD00C2BD4E /* RealmSwift */,
+				54B69E162C36BC0600C2BD4E /* DGChartsDynamic */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -567,6 +577,7 @@
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
 				54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				54B69E152C36BC0600C2BD4E /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -615,6 +626,7 @@
 				54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
+				54B69E1B2C36C39400C2BD4E /* TimeInterval+Extensions.swift in Sources */,
 				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
 				54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
@@ -867,6 +879,14 @@
 				kind = branch;
 			};
 		};
+		54B69E152C36BC0600C2BD4E /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -874,6 +894,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		54B69E162C36BC0600C2BD4E /* DGChartsDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54B69E152C36BC0600C2BD4E /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGChartsDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

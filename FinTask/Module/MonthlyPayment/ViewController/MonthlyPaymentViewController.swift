@@ -121,6 +121,9 @@ private extension MonthlyPaymentViewController {
         addMontlyPaymentVC.closure = {[weak self] res in
             if res {
                 self?.fetchSavings()
+                self?.setupSavingNotTitle()
+                self?.closure?(true)
+                self?.tableView.reloadData()
             }
         }
         present(addMontlyPaymentVC, animated: true)
