@@ -22,7 +22,7 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.text = "Test"
-        lbl.font = .systemFont(ofSize: 20, weight: .bold)
+        lbl.font = .systemFont(ofSize: 16, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -43,7 +43,6 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
             contentView.addSubview($0)
         }
         backgroundColor = AppColors.lightGrayMain
-        // 1  Нужно чтобы были не ячейки а секции и в каждой секции ячейка
         NSLayoutConstraint.activate([
             
             //title label constraints
@@ -54,8 +53,8 @@ class SettingsTableViewCell: UITableViewCell, CellProtocols {
             //iconImage constraints
             iconImage.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
             iconImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            iconImage.heightAnchor.constraint(equalToConstant: 35),
-            iconImage.widthAnchor.constraint(equalToConstant: 35)
+            iconImage.heightAnchor.constraint(equalToConstant: 30),
+            iconImage.widthAnchor.constraint(equalToConstant: 30)
         ])
     }
     
