@@ -26,7 +26,6 @@ class SavingViewController: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        lbl.isHidden = true
         return lbl
     }()
     private lazy var tableView: UITableView = {
@@ -50,9 +49,10 @@ class SavingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         fetchSavings()
+        setup()
     }
+    
 }
 
 // MARK: -- Setup Layer
@@ -77,9 +77,13 @@ private extension SavingViewController {
     
     // Setup saving not title
     func setupSavingNotTitle() {
-        // logic work with this title
-        //
-        //
+        if savings == nil || savings?.isEmpty == true {
+            tableView.isHidden = true
+            savingNotTitle.isHidden = false
+        } else {
+            tableView.isHidden = false
+            savingNotTitle.isHidden = true
+        }
         
         view.addSubview(savingNotTitle)
         
@@ -116,6 +120,7 @@ private extension SavingViewController {
         vc.closure = { [weak self] res in
             if res {
                 self?.fetchSavings()
+                self?.setupSavingNotTitle()
                 self?.tableView.reloadData()
                 self?.closure?(true)
             }
@@ -165,6 +170,7 @@ extension SavingViewController: UITableViewDelegate, UITableViewDataSource {
         vc.closure = {[weak self] res in
             if res {
                 self?.fetchSavings()
+                self?.setupSavingNotTitle()
                 self?.tableView.reloadData()
                 self?.closure?(true)
             }

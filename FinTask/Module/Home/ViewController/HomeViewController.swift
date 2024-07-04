@@ -274,7 +274,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 if res {
                     self?.fetchData()
                     self?.collectionView.reloadData()
-                    print(self?.allSavings)
                 }
             }
             present(savingVC, animated: true)

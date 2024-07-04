@@ -35,8 +35,9 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
-        collection.isScrollEnabled = false
         collection.dataSource = self
+        collection.isPagingEnabled = true
+        collection.showsHorizontalScrollIndicator = false
         collection.register(CellLastSecondCollectionViewCell.self, forCellWithReuseIdentifier: CellLastSecondCollectionViewCell.reuseId)
         collection.translatesAutoresizingMaskIntoConstraints = false
         return collection
@@ -46,7 +47,6 @@ class HomeCollectionCollectionViewCellSecondLast: UICollectionViewCell, CellProt
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
-        startTimer()
     }
     
     required init?(coder: NSCoder) {
@@ -98,30 +98,6 @@ private extension HomeCollectionCollectionViewCellSecondLast {
     }
     
 }
-
-
-// Timer
-private extension HomeCollectionCollectionViewCellSecondLast {
-    
-    private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(scrollToNextItem), userInfo: nil, repeats: true)
-    }
-    
-    private func stopTimer() {
-        timer?.invalidate()
-        timer = nil
-    }
-    
-    @objc private func scrollToNextItem() {
-        guard let savings = savings, !savings.isEmpty else { return }
-        
-        currentIndex = (currentIndex + 1) % savings.count
-        
-        let indexPath = IndexPath(item: currentIndex, section: 0)
-        collectionSaving.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    }
-}
-
 
 // MARK: -- UICollectionViewDelegate, UICollectionViewDataSource
 extension HomeCollectionCollectionViewCellSecondLast: UICollectionViewDelegate, UICollectionViewDataSource {

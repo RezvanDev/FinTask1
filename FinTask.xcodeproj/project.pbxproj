@@ -38,6 +38,7 @@
 		54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */; };
 		54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; };
 		54B69E052C35904300C2BD4E /* CellLastSecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E042C35904300C2BD4E /* CellLastSecondCollectionViewCell.swift */; };
+		54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -91,6 +92,7 @@
 		54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSavingViewController.swift; sourceTree = "<group>"; };
 		54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCollectionViewCellSecondLast.swift; sourceTree = "<group>"; };
 		54B69E042C35904300C2BD4E /* CellLastSecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLastSecondCollectionViewCell.swift; sourceTree = "<group>"; };
+		54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentViewController.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				54B69E072C36974700C2BD4E /* MonthlyPayment */,
 				54B69DFA2C355A1600C2BD4E /* EditSaving */,
 				54B69DF32C3544DD00C2BD4E /* AddSaving */,
 				54B69DEB2C352C2800C2BD4E /* Saving */,
@@ -440,6 +443,22 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		54B69E072C36974700C2BD4E /* MonthlyPayment */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E082C36975700C2BD4E /* ViewController */,
+			);
+			path = MonthlyPayment;
+			sourceTree = "<group>";
+		};
+		54B69E082C36975700C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		54BFBEB52C2C17D700379920 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +570,7 @@
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
 				54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */,
+				54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */,
 				54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
 				54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */,
