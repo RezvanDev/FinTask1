@@ -46,6 +46,7 @@
 		54B69E182C36BF7800C2BD4E /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E162C36BC0600C2BD4E /* DGChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		54B69E192C36BF7900C2BD4E /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		54B69E1B2C36C39400C2BD4E /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */; };
+		54B69E1E2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E1D2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -106,6 +107,7 @@
 		54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyPaymentViewController.swift; sourceTree = "<group>"; };
 		54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyPaymentHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		54B69E1D2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticTableViewCell.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		543913CC2C296BC8006A2075 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				54B69E1C2C36D5A200C2BD4E /* View */,
 				543913CD2C296BD9006A2075 /* ViewController */,
 			);
 			path = Analytics;
@@ -501,6 +504,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		54B69E1C2C36D5A200C2BD4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E1D2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		54BFBEB52C2C17D700379920 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +629,7 @@
 				54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */,
 				54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */,
 				54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */,
+				54B69E1E2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
 				54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */,
 				54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */,

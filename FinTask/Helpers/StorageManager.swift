@@ -115,10 +115,18 @@ extension StorageManager {
 
 // MARK: -- Get methods
 extension StorageManager {
+    
     // Get user
     func getUser() -> User? {
         return realm.objects(User.self).first
     }
+    
+    // Get wallet
+    func getWallet() -> Wallet {
+        guard let user = getUser() else { return Wallet()}
+        return user.wallets.first!
+    }
+    
     // Get all expense categories
     func getAllExpenseCategories() -> [CategoryExpense] {
         guard let user = getUser() else { return [] }
@@ -279,21 +287,28 @@ extension StorageManager {
         
         // Add default categories for incomes
         let categoriesIncome = ["Работа": "doc", "Фриланс": "network", "Подарок": "gift", "Банк": "creditcard"]
+        let colorsIncome = ["#FFF8DC", "#F4A460", "#DC143C", "#FF6347"]
+        var count = 0
         for (categoryName, categoryImage) in categoriesIncome {
             let category = CategoryIncome()
             category.name = categoryName
             category.image = categoryImage
+            category.colorString = colorsIncome[count]
+            count += 1
             try! realm.write {
                 wallet.categoriesIncome.append(category)
             }
         }
-        
+        count = 0
         // Add default categories for expenses
         let categoriesExpense = ["Развлечения": "cart", "Транспорт": "car", "Бизнес": "banknote.fill", "Продукты": "carrot", "Переводы": "dollarsign.arrow.circlepath", "Подарки": "gift", "Еда": "fork.knife"]
+        let colorsExpense = ["#00FFFF", "#FFE4B5", "#FF00FF", "#6B8E23", "#ebad81", "#6A5ACD", "#32CD32"]
         for  (categoryName, categoryImage) in categoriesExpense {
             let category = CategoryExpense()
             category.name = categoryName
             category.image = categoryImage
+            category.colorString = colorsExpense[count]
+            count += 1
             try! realm.write {
                 wallet.categoriesExpense.append(category)
             }

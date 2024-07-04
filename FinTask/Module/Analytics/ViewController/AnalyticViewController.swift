@@ -7,13 +7,17 @@
 
 import UIKit
 import DGCharts
+import RealmSwift
 
 class AnalyticViewController: UIViewController {
     
     private var expenseCategories: [CategoryExpense]?
     private var incomeCategories: [CategoryIncome]?
+    private var wallet: Wallet?
     private var isShowingExpenses: Bool = true
     private var selectedTimeInterval: TimeInterval = .day
+    private var tableData: [Object] = []
+    private var categoryColors: [UIColor] = []
     
     private lazy var analyticsTitle: UILabel = {
         let lbl = UILabel()
@@ -41,13 +45,32 @@ class AnalyticViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
+    private lazy var segmentedControlContainer: UIView = {
+        let container = UIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        container.backgroundColor = AppColors.lightGreen
+        container.layer.cornerRadius = 20  // Adjust corner radius as needed
+        container.layer.masksToBounds = true
+        return container
+    }()
     private lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: ["Expenses", "Incomes"])
+        let control = UISegmentedControl(items: ["Расходы", "Доходы"])
         control.selectedSegmentIndex = 0
         control.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
         control.translatesAutoresizingMaskIntoConstraints = false
+        control.backgroundColor = .clear
+        control.selectedSegmentTintColor = AppColors.mainGreen
         return control
+    }()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.showsVerticalScrollIndicator = false
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        tableView.register(AnalyticTableViewCell.self, forCellReuseIdentifier: AnalyticTableViewCell.reuseId)
+        return tableView
     }()
     
     override func viewDidLoad() {
@@ -72,6 +95,7 @@ private extension AnalyticViewController {
         setupFilterButton()
         setupPieChartView()
         setupSegmentedControl()
+        setupTableView()
     }
     
     // Setup history title
@@ -98,11 +122,20 @@ private extension AnalyticViewController {
     
     // Setup SC
     func setupSegmentedControl() {
-        view.addSubview(segmentedControl)
+        view.addSubview(segmentedControlContainer)
+        segmentedControlContainer.addSubview(segmentedControl)
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: pieChartView.bottomAnchor, constant: 20),
-            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            segmentedControlContainer.topAnchor.constraint(equalTo: pieChartView.bottomAnchor, constant: 20),
+            segmentedControlContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            segmentedControlContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            segmentedControlContainer.heightAnchor.constraint(equalToConstant: 40),
+            
+            segmentedControl.topAnchor.constraint(equalTo: segmentedControlContainer.topAnchor, constant: -5),
+            segmentedControl.leadingAnchor.constraint(equalTo: segmentedControlContainer.leadingAnchor, constant: -5),
+            segmentedControl.trailingAnchor.constraint(equalTo: segmentedControlContainer.trailingAnchor, constant: 5),
+            segmentedControl.bottomAnchor.constraint(equalTo: segmentedControlContainer.bottomAnchor, constant: 5),
         ])
     }
     
@@ -115,12 +148,24 @@ private extension AnalyticViewController {
             filterButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
         ])
     }
+    
+    func setupTableView() {
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: segmentedControlContainer.bottomAnchor, constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
 }
 // MARK: -- Data Fetching
 private extension AnalyticViewController {
     func fetchCategories() {
         expenseCategories = StorageManager.shared.getAllExpenseCategories()
         incomeCategories = StorageManager.shared.getAllIncomeCategories()
+        wallet = StorageManager.shared.getWallet()
     }
     
     func updateChartData() {
@@ -145,8 +190,14 @@ private extension AnalyticViewController {
                 }
                 let categoryTotal = filteredExpenses.reduce(0) { $0 + $1.amount }
                 totalAmount += categoryTotal
+                if let color = UIColor(hexString: category.colorString) {
+                    categoryColors.append(color)
+                } else {
+                    categoryColors.append(.clear)
+                }
                 return PieChartDataEntry(value: categoryTotal, label: category.name)
             }
+            tableData = Array(expenseCategories!)
         } else {
             entries = incomeCategories!.compactMap { category in
                 let filteredIncomes = category.incomes.filter { income in
@@ -163,21 +214,29 @@ private extension AnalyticViewController {
                 }
                 let categoryTotal = filteredIncomes.reduce(0) { $0 + $1.amount }
                 totalAmount += categoryTotal
+                if let color = UIColor(hexString: category.colorString) {
+                    categoryColors.append(color)
+                } else {
+                    categoryColors.append(.clear)
+                }
                 return PieChartDataEntry(value: categoryTotal, label: category.name)
             }
+            tableData = Array(incomeCategories!)
         }
         
         let dataSet = PieChartDataSet(entries: entries, label: "")
         dataSet.drawValuesEnabled = false
-        dataSet.colors = ChartColorTemplates.pastel()
+        dataSet.colors = categoryColors
         
         let data = PieChartData(dataSet: dataSet)
         pieChartView.data = data
         pieChartView.notifyDataSetChanged()
         
         
-        let totalText = isShowingExpenses ? "Total Expenses\n\(totalAmount)" : "Total Incomes\n\(totalAmount)"
+        let totalText = isShowingExpenses ? "\(wallet!.nameCurrency)\(totalAmount)" : "\(wallet!.nameCurrency)\(totalAmount)"
         pieChartView.centerText = totalText
+        
+        tableView.reloadData()
     }
 }
 
@@ -186,6 +245,7 @@ private extension AnalyticViewController {
     @objc private func segmentChanged(_ sender: UISegmentedControl) {
         isShowingExpenses = sender.selectedSegmentIndex == 0
         updateChartData()
+        
     }
     
     @objc private func showTimeIntervalOptions() {
@@ -215,5 +275,22 @@ private extension AnalyticViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+}
+
+// MARK: --
+extension AnalyticViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnalyticTableViewCell.reuseId, for: indexPath) as! AnalyticTableViewCell
+        let category = tableData[indexPath.row]
+        let color = categoryColors[indexPath.row]
+        cell.configure(with: category, wallet: self.wallet!, color: color)
+        cell.selectionStyle = .none
+        return cell
+    }
+    
     
 }
