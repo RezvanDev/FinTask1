@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */; };
+		2258CB0A2C36999A00637949 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258CB092C36999A00637949 /* RealmSwift.framework */; };
 		541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A62C2835A400AFA81C /* AppDelegate.swift */; };
 		541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A82C2835A400AFA81C /* SceneDelegate.swift */; };
 		541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7AA2C2835A400AFA81C /* TabBarViewController.swift */; };
@@ -38,21 +39,10 @@
 		54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C8A9112C2C390000AF2D6D /* LimitViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		54BFBEA42C2BFC6900379920 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2258CB062C36998900637949 /* Pods_FinTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_FinTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2258CB092C36999A00637949 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		541AC7A32C2835A400AFA81C /* FinTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		541AC7A62C2835A400AFA81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		541AC7A82C2835A400AFA81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2258CB0A2C36999A00637949 /* RealmSwift.framework in Frameworks */,
 				54B69DD52C32FC7D00C2BD4E /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,13 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		22002EFD2C346B1A00921172 /* PremiumSubViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PremiumSubViewController;
-			sourceTree = "<group>";
-		};
 		223E3B202C2A2E0F005B3FD2 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +101,15 @@
 				223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2258CB052C36998900637949 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2258CB092C36999A00637949 /* RealmSwift.framework */,
+				2258CB062C36998900637949 /* Pods_FinTask.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		22BD30082C2871C400945318 /* Module */ = {
@@ -148,6 +141,7 @@
 			children = (
 				541AC7A52C2835A400AFA81C /* FinTask */,
 				541AC7A42C2835A400AFA81C /* Products */,
+				2258CB052C36998900637949 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -249,7 +243,6 @@
 		543913D02C296BE9006A2075 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				22002EFD2C346B1A00921172 /* PremiumSubViewController */,
 				54B69DD82C32FD0200C2BD4E /* View */,
 				543913D12C296BED006A2075 /* ViewController */,
 			);
@@ -406,7 +399,6 @@
 				541AC79F2C2835A400AFA81C /* Sources */,
 				541AC7A02C2835A400AFA81C /* Frameworks */,
 				541AC7A12C2835A400AFA81C /* Resources */,
-				54BFBEA42C2BFC6900379920 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
