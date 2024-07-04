@@ -41,7 +41,6 @@ class IncomeCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
     }()
     
     
-    private let colorsForView: [UIColor] = AppColors.arrayColors
     private var flag = 0
     
     override init(frame: CGRect) {
@@ -57,7 +56,9 @@ class IncomeCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
     func configure(with category: CategoryIncome) {
         title.text = category.name
         image.image = UIImage(systemName: category.image)
-        viewMain.backgroundColor = colorsForView.randomElement()
+        if let color = UIColor(hexString: category.colorString) {
+            viewMain.backgroundColor = color
+        }
         viewMain.layer.borderColor = UIColor.clear.cgColor
     }
     

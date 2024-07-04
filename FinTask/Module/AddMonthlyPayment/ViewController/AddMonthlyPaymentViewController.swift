@@ -14,7 +14,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Добавление накопления"
+        lbl.text = "Добавление платежа"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 25, weight: .bold)

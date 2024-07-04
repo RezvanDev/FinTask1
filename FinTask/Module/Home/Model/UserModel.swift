@@ -7,6 +7,7 @@
 
 import RealmSwift
 import Foundation
+import UIKit
 
 class User: Object {
     @objc dynamic var id: String = UUID().uuidString
@@ -38,6 +39,7 @@ class CategoryIncome: Object {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var name: String = ""
     @objc dynamic var image: String = ""
+    @objc dynamic var colorString: String = ""
     let incomes = List<Income>()
     
     override static func primaryKey() -> String? {
@@ -50,6 +52,7 @@ class CategoryExpense: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var image: String = ""
     @objc dynamic var limits: Double = 0.0
+    @objc dynamic var colorString: String = ""
     let expenses = List<Expense>()
     
     override static func primaryKey() -> String? {
