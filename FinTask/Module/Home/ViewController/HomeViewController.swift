@@ -74,6 +74,7 @@ class HomeViewController: UIViewController {
         collection.delegate = self
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: HomeCollectionViewCell.reuseId)
+        collection.register(HomeCollectionCollectionViewCellSecondLast.self, forCellWithReuseIdentifier: HomeCollectionCollectionViewCellSecondLast.reuseId)
         collection.register(HomeCollectionViewCellLast.self, forCellWithReuseIdentifier: HomeCollectionViewCellLast.reuseId)
         return collection
     }()
@@ -102,10 +103,13 @@ class HomeViewController: UIViewController {
         setup()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         timeLabel.text = homeModelDate.timeUntilEndOfDay()
+        fetchData()
     }
+    
 }
 
 // MARK: -- Set layer
@@ -113,6 +117,7 @@ private extension HomeViewController {
     
     func setup() {
         view.backgroundColor = .white
+        fetchData()
         setupConstraintsHeaderViewBackground()
         setupHeaderView()
         setupLabelsOnViewBackground()

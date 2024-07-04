@@ -44,19 +44,19 @@ class LimitTableViewCell: UITableViewCell, CellProtocols {
         return view
     }()
     
-    private let limitView: UIView = {
+    private lazy var limitView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .lightGray
         view.layer.cornerRadius = 8
+        view.clipsToBounds = true
         return view
     }()
     
-    private let filledView: UIView = {
+    private lazy var filledView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .green
-        view.layer.cornerRadius = 8
         return view
     }()
     
@@ -100,8 +100,15 @@ class LimitTableViewCell: UITableViewCell, CellProtocols {
         title.text = category.name
         imageMain.image = UIImage(systemName: category.image)
         
+        // Получаем начало и конец текущего месяца
+        let calendar = Calendar.current
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: Date()))!
+        let endOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: startOfMonth)!
+        
+        let currentMonthExpenses = category.expenses.filter("date >= %@ AND date <= %@", startOfMonth, endOfMonth)
+        let totalExpenses = currentMonthExpenses.reduce(0) { $0 + $1.amount }
+        
         if category.limits > 0 {
-            let totalExpenses = category.expenses.reduce(0) { $0 + $1.amount }
             let ratio = min(Double(totalExpenses) / category.limits, 1.0)
             updateProgressBar(ratio: ratio)
             

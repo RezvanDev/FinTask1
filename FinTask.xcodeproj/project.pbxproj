@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */; };
+		2258CB0A2C36999A00637949 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258CB092C36999A00637949 /* RealmSwift.framework */; };
 		541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A62C2835A400AFA81C /* AppDelegate.swift */; };
 		541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A82C2835A400AFA81C /* SceneDelegate.swift */; };
 		541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7AA2C2835A400AFA81C /* TabBarViewController.swift */; };
@@ -38,6 +39,8 @@
 		54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C8A9112C2C390000AF2D6D /* LimitViewController.swift */; };
 /* End PBXBuildFile section */
 
+<<<<<<< HEAD
+=======
 /* Begin PBXCopyFilesBuildPhase section */
 		54BFBEA42C2BFC6900379920 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -45,14 +48,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				54B69E192C36BF7900C2BD4E /* RealmSwift in Embed Frameworks */,
+				54B69E182C36BF7800C2BD4E /* DGChartsDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
+>>>>>>> main
 /* Begin PBXFileReference section */
 		223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2258CB062C36998900637949 /* Pods_FinTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_FinTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2258CB092C36999A00637949 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		541AC7A32C2835A400AFA81C /* FinTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		541AC7A62C2835A400AFA81C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		541AC7A82C2835A400AFA81C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +85,19 @@
 		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
 		54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
+		54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingTableViewCell.swift; sourceTree = "<group>"; };
+		54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSavingViewController.swift; sourceTree = "<group>"; };
+		54B69DF82C35528400C2BD4E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSavingViewController.swift; sourceTree = "<group>"; };
+		54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCollectionViewCellSecondLast.swift; sourceTree = "<group>"; };
+		54B69E042C35904300C2BD4E /* SavingHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentViewController.swift; sourceTree = "<group>"; };
+		54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentTableViewCell.swift; sourceTree = "<group>"; };
+		54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyPaymentViewController.swift; sourceTree = "<group>"; };
+		54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyPaymentHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		54B69E1D2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticTableViewCell.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -89,7 +110,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				2258CB0A2C36999A00637949 /* RealmSwift.framework in Frameworks */,
 				54B69DD52C32FC7D00C2BD4E /* RealmSwift in Frameworks */,
+=======
+				54B69E172C36BC0600C2BD4E /* DGChartsDynamic in Frameworks */,
+				54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */,
+>>>>>>> main
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,9 +139,23 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		2258CB052C36998900637949 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2258CB092C36999A00637949 /* RealmSwift.framework */,
+				2258CB062C36998900637949 /* Pods_FinTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				54B69E0E2C36A24100C2BD4E /* AddMonthlyPayment */,
+				54B69E072C36974700C2BD4E /* MonthlyPayment */,
+				54B69DFA2C355A1600C2BD4E /* EditSaving */,
+				54B69DF32C3544DD00C2BD4E /* AddSaving */,
+				54B69DEB2C352C2800C2BD4E /* Saving */,
 				545D08772C31876E005F19CE /* AddIncome */,
 				547C8D9F2C2D7DCC008EA96D /* AddExpense */,
 				223E3B202C2A2E0F005B3FD2 /* Onboarding */,
@@ -141,6 +182,7 @@
 			children = (
 				541AC7A52C2835A400AFA81C /* FinTask */,
 				541AC7A42C2835A400AFA81C /* Products */,
+				2258CB052C36998900637949 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,6 +268,7 @@
 		543913CC2C296BC8006A2075 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				54B69E1C2C36D5A200C2BD4E /* View */,
 				543913CD2C296BD9006A2075 /* ViewController */,
 			);
 			path = Analytics;
@@ -287,7 +330,10 @@
 			isa = PBXGroup;
 			children = (
 				543913DD2C2AA783006A2075 /* HomeCollectionViewCell.swift */,
+				54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */,
 				54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */,
+				54B69E042C35904300C2BD4E /* SavingHomeCollectionViewCell.swift */,
+				54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +345,7 @@
 				543913E02C2AAD93006A2075 /* Protocols.swift */,
 				54BFBE902C2BF43C00379920 /* StorageManager.swift */,
 				545D08712C317A3E005F19CE /* Alerts.swift */,
+				54B69DF82C35528400C2BD4E /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -308,6 +355,7 @@
 			children = (
 				543913E32C2ABC97006A2075 /* UIColor+Extensions.swift */,
 				543913E52C2ABCAF006A2075 /* AppColors.swift */,
+				54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +407,112 @@
 			isa = PBXGroup;
 			children = (
 				54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54B69DEB2C352C2800C2BD4E /* Saving */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF02C3530F500C2BD4E /* View */,
+				54B69DED2C352C4E00C2BD4E /* ViewController */,
+			);
+			path = Saving;
+			sourceTree = "<group>";
+		};
+		54B69DED2C352C4E00C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69DF02C3530F500C2BD4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54B69DF32C3544DD00C2BD4E /* AddSaving */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF42C3544E300C2BD4E /* ViewController */,
+			);
+			path = AddSaving;
+			sourceTree = "<group>";
+		};
+		54B69DF42C3544E300C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69DFA2C355A1600C2BD4E /* EditSaving */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DFB2C355A1B00C2BD4E /* ViewController */,
+			);
+			path = EditSaving;
+			sourceTree = "<group>";
+		};
+		54B69DFB2C355A1B00C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69E072C36974700C2BD4E /* MonthlyPayment */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E0B2C369A6900C2BD4E /* View */,
+				54B69E082C36975700C2BD4E /* ViewController */,
+			);
+			path = MonthlyPayment;
+			sourceTree = "<group>";
+		};
+		54B69E082C36975700C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69E0B2C369A6900C2BD4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54B69E0E2C36A24100C2BD4E /* AddMonthlyPayment */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E0F2C36A24B00C2BD4E /* ViewController */,
+			);
+			path = AddMonthlyPayment;
+			sourceTree = "<group>";
+		};
+		54B69E0F2C36A24B00C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69E1C2C36D5A200C2BD4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E1D2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -470,25 +624,38 @@
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
 				541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */,
+				54B69E112C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
+				54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */,
+				54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */,
+				54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */,
 				54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */,
+				54B69E1E2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
+				54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */,
+				54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
+				54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */,
 				54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
+				54B69E1B2C36C39400C2BD4E /* TimeInterval+Extensions.swift in Sources */,
 				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
+				54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
 				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
+				54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,
+				54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
 				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
+				54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */,
 				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,
 				543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */,
 			);
