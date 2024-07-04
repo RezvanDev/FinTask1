@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController{
     
     private var tapGesture: UITapGestureRecognizer?
     
@@ -16,24 +16,88 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         (UIImage(systemName: "square.and.arrow.down"),"Категории доходов"),
         (UIImage(systemName: "dollarsign.circle"),"Валюта по умолчанию"),
         (UIImage(systemName: "globe"),"Язык интерфейса"),
-        (UIImage(named: "sliders"),"Дополнительно")
+        (UIImage(named: "sliders"),"Дополнительно"),
+        (UIImage(systemName: "envelope.fill"), "Связаться с разработчиком")
     ]
+    
+    private lazy var settingsTitle: UILabel = {
+        let lbl = UILabel()
+        lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        lbl.text = "Настройки"
+        lbl.textColor = .black
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        return lbl
+    }()
+    
+    private lazy var tableView: UITableView = {
+        let tbView = UITableView()
+        tbView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.reuseId)
+        tbView.delegate = self
+        tbView.dataSource = self
+        tbView.translatesAutoresizingMaskIntoConstraints = false
+        tbView.layer.cornerRadius = 20
+        tbView.isScrollEnabled = false
+        return tbView
+    }()
+    
+    private lazy var mainView: UIView = {
+        let mainObj = UIView()
+        mainObj.backgroundColor = AppColors.mainGreen
+        mainObj.translatesAutoresizingMaskIntoConstraints = false
+        mainObj.layer.cornerRadius = 20
+        return mainObj
+    }()
+    
+    private lazy var premiumLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Купить премиум"
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textColor = .black
+        return label
+    }()
+    
+    private lazy var premiumStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 23
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private lazy var crownImageView: UIImageView = {
+        let mainImg = UIImageView()
+        mainImg.image = UIImage(named: "crown")
+        mainImg.translatesAutoresizingMaskIntoConstraints = false
+        mainImg.contentMode = .scaleAspectFill
+        return mainImg
+    }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setup()
+    }
+}
+// MARK: -- Setup Layer
+private extension SettingsViewController {
+    
+    func setup() {
         view.backgroundColor = .white
+        setupConstraints()
+        setupTapGesture()
+    }
+    func setupConstraints() {
         view.addSubview(settingsTitle)
         view.addSubview(tableView)
         view.addSubview(mainView)
-        view.addSubview(clearMainView)
-        view.addSubview(supportButton)
+      
+        
         mainView.addSubview(premiumStackView)
         premiumStackView.addArrangedSubview(crownImageView)
         premiumStackView.addArrangedSubview(premiumLabel)
         
-        //MARK: --Constraints
-        //settingsTitle constraints
+        
         NSLayoutConstraint.activate([
             settingsTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
             settingsTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -62,107 +126,30 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             crownImageView.heightAnchor.constraint(equalToConstant: 10),
             crownImageView.widthAnchor.constraint(equalToConstant: 100),
             
-            //clearMainView constraints
-            clearMainView.topAnchor.constraint(equalTo: view.topAnchor),
-            clearMainView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            clearMainView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            clearMainView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            //supportButton constraints
-            supportButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 20),
-            supportButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            supportButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            supportButton.heightAnchor.constraint(equalToConstant: 50),
-            supportButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
         
     }
     
-    //MARK: --ViewSetup
-    //main settings title
-    private lazy var settingsTitle: UILabel = {
-        let lbl = UILabel()
-        lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        lbl.text = "Настройки"
-        lbl.textColor = .black
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        return lbl
-    }()
-    
-    private lazy var tableView: UITableView = {
-        let tbView = UITableView()
-        tbView.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.reuseId)
-        tbView.delegate = self
-        tbView.dataSource = self
-        tbView.translatesAutoresizingMaskIntoConstraints = false
-        tbView.layer.cornerRadius = 20
-        tbView.isScrollEnabled = false
-        return tbView
-    }()
-    
-    //setup mainView
-    private lazy var mainView: UIView = {
-        let mainObj = UIView()
-        mainObj.backgroundColor = AppColors.mainGreen
-        mainObj.translatesAutoresizingMaskIntoConstraints = false
-        mainObj.layer.cornerRadius = 20
-        return mainObj
-    }()
-    
-    //setup buyPremiumLabel
-    private lazy var premiumLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Купить премиум"
-        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        label.textColor = .black
-        return label
-    }()
-    
-    //setup stackView
-    private lazy var premiumStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 23
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
-    //setup crown image
-    private lazy var crownImageView: UIImageView = {
-        let mainImg = UIImageView()
-        mainImg.image = UIImage(named: "crown")
-        mainImg.translatesAutoresizingMaskIntoConstraints = false
-        mainImg.contentMode = .scaleAspectFill
-        return mainImg
-    }()
-    
-    //setup clearMainView
-    private lazy var clearMainView: UIView = {
-        let clearView = UIView()
-        clearView.backgroundColor = .clear
-        clearView.translatesAutoresizingMaskIntoConstraints = false
-        return clearView
-    }()
-    
-    //setup supportButton
-    private lazy var supportButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Button", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = AppColors.mediumGreen
-        button.layer.cornerRadius = 20
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     // setup gesture
     func setupTapGesture() {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        clearMainView.addGestureRecognizer(tapGesture!)
-        tapGesture?.isEnabled = false
+        mainView.addGestureRecognizer(tapGesture!)
+        tapGesture?.isEnabled = true
         
     }
+}
     
+
+//MARK: -- OBJC
+private extension SettingsViewController {
+    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+        print(#function)
+    }
+}
+
+
+// MARK: UITableViewDataSource, UITableViewDelegate
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         settingsCell.count
     }
@@ -172,13 +159,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseId, for: indexPath) as? SettingsTableViewCell else {
-            return UITableViewCell()
-        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.reuseId, for: indexPath) as! SettingsTableViewCell
         let item = settingsCell[indexPath.section]
         
         //rounded edges
-        if indexPath.section == 4 ? true: false {
+        if indexPath.section == 5 ? true: false {
             let cornerRadius: CGFloat = 20.0
             let maskPath = UIBezierPath(roundedRect: cell.bounds,
                                         byRoundingCorners: [.bottomLeft, .bottomRight],
@@ -205,10 +191,4 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5
     }
-    //MARK: --Objc
-    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
-        let vc = HomeViewController()
-        present(vc, animated: true)
-    }
-    
 }
