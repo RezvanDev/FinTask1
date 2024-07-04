@@ -16,7 +16,6 @@ class SettingsViewController: UIViewController{
         (UIImage(systemName: "square.and.arrow.down"),"Категории доходов"),
         (UIImage(systemName: "dollarsign.circle"),"Валюта по умолчанию"),
         (UIImage(systemName: "globe"),"Язык интерфейса"),
-        (UIImage(named: "sliders"),"Дополнительно"),
         (UIImage(systemName: "envelope.fill"), "Связаться с разработчиком")
     ]
     
@@ -164,7 +163,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let item = settingsCell[indexPath.section]
         
         //rounded edges
-        if indexPath.section == 5 ? true: false {
+        if indexPath.section == 4 ? true: false {
             let cornerRadius: CGFloat = 20.0
             let maskPath = UIBezierPath(roundedRect: cell.bounds,
                                         byRoundingCorners: [.bottomLeft, .bottomRight],
@@ -190,5 +189,21 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = [AddCategoryViewController(), AddCategoryViewController(), EditCurrencyViewController(), ChangeLanguageViewController()]
+        if indexPath.section == 4 {
+            // MARK: -- ЗДЕСЬ В ЭТОМ БЛОКЕ РЕАЛИЗАЦИЯ СВЯЗИ С РАЗРАБОТЧИКОМ
+            // ->
+            
+            
+            
+            
+            
+            // <-
+        } else {
+            present(vc[indexPath.section], animated: true)
+        }
     }
 }
