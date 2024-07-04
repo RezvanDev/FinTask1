@@ -146,12 +146,8 @@ private extension FinanceViewController {
         tableView.reloadData()
     }
 
-    // Format date
-    func formatDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        return formatter.string(from: date)
-    }
+
+    
     
     // Setup buttons
     func setupButtons() {
@@ -240,7 +236,7 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         } else if Calendar.current.isDateInYesterday(date) {
             return "Вчера"
         } else {
-            return formatDate(date)
+            return Helpers.shared.formatDate(date)
         }
     }
     

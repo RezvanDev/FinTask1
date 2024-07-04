@@ -12,71 +12,121 @@ import CoreLocation
 class StorageManager {
     static let shared = StorageManager()
     private var realm = try! Realm()
-    private let geocoder = CLGeocoder()
+    
 }
 
 // MARK: -- Update methods
 extension StorageManager {
     func updateCategoryLimit(categoryId: String, newLimit: Double) {
-            guard let user = getUser() else { return }
-            
-            for wallet in user.wallets {
-                if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
-                    try! realm.write {
-                        category.limits = newLimit
-                    }
-                    break
+        guard let user = getUser() else { return }
+        
+        for wallet in user.wallets {
+            if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
+                try! realm.write {
+                    category.limits = newLimit
+                }
+                break
+            }
+        }
+    }
+    
+    func updateSaving(savingId: String, sum: Double) {
+        guard let user = getUser() else { return }
+        if let saving = user.savings.first(where: {$0.id == savingId}) {
+            try! realm.write {
+                saving.haveAmount += sum
+                if saving.haveAmount >= saving.needAmount {
+                    user.savings.remove(at: user.savings.index(of: saving)!)
                 }
             }
         }
+    }
 }
 
 // MARK: -- Set methods
 extension StorageManager {
     // Method to create a new expense for a given category ID
     func createExpense(for categoryId: String, amount: Double, date: Date, note: String?) {
-            guard let user = getUser() else { return }
-            
-            for wallet in user.wallets {
-                if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
-                    let expense = Expense()
-                    expense.amount = amount
-                    expense.date = date
-                    expense.note = note
-                    
-                    try! realm.write {
-                        category.expenses.append(expense)
-                    }
-                    break
+        guard let user = getUser() else { return }
+        
+        for wallet in user.wallets {
+            if let category = wallet.categoriesExpense.first(where: { $0.id == categoryId }) {
+                let expense = Expense()
+                expense.amount = amount
+                expense.date = date
+                expense.note = note
+                
+                try! realm.write {
+                    category.expenses.append(expense)
                 }
+                break
             }
+        }
     }
     
+    
+    // Method to create a new income for a given category ID
     func createIncome(for categoryId: String, amount: Double, date: Date, note: String?) {
-            guard let user = getUser() else { return }
-            
-            for wallet in user.wallets {
-                if let category = wallet.categoriesIncome.first(where: { $0.id == categoryId }) {
-                    let income = Income()
-                    income.amount = amount
-                    income.date = date
-                    income.note = note
-                    
-                    try! realm.write {
-                        category.incomes.append(income)
-                    }
-                    break
+        guard let user = getUser() else { return }
+        
+        for wallet in user.wallets {
+            if let category = wallet.categoriesIncome.first(where: { $0.id == categoryId }) {
+                let income = Income()
+                income.amount = amount
+                income.date = date
+                income.note = note
+                
+                try! realm.write {
+                    category.incomes.append(income)
                 }
+                break
             }
+        }
+    }
+    
+    func createSaving(name: String, haveAmount: Double, needAmount: Double, dateStart: Date, dateEnd: Date) {
+        guard let user = getUser() else { return }
+        
+        let saving = Saving()
+        saving.name = name
+        saving.haveAmount = haveAmount
+        saving.needAmount = needAmount
+        saving.dateStart = dateStart
+        saving.dateEnd = dateEnd
+        
+        try! realm.write{
+            user.savings.append(saving)
+        }
+    }
+    
+    func createMonthlyPayments(name: String, summ: Double, date: Date) {
+        guard let user = getUser() else { return }
+        
+        let monthlyPayment = MonthlyPayment()
+        monthlyPayment.name = name
+        monthlyPayment.amount = summ
+        monthlyPayment.date = date
+        
+        try! realm.write {
+            user.monthlyPayment.append(monthlyPayment)
+        }
     }
 }
 
 // MARK: -- Get methods
 extension StorageManager {
+    
     // Get user
     func getUser() -> User? {
         return realm.objects(User.self).first
     }
+    
+    // Get wallet
+    func getWallet() -> Wallet {
+        guard let user = getUser() else { return Wallet()}
+        return user.wallets.first!
+    }
+    
     // Get all expense categories
     func getAllExpenseCategories() -> [CategoryExpense] {
         guard let user = getUser() else { return [] }
@@ -100,7 +150,7 @@ extension StorageManager {
         return allIncomesCategories
     }
     
-    // Method to calculate total income
+    // Method to get and  calculate total income
     func totalIncome() -> Double {
         guard let user = getUser() else { return 0.0 }
         
@@ -114,7 +164,7 @@ extension StorageManager {
         return totalIncome
     }
     
-    // Method to calculate total expense
+    // Method to get and calculate total expense
     func totalExpense() -> Double {
         guard let user = getUser() else { return 0.0 }
         
@@ -128,10 +178,22 @@ extension StorageManager {
         return totalExpense
     }
     
-    // Method to calculate total savings
+    // Method to get and  calculate total savings
     func totalSavings() -> Double {
         guard let user = getUser() else { return 0.0 }
-        return user.savings.reduce(0.0) { $0 + $1.amount }
+        return user.savings.reduce(0.0) { $0 + $1.haveAmount }
+    }
+    
+    // Method to get all savings
+    func getSavings() -> [Saving] {
+        guard let user = getUser() else { return []}
+        var allSaving: [Saving] = []
+        
+        user.savings.forEach { saving in
+            allSaving.append(saving)
+        }
+        
+        return allSaving
     }
     
     // Get sorted incomes
@@ -183,13 +245,35 @@ extension StorageManager {
         
         return groupedExpenses
     }
+    
+    // Get all wallets
+    func getAllWallets() -> [Wallet] {
+        guard let user = getUser() else { return []}
+        
+        var allWalets: [Wallet] = []
+        user.wallets.forEach { wallet in
+            allWalets.append(wallet)
+        }
+        
+        return allWalets
+    }
+    
+    func getAllMonthlyPayment() -> [MonthlyPayment] {
+        guard let user = getUser() else { return []}
+        
+        var allMonthlyPayment: [MonthlyPayment] = []
+        user.monthlyPayment.forEach { mp in
+            allMonthlyPayment.append(mp)
+        }
+        
+        return allMonthlyPayment
+    }
 }
-
 
 // MARK: -- Launch first time
 extension StorageManager {
     // Create user first time. When user login in app
-    func createInitialUserIfNeeded(locationManager: CLLocationManager) {
+    func createInitialUserIfNeeded(locationManager: CLLocationManager, currency: String?) {
         let userExists = realm.objects(User.self).first != nil
         guard !userExists else { return }
         
@@ -198,70 +282,41 @@ extension StorageManager {
         
         let wallet = Wallet()
         wallet.name = "Default Wallet"
+        wallet.nameCurrency = currency ?? "USD"
+        wallet.currentFunds = 0.0
         
-        determineCurrencyForCurrentLocation(locationManager: locationManager) { currency in
-            if let currency = currency {
-                wallet.nameCurrency = currency
-            } else {
-                wallet.nameCurrency = "USD" // default USD
-            }
-            wallet.currentFunds = 0.0
-            
-            // Add default categories for incomes
-            let categoriesIncome = ["Работа": "doc", "Фриланс": "network", "Подарок": "gift", "Банк": "creditcard"]
-            for (categoryName, categoryImage) in categoriesIncome {
-                let category = CategoryIncome()
-                category.name = categoryName
-                category.image = categoryImage
-                try! self.realm.write {
-                    wallet.categoriesIncome.append(category)
-                }
-            }
-            
-            // Add default categories for expenses
-            let categoriesExpense = ["Развлечения": "cart", "Транспорт": "car", "Бизнес": "banknote.fill", "Продукты": "carrot", "Переводы": "dollarsign.arrow.circlepath", "Подарки": "gift", "Еда": "fork.knife"]
-            for  (categoryName, categoryImage) in categoriesExpense {
-                let category = CategoryExpense()
-                category.name = categoryName
-                category.image = categoryImage
-                try! self.realm.write {
-                    wallet.categoriesExpense.append(category)
-                }
-            }
-            
-            try! self.realm.write {
-                self.realm.add(user)
-                user.wallets.append(wallet)
+        // Add default categories for incomes
+        let categoriesIncome = ["Работа": "doc", "Фриланс": "network", "Подарок": "gift", "Банк": "creditcard"]
+        let colorsIncome = ["#FFF8DC", "#F4A460", "#DC143C", "#FF6347"]
+        var count = 0
+        for (categoryName, categoryImage) in categoriesIncome {
+            let category = CategoryIncome()
+            category.name = categoryName
+            category.image = categoryImage
+            category.colorString = colorsIncome[count]
+            count += 1
+            try! realm.write {
+                wallet.categoriesIncome.append(category)
             }
         }
-    }
-    
-    // find geo user
-    private func determineCurrencyForCurrentLocation(locationManager: CLLocationManager, completion: @escaping (String?) -> Void) {
-        guard let location = locationManager.location else {
-            completion(nil)
-            return
+        count = 0
+        // Add default categories for expenses
+        let categoriesExpense = ["Развлечения": "cart", "Транспорт": "car", "Бизнес": "banknote.fill", "Продукты": "carrot", "Переводы": "dollarsign.arrow.circlepath", "Подарки": "gift", "Еда": "fork.knife"]
+        let colorsExpense = ["#00FFFF", "#FFE4B5", "#FF00FF", "#6B8E23", "#ebad81", "#6A5ACD", "#32CD32"]
+        for  (categoryName, categoryImage) in categoriesExpense {
+            let category = CategoryExpense()
+            category.name = categoryName
+            category.image = categoryImage
+            category.colorString = colorsExpense[count]
+            count += 1
+            try! realm.write {
+                wallet.categoriesExpense.append(category)
+            }
         }
         
-        geocoder.reverseGeocodeLocation(location) { placemarks, error in
-            guard let placemark = placemarks?.first else {
-                completion(nil)
-                return
-            }
-            
-            let countryCode = placemark.isoCountryCode
-            var currency: String?
-            
-            switch countryCode {
-            case "KZ":
-                currency = "KZT"
-            case "RU":
-                currency = "RUB"
-            default:
-                currency = nil
-            }
-            
-            completion(currency)
+        try! realm.write {
+            realm.add(user)
+            user.wallets.append(wallet)
         }
     }
 }

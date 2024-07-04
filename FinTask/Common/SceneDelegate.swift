@@ -11,7 +11,8 @@ import CoreLocation
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
+    private let geocoder = CLGeocoder()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
@@ -27,13 +28,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         guard let viewController else { return }
         
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        // Создание user
+      //  StorageManager.shared.createInitialUserIfNeeded(locationManager: self.locationManager, currency: nil)
+      
+        
         window.rootViewController = viewController
         self.window = window
         window.makeKeyAndVisible()
         
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        StorageManager.shared.createInitialUserIfNeeded(locationManager: locationManager)
+        
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -71,6 +78,43 @@ extension SceneDelegate: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        determineCurrencyForCurrentLocation(location: location) { [weak self] success in
+                   if success {
+                       self?.locationManager.stopUpdatingLocation()
+                   }
+               }
+    }
+    
+    private func determineCurrencyForCurrentLocation(location: CLLocation? = nil, completion: @escaping (Bool) -> Void) {
+        guard let location = location ?? locationManager.location else {
+            print("error location")
+            return
+        }
+        
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            guard let placemark = placemarks?.first else {
+                print("error reverse geocode location")
+                return
+            }
+            
+            let countryCode = placemark.isoCountryCode
+            var currency: String?
+            switch countryCode {
+            case "KZ":
+                currency = "KZT"
+            case "RU":
+                currency = "RUB"
+            default:
+                currency = "USD"
+            }
+            
+            StorageManager.shared.createInitialUserIfNeeded(locationManager: self.locationManager, currency: currency)
+            completion(true)
         }
     }
 }
