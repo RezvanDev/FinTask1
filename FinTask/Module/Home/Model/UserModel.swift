@@ -13,7 +13,7 @@ class User: Object {
     @objc dynamic var hasSubscription: Bool = false
     let wallets = List<Wallet>()
     let savings = List<Saving>()
-    @objc dynamic var monthlyPayment: MonthlyPayment?
+    let monthlyPayment = List<MonthlyPayment>()
     
     
     override static func primaryKey() -> String? {
@@ -96,22 +96,13 @@ class Saving: Object {
 
 class MonthlyPayment: Object {
     @objc dynamic var id: String = UUID().uuidString
-    let procedures = List<Procedure>()
+    @objc dynamic var name: String = ""
+    @objc dynamic var amount: Double = 0.0
+    @objc dynamic var date: Date = Date()
     
     override static func primaryKey() -> String? {
         return "id"
     }
 }
 
-class Procedure: Object {
-    @objc dynamic var id: String = UUID().uuidString
-    @objc dynamic var name: String = ""
-    @objc dynamic var image: String = ""
-    @objc dynamic var amount: Double = 0.0
-    
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-}
 

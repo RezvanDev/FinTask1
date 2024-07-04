@@ -30,13 +30,18 @@
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
 		54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */; };
 		54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */; };
-		54B69DEA2C340C5500C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69DE92C340C5500C2BD4E /* RealmSwift */; };
 		54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */; };
 		54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF12C35310700C2BD4E /* SavingTableViewCell.swift */; };
 		54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF52C3544F900C2BD4E /* AddSavingViewController.swift */; };
 		54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF82C35528400C2BD4E /* Helpers.swift */; };
 		54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */; };
 		54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */; };
+		54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; };
+		54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E042C35904300C2BD4E /* SavingHomeCollectionViewCell.swift */; };
+		54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */; };
+		54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */; };
+		54B69E112C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */; };
+		54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -89,6 +94,11 @@
 		54B69DF82C35528400C2BD4E /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSavingViewController.swift; sourceTree = "<group>"; };
 		54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCollectionViewCellSecondLast.swift; sourceTree = "<group>"; };
+		54B69E042C35904300C2BD4E /* SavingHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentViewController.swift; sourceTree = "<group>"; };
+		54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentTableViewCell.swift; sourceTree = "<group>"; };
+		54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyPaymentViewController.swift; sourceTree = "<group>"; };
+		54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyPaymentHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		54BFBE902C2BF43C00379920 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54BFBE922C2BF45000379920 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
@@ -101,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54B69DEA2C340C5500C2BD4E /* RealmSwift in Frameworks */,
+				54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +137,8 @@
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				54B69E0E2C36A24100C2BD4E /* AddMonthlyPayment */,
+				54B69E072C36974700C2BD4E /* MonthlyPayment */,
 				54B69DFA2C355A1600C2BD4E /* EditSaving */,
 				54B69DF32C3544DD00C2BD4E /* AddSaving */,
 				54B69DEB2C352C2800C2BD4E /* Saving */,
@@ -304,6 +316,8 @@
 				543913DD2C2AA783006A2075 /* HomeCollectionViewCell.swift */,
 				54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */,
 				54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */,
+				54B69E042C35904300C2BD4E /* SavingHomeCollectionViewCell.swift */,
+				54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -437,6 +451,47 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		54B69E072C36974700C2BD4E /* MonthlyPayment */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E0B2C369A6900C2BD4E /* View */,
+				54B69E082C36975700C2BD4E /* ViewController */,
+			);
+			path = MonthlyPayment;
+			sourceTree = "<group>";
+		};
+		54B69E082C36975700C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54B69E0B2C369A6900C2BD4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54B69E0E2C36A24100C2BD4E /* AddMonthlyPayment */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E0F2C36A24B00C2BD4E /* ViewController */,
+			);
+			path = AddMonthlyPayment;
+			sourceTree = "<group>";
+		};
+		54B69E0F2C36A24B00C2BD4E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		54BFBEB52C2C17D700379920 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,7 +535,7 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				54B69DE92C340C5500C2BD4E /* RealmSwift */,
+				54B69E012C357DBD00C2BD4E /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -511,7 +566,7 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -544,12 +599,16 @@
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
 				541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */,
+				54B69E112C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
 				54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */,
+				54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */,
+				54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */,
 				54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */,
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
+				54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */,
 				54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
 				54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */,
@@ -557,6 +616,7 @@
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
 				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
+				54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
 				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
@@ -799,7 +859,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -810,9 +870,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54B69DE92C340C5500C2BD4E /* RealmSwift */ = {
+		54B69E012C357DBD00C2BD4E /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54B69DE82C340C5500C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

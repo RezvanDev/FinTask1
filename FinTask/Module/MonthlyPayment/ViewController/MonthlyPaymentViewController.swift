@@ -1,20 +1,20 @@
 //
-//  SavingViewController.swift
+//  MonthlyPaymentViewController.swift
 //  FinTask
 //
-//  Created by Иван Незговоров on 03.07.2024.
+//  Created by Иван Незговоров on 04.07.2024.
 //
 
 import UIKit
 
-class SavingViewController: UIViewController {
-    
-    private var savings: [Saving]?
+class MonthlyPaymentViewController: UIViewController {
+
+    private var monthlyPayment: [MonthlyPayment]?
     var closure: ((Bool) -> ())?
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Накопления"
+        lbl.text = "Ежемесячный платеж"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -22,7 +22,7 @@ class SavingViewController: UIViewController {
     }()
     private lazy var savingNotTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Накоплений нет"
+        lbl.text = "Ежемесячных платежей нет"
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .medium)
@@ -31,7 +31,7 @@ class SavingViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.register(SavingTableViewCell.self, forCellReuseIdentifier: SavingTableViewCell.reuseId)
+        tv.register(MonthlyPaymentTableViewCell.self, forCellReuseIdentifier: MonthlyPaymentTableViewCell.reuseId)
         tv.delegate = self
         tv.dataSource = self
         tv.separatorStyle = .none
@@ -52,11 +52,12 @@ class SavingViewController: UIViewController {
         fetchSavings()
         setup()
     }
-    
 }
 
+
 // MARK: -- Setup Layer
-private extension SavingViewController {
+private extension MonthlyPaymentViewController {
+    
     func setup() {
         view.backgroundColor = .white
         setupTitleMain()
@@ -65,7 +66,6 @@ private extension SavingViewController {
         view.addSubview(buttonAppend)
     }
     
-    // Setup title main
     func setupTitleMain() {
         view.addSubview(titleMain)
         
@@ -77,14 +77,13 @@ private extension SavingViewController {
     
     // Setup saving not title
     func setupSavingNotTitle() {
-        if savings == nil || savings?.isEmpty == true {
+        if monthlyPayment == nil || monthlyPayment?.isEmpty == true {
             tableView.isHidden = true
             savingNotTitle.isHidden = false
         } else {
             tableView.isHidden = false
             savingNotTitle.isHidden = true
         }
-        
         view.addSubview(savingNotTitle)
         
         NSLayoutConstraint.activate([
@@ -104,36 +103,34 @@ private extension SavingViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    
 }
 
 // MARK: -- Fetch
-private extension SavingViewController {
+private extension MonthlyPaymentViewController {
     func fetchSavings() {
-        savings = StorageManager.shared.getSavings()
+        monthlyPayment = StorageManager.shared.getAllMonthlyPayment()
+        tableView.reloadData()
     }
 }
 
 // MARK: -- Objc methods
-private extension SavingViewController {
+ extension MonthlyPaymentViewController {
     @objc func buttonAppendTap() {
-        let vc = AddSavingViewController()
-        vc.closure = { [weak self] res in
+        let addMontlyPaymentVC = AddMonthlyPaymentViewController()
+        addMontlyPaymentVC.closure = {[weak self] res in
             if res {
                 self?.fetchSavings()
-                self?.setupSavingNotTitle()
-                self?.tableView.reloadData()
-                self?.closure?(true)
             }
         }
-        
-        present(vc, animated: true)
+        present(addMontlyPaymentVC, animated: true)
     }
 }
 
-extension SavingViewController: UITableViewDelegate, UITableViewDataSource {
-    
+// MARK: -- UITableViewDelegate, UITableViewDataSource
+extension MonthlyPaymentViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        savings?.count ?? 0
+        monthlyPayment?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,11 +138,10 @@ extension SavingViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SavingTableViewCell.reuseId, for: indexPath) as! SavingTableViewCell
-        guard let savings else { return UITableViewCell() }
-        let provaider = savings[indexPath.section]
+        let cell = tableView.dequeueReusableCell(withIdentifier: MonthlyPaymentTableViewCell.reuseId, for: indexPath) as! MonthlyPaymentTableViewCell
+        let provaider = monthlyPayment![indexPath.section]
+        cell.configure(item: provaider)
         cell.selectionStyle = .none
-        cell.configure(saving: provaider)
         return cell
     }
     
@@ -161,20 +157,5 @@ extension SavingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 20
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = EditSavingViewController()
-        let provaider = savings![indexPath.section]
-        vc.currentSaving = provaider
-        vc.closure = {[weak self] res in
-            if res {
-                self?.fetchSavings()
-                self?.setupSavingNotTitle()
-                self?.tableView.reloadData()
-                self?.closure?(true)
-            }
-        }
-        present(vc, animated: true)
     }
 }
