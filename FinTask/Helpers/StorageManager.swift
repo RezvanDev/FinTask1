@@ -286,7 +286,7 @@ extension StorageManager {
         wallet.currentFunds = 0.0
         
         // Add default categories for incomes
-        let categoriesIncome = ["Работа": "doc", "Фриланс": "network", "Подарок": "gift", "Банк": "creditcard"]
+        let categoriesIncome = ["Работа": "work", "Фриланс": "freelance", "Подарок": "gift", "Банк": "bank"]
         let colorsIncome = ["#FFF8DC", "#F4A460", "#DC143C", "#FF6347"]
         var count = 0
         for (categoryName, categoryImage) in categoriesIncome {
@@ -301,7 +301,7 @@ extension StorageManager {
         }
         count = 0
         // Add default categories for expenses
-        let categoriesExpense = ["Развлечения": "cart", "Транспорт": "car", "Бизнес": "banknote.fill", "Продукты": "carrot", "Переводы": "dollarsign.arrow.circlepath", "Подарки": "gift", "Еда": "fork.knife"]
+        let categoriesExpense = ["Развлечения": "entertainment", "Транспорт": "car", "Бизнес": "bisness", "Продукты": "food", "Переводы": "transfer", "Подарки": "gift1", "Еда": "meal"]
         let colorsExpense = ["#00FFFF", "#FFE4B5", "#FF00FF", "#6B8E23", "#ebad81", "#6A5ACD", "#32CD32"]
         for  (categoryName, categoryImage) in categoriesExpense {
             let category = CategoryExpense()

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */; };
-		2258CB0A2C36999A00637949 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258CB092C36999A00637949 /* RealmSwift.framework */; };
 		541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A62C2835A400AFA81C /* AppDelegate.swift */; };
 		541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7A82C2835A400AFA81C /* SceneDelegate.swift */; };
 		541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541AC7AA2C2835A400AFA81C /* TabBarViewController.swift */; };
@@ -37,26 +36,33 @@
 		54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DF82C35528400C2BD4E /* Helpers.swift */; };
 		54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFC2C355A2800C2BD4E /* EditSavingViewController.swift */; };
 		54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DFE2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift */; };
-		54B69E022C357DBD00C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; };
 		54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E042C35904300C2BD4E /* SavingHomeCollectionViewCell.swift */; };
 		54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E092C36976500C2BD4E /* MonthlyPaymentViewController.swift */; };
 		54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E0C2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift */; };
 		54B69E112C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E102C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift */; };
 		54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E122C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift */; };
-		54B69E172C36BC0600C2BD4E /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E162C36BC0600C2BD4E /* DGChartsDynamic */; };
-		54B69E182C36BF7800C2BD4E /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E162C36BC0600C2BD4E /* DGChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		54B69E192C36BF7900C2BD4E /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E012C357DBD00C2BD4E /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		54B69E1B2C36C39400C2BD4E /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E1A2C36C39400C2BD4E /* TimeInterval+Extensions.swift */; };
 		54B69E1E2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E1D2C36D5BE00C2BD4E /* AnalyticTableViewCell.swift */; };
-		54B69E232C3700C900C2BD4E /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E222C3700C800C2BD4E /* AddCategoryViewController.swift */; };
-		54B69E272C3700F700C2BD4E /* EditCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E262C3700F700C2BD4E /* EditCurrencyViewController.swift */; };
-		54B69E2B2C37011400C2BD4E /* ChangeLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69E2A2C37011400C2BD4E /* ChangeLanguageViewController.swift */; };
+		54B69E232C3700C900C2BD4E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		54B69E272C3700F700C2BD4E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		54B69E2B2C37011400C2BD4E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		54B69E302C37EB2100C2BD4E /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */; };
+		54B69E332C37EB2900C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E322C37EB2900C2BD4E /* RealmSwift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
 		54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */; };
 		54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C8A9112C2C390000AF2D6D /* LimitViewController.swift */; };
+		54E7D31A2C37EBAB0097E0D2 /* ChangeCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3192C37EBAB0097E0D2 /* ChangeCurrencyViewController.swift */; };
+		54E7D31C2C37EBB60097E0D2 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D31B2C37EBB60097E0D2 /* CategoryViewController.swift */; };
+		54E7D31F2C37EF970097E0D2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D31E2C37EF970097E0D2 /* CategoryTableViewCell.swift */; };
+		54E7D3232C3801A50097E0D2 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3222C3801A50097E0D2 /* AddCategoryViewController.swift */; };
+		54E7D3272C38148E0097E0D2 /* ColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3262C38148E0097E0D2 /* ColorSelectionViewController.swift */; };
+		54E7D32A2C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */; };
+		54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */; };
+		54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		54BFBEA42C2BFC6900379920 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -64,8 +70,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				54B69E192C36BF7900C2BD4E /* RealmSwift in Embed Frameworks */,
-				54B69E182C36BF7800C2BD4E /* DGChartsDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,14 @@
 		54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCellLast.swift; sourceTree = "<group>"; };
 		54BFBEB62C2C17EB00379920 /* FinanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTableViewCell.swift; sourceTree = "<group>"; };
 		54C8A9112C2C390000AF2D6D /* LimitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitViewController.swift; sourceTree = "<group>"; };
+		54E7D3192C37EBAB0097E0D2 /* ChangeCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCurrencyViewController.swift; sourceTree = "<group>"; };
+		54E7D31B2C37EBB60097E0D2 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		54E7D31E2C37EF970097E0D2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		54E7D3222C3801A50097E0D2 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		54E7D3262C38148E0097E0D2 /* ColorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionViewController.swift; sourceTree = "<group>"; };
+		54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionViewController.swift; sourceTree = "<group>"; };
+		54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B69E332C37EB2900C2BD4E /* RealmSwift in Frameworks */,
+				54B69E302C37EB2100C2BD4E /* DGChartsDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +535,9 @@
 		54B69E1F2C37008B00C2BD4E /* GroupSettings */ = {
 			isa = PBXGroup;
 			children = (
-				54B69E282C37010200C2BD4E /* Language */,
+				54E7D32B2C382CD30097E0D2 /* IconSelection */,
+				54E7D3242C3814720097E0D2 /* ColorSelection */,
+				54E7D3202C3801900097E0D2 /* AddCategory */,
 				54B69E242C3700D000C2BD4E /* Currency */,
 				54B69E202C3700A800C2BD4E /* Category */,
 			);
@@ -531,6 +547,7 @@
 		54B69E202C3700A800C2BD4E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				54E7D31D2C37EF800097E0D2 /* View */,
 				54B69E212C3700AD00C2BD4E /* ViewController */,
 			);
 			path = Category;
@@ -539,7 +556,7 @@
 		54B69E212C3700AD00C2BD4E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				54B69E222C3700C800C2BD4E /* AddCategoryViewController.swift */,
+				54E7D31B2C37EBB60097E0D2 /* CategoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -555,23 +572,7 @@
 		54B69E252C3700D900C2BD4E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				54B69E262C3700F700C2BD4E /* EditCurrencyViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		54B69E282C37010200C2BD4E /* Language */ = {
-			isa = PBXGroup;
-			children = (
-				54B69E292C37010700C2BD4E /* ViewController */,
-			);
-			path = Language;
-			sourceTree = "<group>";
-		};
-		54B69E292C37010700C2BD4E /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				54B69E2A2C37011400C2BD4E /* ChangeLanguageViewController.swift */,
+				54E7D3192C37EBAB0097E0D2 /* ChangeCurrencyViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -601,6 +602,80 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		54E7D31D2C37EF800097E0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D31E2C37EF970097E0D2 /* CategoryTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54E7D3202C3801900097E0D2 /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3212C3801970097E0D2 /* ViewController */,
+			);
+			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		54E7D3212C3801970097E0D2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3222C3801A50097E0D2 /* AddCategoryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54E7D3242C3814720097E0D2 /* ColorSelection */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3282C3819160097E0D2 /* View */,
+				54E7D3252C3814820097E0D2 /* ViewController */,
+			);
+			path = ColorSelection;
+			sourceTree = "<group>";
+		};
+		54E7D3252C3814820097E0D2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3262C38148E0097E0D2 /* ColorSelectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54E7D3282C3819160097E0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54E7D32B2C382CD30097E0D2 /* IconSelection */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D32D2C382CDF0097E0D2 /* View */,
+				54E7D32C2C382CDA0097E0D2 /* ViewController */,
+			);
+			path = IconSelection;
+			sourceTree = "<group>";
+		};
+		54E7D32C2C382CDA0097E0D2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54E7D32D2C382CDF0097E0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -619,8 +694,8 @@
 			);
 			name = FinTask;
 			packageProductDependencies = (
-				54B69E012C357DBD00C2BD4E /* RealmSwift */,
-				54B69E162C36BC0600C2BD4E /* DGChartsDynamic */,
+				54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */,
+				54B69E322C37EB2900C2BD4E /* RealmSwift */,
 			);
 			productName = FinTask;
 			productReference = 541AC7A32C2835A400AFA81C /* FinTask.app */;
@@ -651,8 +726,8 @@
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
-				54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
-				54B69E152C36BC0600C2BD4E /* XCRemoteSwiftPackageReference "Charts" */,
+				54B69E2E2C37EB2100C2BD4E /* XCRemoteSwiftPackageReference "Charts" */,
+				54B69E312C37EB2900C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
 			projectDirPath = "";
@@ -681,7 +756,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */,
-				54B69E232C3700C900C2BD4E /* AddCategoryViewController.swift in Sources */,
+				54B69E232C3700C900C2BD4E /* (null) in Sources */,
 				545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */,
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
@@ -691,7 +766,9 @@
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
 				54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */,
-				54B69E272C3700F700C2BD4E /* EditCurrencyViewController.swift in Sources */,
+				54B69E272C3700F700C2BD4E /* (null) in Sources */,
+				54E7D31A2C37EBAB0097E0D2 /* ChangeCurrencyViewController.swift in Sources */,
+				54E7D32A2C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift in Sources */,
 				54B69E0D2C369A7A00C2BD4E /* MonthlyPaymentTableViewCell.swift in Sources */,
 				54B69E0A2C36976500C2BD4E /* MonthlyPaymentViewController.swift in Sources */,
 				54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */,
@@ -699,9 +776,11 @@
 				54C8A9122C2C390000AF2D6D /* LimitViewController.swift in Sources */,
 				54B69E132C36A9DF00C2BD4E /* MontlyPaymentHomeCollectionViewCell.swift in Sources */,
 				54B69DF22C35310700C2BD4E /* SavingTableViewCell.swift in Sources */,
+				54E7D31C2C37EBB60097E0D2 /* CategoryViewController.swift in Sources */,
 				541AC7A92C2835A400AFA81C /* SceneDelegate.swift in Sources */,
-				54B69E2B2C37011400C2BD4E /* ChangeLanguageViewController.swift in Sources */,
+				54B69E2B2C37011400C2BD4E /* (null) in Sources */,
 				54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */,
+				54E7D3232C3801A50097E0D2 /* AddCategoryViewController.swift in Sources */,
 				54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
@@ -710,17 +789,21 @@
 				54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
+				54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */,
 				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
+				54E7D31F2C37EF970097E0D2 /* CategoryTableViewCell.swift in Sources */,
 				54B69DFF2C357A9F00C2BD4E /* HomeCollectionCollectionViewCellSecondLast.swift in Sources */,
 				223E3B232C2A2E6D005B3FD2 /* OnboardingViewController.swift in Sources */,
 				54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
 				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
+				54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
 				54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */,
 				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,
+				54E7D3272C38148E0097E0D2 /* ColorSelectionViewController.swift in Sources */,
 				543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -950,15 +1033,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		54B69E152C36BC0600C2BD4E /* XCRemoteSwiftPackageReference "Charts" */ = {
+		54B69E2E2C37EB2100C2BD4E /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
 			requirement = {
@@ -966,18 +1041,26 @@
 				minimumVersion = 5.1.0;
 			};
 		};
+		54B69E312C37EB2900C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54B69E012C357DBD00C2BD4E /* RealmSwift */ = {
+		54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54B69E002C357DBD00C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		54B69E162C36BC0600C2BD4E /* DGChartsDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54B69E152C36BC0600C2BD4E /* XCRemoteSwiftPackageReference "Charts" */;
+			package = 54B69E2E2C37EB2100C2BD4E /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGChartsDynamic;
+		};
+		54B69E322C37EB2900C2BD4E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54B69E312C37EB2900C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

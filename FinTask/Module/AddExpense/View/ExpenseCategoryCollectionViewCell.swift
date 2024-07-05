@@ -55,7 +55,7 @@ class ExpenseCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
     
     func configure(with category: CategoryExpense) {
         title.text = category.name
-        image.image = UIImage(systemName: category.image)
+        image.image = UIImage(named: category.image)
         if let color = UIColor(hexString: category.colorString) {
             viewMain.backgroundColor = color
         }

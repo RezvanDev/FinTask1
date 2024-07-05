@@ -99,6 +99,13 @@ class Alerts {
         presenter.present(alert, animated: true)
     }
     
+    func alertSetColorError(title: String, decription: String, presenter: UIViewController) {
+        let alert = UIAlertController(title: title, message: decription, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        alert.addAction(cancel)
+        presenter.present(alert, animated: true)
+    }
+    
 }
 
 
