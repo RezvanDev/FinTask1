@@ -15,7 +15,7 @@ class AnalyticViewController: UIViewController {
     private var incomeCategories: [CategoryIncome]?
     private var wallet: Wallet?
     private var isShowingExpenses: Bool = true
-    private var selectedTimeInterval: TimeInterval = .day
+    private var selectedTimeInterval: TimeInterval = .month
     private var tableData: [Object] = []
     private var categoryColors: [UIColor] = []
     
