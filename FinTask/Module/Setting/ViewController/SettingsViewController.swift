@@ -190,7 +190,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = [AddCategoryViewController(), AddCategoryViewController(), EditCurrencyViewController(), ChangeLanguageViewController()]
+        let vc = [CategoryViewController(), CategoryViewController(), ChangeCurrencyViewController()]
         if indexPath.section == 3 {
             // MARK: -- ЗДЕСЬ В ЭТОМ БЛОКЕ РЕАЛИЗАЦИЯ СВЯЗИ С РАЗРАБОТЧИКОМ
             // ->
@@ -201,6 +201,14 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
             
             // <-
         } else {
+            if let presentVC = vc[indexPath.section] as? CategoryViewController {
+                if indexPath.section == 0 {
+                    presentVC.isIncome = false
+                } else {
+                    presentVC.isIncome = true
+                }
+            }
+            
             present(vc[indexPath.section], animated: true)
         }
     }
