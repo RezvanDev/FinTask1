@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Helpers {
     static let shared = Helpers()
@@ -16,4 +17,18 @@ class Helpers {
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: date)
     }    
+    
+    
+    func sentToMail(to: String) {
+        let mailString = "mailto:\(to)"
+
+        guard let mailUrl = URL(string: mailString) else {
+            return
+        }
+        if UIApplication.shared.canOpenURL(mailUrl) {
+            UIApplication.shared.open(mailUrl)
+        }
+    }
 }
+
+

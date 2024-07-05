@@ -9,8 +9,11 @@ import UIKit
 
 class AddCategoryViewController: UIViewController {
     
-    private var selectedColor: UIColor?
+    private var selectedColor: String?
+    private var selectedIcon: String?
+    private var tapGesture: UITapGestureRecognizer?
     var isIncome: Bool = true
+    var closure: ((Bool) -> ())?
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
@@ -30,6 +33,7 @@ class AddCategoryViewController: UIViewController {
         let tf = UITextField()
         tf.placeholder = "Название категории"
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.inputAccessoryView = createToolbar()
         tf.borderStyle = .roundedRect
         tf.backgroundColor = AppColors.lightGrayMain
         let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
@@ -44,6 +48,7 @@ class AddCategoryViewController: UIViewController {
         button.tintColor = .black
         button.layer.cornerRadius = 30
         button.setImage(UIImage(systemName: "photo.fill"), for: .normal)
+        button.addTarget(self, action: #selector(iconButtonTap), for: .touchUpInside)
         button.backgroundColor = .green
         return button
     }()
@@ -142,13 +147,28 @@ private extension AddCategoryViewController {
             
         ])
     }
+    
+    // gesture
+    func setupTapGesture() {
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tapGesture!)
+        tapGesture?.isEnabled = false
+    }
 }
 
 // MARK: -- ColorSelectionDelegate
-extension AddCategoryViewController: ColorSelectionDelegate {
+extension AddCategoryViewController: ColorSelectionDelegate, IconSelectionDelegate {
+    
+    func didIcon(_ icon: String) {
+        self.selectedIcon = icon
+        iconButton.setImage(nil, for: .normal)
+        iconButton.setBackgroundImage(UIImage(named: icon), for: .normal)
+        iconButton.backgroundColor = .none
+    }
+    
     func didSelectColor(_ color: String) {
-        self.selectedColor = UIColor(hexString: color)
-        colorButton.backgroundColor = selectedColor
+        self.selectedColor = color
+        colorButton.backgroundColor = UIColor(hexString: color)
     }
 }
 
@@ -159,12 +179,60 @@ private extension AddCategoryViewController {
     }
     
     @objc func saveButtonTap() {
-        print(#function)
+        if selectedIcon == nil {
+            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Выберите иконку", presenter: self)
+        } else if selectedColor == nil {
+            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Выберите цвет", presenter: self)
+        } else if nameTF.text?.trimmingCharacters(in: .whitespaces) == "" || ((nameTF.text?.isEmpty) == nil){
+            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Напишите название", presenter: self)
+        } else {
+            if isIncome {
+                StorageManager.shared.createCategoryIncome(name: nameTF.text!, image: selectedIcon!, color: selectedColor!)
+                closure?(true)
+                dismiss(animated: true)
+            } else {
+                StorageManager.shared.createCategoryExpense(name: nameTF.text!, image: selectedIcon!, color: selectedColor!)
+                closure?(true)
+                dismiss(animated: true)
+            }
+        }
+    }
+    
+    @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @objc func colorButtonTap() {
         let vc =  ColorSelectionViewController()
         vc.delegate = self
         present(vc, animated: true)
+    }
+    
+    @objc func iconButtonTap() {
+        let vc = IconSelectionViewController()
+        vc.delegate = self
+        vc.isIncome = isIncome
+        present(vc, animated: true)
+    }
+}
+
+// MARK: -- UITextFieldDelegate
+extension AddCategoryViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    private func createToolbar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        toolbar.items = [flexSpace, doneButton]
+        toolbar.sizeToFit()
+        return toolbar
+    }
+    
+    @objc private func doneButtonTapped() {
+        nameTF.resignFirstResponder()
     }
 }

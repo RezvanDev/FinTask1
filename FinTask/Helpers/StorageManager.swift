@@ -45,6 +45,41 @@ extension StorageManager {
 
 // MARK: -- Set methods
 extension StorageManager {
+    
+    // Metgot to create a new category expense
+    func createCategoryExpense(name: String, image: String, color: String) {
+        guard let user = getUser() else { return }
+        
+        for wallet in user.wallets {
+            let category = CategoryExpense()
+            category.name = name
+            category.image = image
+            category.colorString = color
+            
+            try! realm.write {
+                wallet.categoriesExpense.append(category)
+            }
+            break
+        }
+    }
+    
+    // Metgot to create a new category expense
+    func createCategoryIncome(name: String, image: String, color: String) {
+        guard let user = getUser() else { return }
+        
+        for wallet in user.wallets {
+            let category = CategoryIncome()
+            category.name = name
+            category.image = image
+            category.colorString = color
+            
+            try! realm.write {
+                wallet.categoriesIncome.append(category)
+            }
+            break
+        }
+    }
+  
     // Method to create a new expense for a given category ID
     func createExpense(for categoryId: String, amount: Double, date: Date, note: String?) {
         guard let user = getUser() else { return }

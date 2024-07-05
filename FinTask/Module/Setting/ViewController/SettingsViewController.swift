@@ -192,18 +192,12 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = [CategoryViewController(), CategoryViewController(), ChangeCurrencyViewController()]
         if indexPath.section == 3 {
-            // MARK: -- ЗДЕСЬ В ЭТОМ БЛОКЕ РЕАЛИЗАЦИЯ СВЯЗИ С РАЗРАБОТЧИКОМ
-            // ->
-            
-            
-            
-            
-            
-            // <-
+            Helpers.shared.sentToMail(to: "test1@icloud.com")
         } else {
             if let presentVC = vc[indexPath.section] as? CategoryViewController {
                 if indexPath.section == 0 {
                     presentVC.isIncome = false
+                    
                 } else {
                     presentVC.isIncome = true
                 }
@@ -213,3 +207,5 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
+
+
