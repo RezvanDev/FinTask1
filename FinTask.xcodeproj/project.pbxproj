@@ -61,6 +61,8 @@
 		54E7D32A2C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */; };
 		54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */; };
 		54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */; };
+		54E7D3332C384A590097E0D2 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E322C37EB2900C2BD4E /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		54E7D3342C384A5A0097E0D2 /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +72,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				54E7D3342C384A5A0097E0D2 /* DGChartsDynamic in Embed Frameworks */,
+				54E7D3332C384A590097E0D2 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;

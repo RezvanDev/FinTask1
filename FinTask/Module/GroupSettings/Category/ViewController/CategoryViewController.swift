@@ -31,7 +31,7 @@ class CategoryViewController: UIViewController {
         return tb
     }()
     private lazy var addButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: ((view.bounds.width - 150) / 2) - 25, y: view.bounds.height - 200, width: 200, height: 40))
+        let button = UIButton(frame: CGRect(x: ((view.bounds.width - 150) / 2) - 25, y: view.bounds.height - 130, width: 200, height: 40))
         button.layer.cornerRadius = 10
         button.backgroundColor = AppColors.mainGreen
         button.addTarget(self, action: #selector(addButtonTap), for: .touchUpInside)
@@ -79,7 +79,7 @@ private extension CategoryViewController {
             tableView.topAnchor.constraint(equalTo: categoryTitle.bottomAnchor, constant: 20),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
             
         ])
     }
@@ -112,6 +112,12 @@ private extension CategoryViewController {
     @objc func addButtonTap() {
         let vc = AddCategoryViewController()
         vc.isIncome = isIncome!
+        vc.closure = { [weak self] result in
+            if result {
+                self?.fetchData()
+                self?.tableView.reloadData()
+            }
+        }
         present(vc, animated: true)
     }
 }
