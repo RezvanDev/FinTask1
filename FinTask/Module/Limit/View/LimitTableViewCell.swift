@@ -98,7 +98,7 @@ class LimitTableViewCell: UITableViewCell, CellProtocols {
     
     func configure(category: CategoryExpense) {
         title.text = category.name
-        imageMain.image = UIImage(systemName: category.image)
+        imageMain.image = UIImage(named: category.image)
         
         // Получаем начало и конец текущего месяца
         let calendar = Calendar.current

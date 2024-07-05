@@ -59,6 +59,8 @@
 		54E7D3232C3801A50097E0D2 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3222C3801A50097E0D2 /* AddCategoryViewController.swift */; };
 		54E7D3272C38148E0097E0D2 /* ColorSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3262C38148E0097E0D2 /* ColorSelectionViewController.swift */; };
 		54E7D32A2C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */; };
+		54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */; };
+		54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -126,6 +128,8 @@
 		54E7D3222C3801A50097E0D2 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		54E7D3262C38148E0097E0D2 /* ColorSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionViewController.swift; sourceTree = "<group>"; };
 		54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionViewController.swift; sourceTree = "<group>"; };
+		54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -531,6 +535,7 @@
 		54B69E1F2C37008B00C2BD4E /* GroupSettings */ = {
 			isa = PBXGroup;
 			children = (
+				54E7D32B2C382CD30097E0D2 /* IconSelection */,
 				54E7D3242C3814720097E0D2 /* ColorSelection */,
 				54E7D3202C3801900097E0D2 /* AddCategory */,
 				54B69E242C3700D000C2BD4E /* Currency */,
@@ -642,6 +647,31 @@
 			isa = PBXGroup;
 			children = (
 				54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		54E7D32B2C382CD30097E0D2 /* IconSelection */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D32D2C382CDF0097E0D2 /* View */,
+				54E7D32C2C382CDA0097E0D2 /* ViewController */,
+			);
+			path = IconSelection;
+			sourceTree = "<group>";
+		};
+		54E7D32C2C382CDA0097E0D2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		54E7D32D2C382CDF0097E0D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,6 +789,7 @@
 				54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
+				54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */,
 				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
@@ -768,6 +799,7 @@
 				54B69DF62C3544F900C2BD4E /* AddSavingViewController.swift in Sources */,
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
 				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
+				54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
 				54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */,
 				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,

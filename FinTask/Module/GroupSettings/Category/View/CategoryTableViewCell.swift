@@ -52,11 +52,11 @@ class CategoryTableViewCell: UITableViewCell, CellProtocols {
     func config(item: Any) {
         if let category  = item as? CategoryExpense {
             nameTitle.text = category.name
-            imageMain.image = UIImage(systemName: category.image)
+            imageMain.image = UIImage(named: category.image)
             viewColor.backgroundColor = UIColor(hexString: category.colorString)
         } else if let category = item as? CategoryIncome {
             nameTitle.text = category.name
-            imageMain.image = UIImage(systemName: category.image)
+            imageMain.image = UIImage(named: category.image)
             viewColor.backgroundColor = UIColor(hexString: category.colorString)
         }
     }

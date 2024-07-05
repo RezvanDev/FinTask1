@@ -64,10 +64,10 @@ class FinanceTableViewCell: UITableViewCell, CellProtocols {
     
     func configure(with category: Any, data: AnyObject, currency: String) {
         if let category = category as? CategoryIncome {
-            imageIcon.image = UIImage(systemName: category.image)
+            imageIcon.image = UIImage(named: category.image)
             categoryTitle.text = category.name
         } else if let category = category as? CategoryExpense {
-            imageIcon.image = UIImage(systemName: category.image)
+            imageIcon.image = UIImage(named: category.image)
             categoryTitle.text = category.name
         }
         
