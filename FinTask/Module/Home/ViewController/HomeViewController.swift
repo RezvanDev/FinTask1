@@ -109,6 +109,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         timeLabel.text = homeModelDate.timeUntilEndOfDay()
         fetchData()
+        setupHeaderDate()
     }
     
 }

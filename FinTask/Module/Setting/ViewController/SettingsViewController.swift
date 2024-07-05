@@ -15,7 +15,6 @@ class SettingsViewController: UIViewController{
         (UIImage(systemName: "square.and.arrow.up"),"Категории расходов"),
         (UIImage(systemName: "square.and.arrow.down"),"Категории доходов"),
         (UIImage(systemName: "dollarsign.circle"),"Валюта по умолчанию"),
-        (UIImage(systemName: "globe"),"Язык интерфейса"),
         (UIImage(systemName: "envelope.fill"), "Связаться с разработчиком")
     ]
     
@@ -134,7 +133,6 @@ private extension SettingsViewController {
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         mainView.addGestureRecognizer(tapGesture!)
         tapGesture?.isEnabled = true
-        
     }
 }
     
@@ -163,7 +161,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
         let item = settingsCell[indexPath.section]
         
         //rounded edges
-        if indexPath.section == 4 ? true: false {
+        if indexPath.section == 3 ? true: false {
             let cornerRadius: CGFloat = 20.0
             let maskPath = UIBezierPath(roundedRect: cell.bounds,
                                         byRoundingCorners: [.bottomLeft, .bottomRight],
@@ -193,7 +191,7 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = [AddCategoryViewController(), AddCategoryViewController(), EditCurrencyViewController(), ChangeLanguageViewController()]
-        if indexPath.section == 4 {
+        if indexPath.section == 3 {
             // MARK: -- ЗДЕСЬ В ЭТОМ БЛОКЕ РЕАЛИЗАЦИЯ СВЯЗИ С РАЗРАБОТЧИКОМ
             // ->
             
