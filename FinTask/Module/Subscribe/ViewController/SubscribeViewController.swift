@@ -180,6 +180,12 @@ private extension SubscribeViewController {
             infoText.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
+    
+    func goToVC(isLoaded: Bool) {
+        let vc = HelpViewController()
+        vc.isLoader = isLoaded
+        present(vc, animated: true)
+    }
 }
 
 // MARK: -- Fetch
@@ -250,17 +256,17 @@ extension SubscribeViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 
-// MARK: -- Objc
+// MARK: -- OBJC
 private extension SubscribeViewController {
     @objc func cancelButtonTap() {
         dismiss(animated: true)
     }
     
     @objc private func openPrivacyPolicy() {
-        print(#function)
+        goToVC(isLoaded: true)
     }
 
     @objc private func openUserAgreement() {
-        print(#function)
+        goToVC(isLoaded: false)
     }
 }
