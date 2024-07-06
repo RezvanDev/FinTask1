@@ -326,6 +326,7 @@ private extension AddExpenseViewController {
             Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма трат", presenter: self)
         } else {
             StorageManager.shared.createExpense(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: noteTF.text)
+            StorageManager.shared.updateWalletCurrentFunds(money:  Double(tfBottomShieldView.text!) ?? 0, isIncome: false)
             reloadDataFinanceViewController?(true)
             dismiss(animated: true)
         }

@@ -41,6 +41,23 @@ extension StorageManager {
             }
         }
     }
+    
+    func updateWalletCurrentFunds(money: Double, isIncome: Bool) {
+        guard let user = getUser() else { return }
+        
+        if let wallet = user.wallets.first {
+            var newFunds = 0.0
+            if isIncome {
+                newFunds = wallet.currentFunds + money
+            } else {
+                newFunds = wallet.currentFunds - money
+            }
+            print(newFunds)
+            try! realm.write {
+                wallet.currentFunds = newFunds
+            }
+        }
+    }
 }
 
 // MARK: -- Set methods
