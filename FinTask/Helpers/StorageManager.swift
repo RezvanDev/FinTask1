@@ -58,6 +58,16 @@ extension StorageManager {
             }
         }
     }
+    
+    func updateCodeCurrencyInWallet(code: String) {
+        guard let user = getUser() else { return }
+        
+        if let wallet = user.wallets.first {
+            try! realm.write {
+                wallet.nameCurrency = code
+            }
+        }
+    }
 }
 
 // MARK: -- Set methods

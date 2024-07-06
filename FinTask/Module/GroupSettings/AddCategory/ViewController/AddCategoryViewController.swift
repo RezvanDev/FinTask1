@@ -23,7 +23,7 @@ class AddCategoryViewController: UIViewController {
         return button
     }()
     private lazy var saveButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: view.bounds.width - 100, y: 0, width: 100, height: 45))
+        let button = UIButton(frame: CGRect(x: view.bounds.width - 110, y: 0, width: 100, height: 45))
         button.setTitle("Сохранить", for: .normal)
         button.setTitleColor(AppColors.mainGreen, for: .normal)
         button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
