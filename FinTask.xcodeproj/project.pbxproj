@@ -35,6 +35,8 @@
 		5486D65D2C394CE7006FD511 /* SubscribeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D65C2C394CE7006FD511 /* SubscribeModel.swift */; };
 		5486D6602C394EDD006FD511 /* SubscribeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D65F2C394EDD006FD511 /* SubscribeCollectionViewCell.swift */; };
 		5486D6622C3956E7006FD511 /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */; };
+		5486D6642C397136006FD511 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6632C397136006FD511 /* HelpViewController.swift */; };
+		5486D6662C397488006FD511 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6652C397488006FD511 /* SubscriptionManager.swift */; };
 		54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */; };
 		54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */; };
 		54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */; };
@@ -120,6 +122,8 @@
 		5486D65C2C394CE7006FD511 /* SubscribeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeModel.swift; sourceTree = "<group>"; };
 		5486D65F2C394EDD006FD511 /* SubscribeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCollectionViewCell.swift; sourceTree = "<group>"; };
 		5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
+		5486D6632C397136006FD511 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		5486D6652C397488006FD511 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +385,7 @@
 				54BFBE902C2BF43C00379920 /* StorageManager.swift */,
 				545D08712C317A3E005F19CE /* Alerts.swift */,
 				54B69DF82C35528400C2BD4E /* Helpers.swift */,
+				5486D6652C397488006FD511 /* SubscriptionManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				5486D6592C3946E7006FD511 /* SubscribeViewController.swift */,
+				5486D6632C397136006FD511 /* HelpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -874,6 +880,7 @@
 				5486D6502C393C96006FD511 /* ColorModel.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
 				5486D6532C393DCA006FD511 /* CurrencyModel.swift in Sources */,
+				5486D6662C397488006FD511 /* SubscriptionManager.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
 				54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */,
 				5486D6602C394EDD006FD511 /* SubscribeCollectionViewCell.swift in Sources */,
@@ -893,6 +900,7 @@
 				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,
 				54E7D3272C38148E0097E0D2 /* ColorSelectionViewController.swift in Sources */,
 				543913DB2C299FB2006A2075 /* HomeModel.swift in Sources */,
+				5486D6642C397136006FD511 /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
