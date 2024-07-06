@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
     private var totalIncome: Double?
     private var totalExpense: Double?
     private var allSavings: [Saving]?
-    private var allWallets: [Wallet]?
+    private var wallet: Wallet?
     private var allMonthlyPayments: [MonthlyPayment]?
     
     private let homeModelCellMockData = HomeModelCellMockData()
@@ -219,18 +219,8 @@ private extension HomeViewController {
     }
     
     func setupHeaderDate() {
-        allWallets = StorageManager.shared.getAllWallets()
-        
-        let firstWallet = allWallets?.first
-        var totalExpense: Double = 0.0
-        
-        
-        for category in firstWallet!.categoriesIncome {
-            totalExpense += category.incomes.reduce(0.0) { $0 + $1.amount }
-        }
-        
-        countTextOnViewBackground.text = "\(firstWallet!.nameCurrency) \(totalExpense)"
-        
+        wallet = StorageManager.shared.getAllWallets().first
+        countTextOnViewBackground.text = "\(wallet!.nameCurrency) \( wallet!.currentFunds)"
     }
 }
 

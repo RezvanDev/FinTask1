@@ -326,6 +326,7 @@ private extension AddIncomeViewController {
             Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма прибыли", presenter: self)
         } else {
             StorageManager.shared.createIncome(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: tfBottomShieldView.text)
+            StorageManager.shared.updateWalletCurrentFunds(money: Double(tfBottomShieldView.text!) ?? 0, isIncome: true)
             reloadDataFinanceViewController?(true)
             dismiss(animated: true)
         }

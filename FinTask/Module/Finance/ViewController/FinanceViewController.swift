@@ -71,6 +71,10 @@ class FinanceViewController: UIViewController {
         fetchData()
         setupButtons()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
+    }
 }
 
 // MARK: -- SetupLayer

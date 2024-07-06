@@ -28,6 +28,13 @@
 		545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */; };
 		545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */; };
 		547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */; };
+		5486D6502C393C96006FD511 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D64F2C393C96006FD511 /* ColorModel.swift */; };
+		5486D6532C393DCA006FD511 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6522C393DCA006FD511 /* CurrencyModel.swift */; };
+		5486D6562C3941F5006FD511 /* ChangeCurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6552C3941F5006FD511 /* ChangeCurrencyTableViewCell.swift */; };
+		5486D65A2C3946E7006FD511 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6592C3946E7006FD511 /* SubscribeViewController.swift */; };
+		5486D65D2C394CE7006FD511 /* SubscribeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D65C2C394CE7006FD511 /* SubscribeModel.swift */; };
+		5486D6602C394EDD006FD511 /* SubscribeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D65F2C394EDD006FD511 /* SubscribeCollectionViewCell.swift */; };
+		5486D6622C3956E7006FD511 /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */; };
 		54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */; };
 		54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */; };
 		54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */; };
@@ -106,6 +113,13 @@
 		545D087C2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		545D087F2C32C2A4005F19CE /* LimitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitTableViewCell.swift; sourceTree = "<group>"; };
 		547C8DA02C2D7E11008EA96D /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		5486D64F2C393C96006FD511 /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		5486D6522C393DCA006FD511 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		5486D6552C3941F5006FD511 /* ChangeCurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		5486D6592C3946E7006FD511 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		5486D65C2C394CE7006FD511 /* SubscribeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeModel.swift; sourceTree = "<group>"; };
+		5486D65F2C394EDD006FD511 /* SubscribeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeCollectionViewCell.swift; sourceTree = "<group>"; };
+		5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
 		54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +191,7 @@
 		22BD30082C2871C400945318 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				5486D6572C3946C6006FD511 /* Subscribe */,
 				54B69E1F2C37008B00C2BD4E /* GroupSettings */,
 				54B69E0E2C36A24100C2BD4E /* AddMonthlyPayment */,
 				54B69E072C36974700C2BD4E /* MonthlyPayment */,
@@ -422,6 +437,65 @@
 			path = AddExpense;
 			sourceTree = "<group>";
 		};
+		5486D64E2C393C81006FD511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5486D64F2C393C96006FD511 /* ColorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5486D6512C393DBD006FD511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5486D6522C393DCA006FD511 /* CurrencyModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5486D6542C3941E2006FD511 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5486D6552C3941F5006FD511 /* ChangeCurrencyTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5486D6572C3946C6006FD511 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				5486D65B2C394CD1006FD511 /* Model */,
+				5486D65E2C394EC0006FD511 /* View */,
+				5486D6582C3946D2006FD511 /* ViewController */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		5486D6582C3946D2006FD511 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5486D6592C3946E7006FD511 /* SubscribeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5486D65B2C394CD1006FD511 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5486D65C2C394CE7006FD511 /* SubscribeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5486D65E2C394EC0006FD511 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5486D65F2C394EDD006FD511 /* SubscribeCollectionViewCell.swift */,
+				5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		54B69DD82C32FD0200C2BD4E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +642,8 @@
 		54B69E242C3700D000C2BD4E /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				5486D6512C393DBD006FD511 /* Model */,
+				5486D6542C3941E2006FD511 /* View */,
 				54B69E252C3700D900C2BD4E /* ViewController */,
 			);
 			path = Currency;
@@ -633,6 +709,7 @@
 		54E7D3242C3814720097E0D2 /* ColorSelection */ = {
 			isa = PBXGroup;
 			children = (
+				5486D64E2C393C81006FD511 /* Model */,
 				54E7D3282C3819160097E0D2 /* View */,
 				54E7D3252C3814820097E0D2 /* ViewController */,
 			);
@@ -762,10 +839,12 @@
 				541AC7AB2C2835A400AFA81C /* TabBarViewController.swift in Sources */,
 				54B69E232C3700C900C2BD4E /* (null) in Sources */,
 				545D087D2C3188B8005F19CE /* IncomeCategoryCollectionViewCell.swift in Sources */,
+				5486D6622C3956E7006FD511 /* SubscribeTableViewCell.swift in Sources */,
 				543913CF2C296BE3006A2075 /* AnalyticViewController.swift in Sources */,
 				547C8DA12C2D7E11008EA96D /* AddExpenseViewController.swift in Sources */,
 				541C7D2F2C2FE80400928483 /* ExpenseCategoryCollectionViewCell.swift in Sources */,
 				54B69E112C36A25B00C2BD4E /* AddMonthlyPaymentViewController.swift in Sources */,
+				5486D65D2C394CE7006FD511 /* SubscribeModel.swift in Sources */,
 				541AC7A72C2835A400AFA81C /* AppDelegate.swift in Sources */,
 				543913E42C2ABC97006A2075 /* UIColor+Extensions.swift in Sources */,
 				545D087A2C318783005F19CE /* AddIncomeViewController.swift in Sources */,
@@ -786,14 +865,18 @@
 				54B69DF92C35528400C2BD4E /* Helpers.swift in Sources */,
 				54E7D3232C3801A50097E0D2 /* AddCategoryViewController.swift in Sources */,
 				54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */,
+				5486D65A2C3946E7006FD511 /* SubscribeViewController.swift in Sources */,
 				543913E12C2AAD93006A2075 /* Protocols.swift in Sources */,
 				543913D72C296C18006A2075 /* HomeViewController.swift in Sources */,
 				54B69E1B2C36C39400C2BD4E /* TimeInterval+Extensions.swift in Sources */,
 				54BFBEB72C2C17EB00379920 /* FinanceTableViewCell.swift in Sources */,
 				54B69E052C35904300C2BD4E /* SavingHomeCollectionViewCell.swift in Sources */,
+				5486D6502C393C96006FD511 /* ColorModel.swift in Sources */,
 				543913DE2C2AA783006A2075 /* HomeCollectionViewCell.swift in Sources */,
+				5486D6532C393DCA006FD511 /* CurrencyModel.swift in Sources */,
 				543913C22C295944006A2075 /* Builder.swift in Sources */,
 				54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */,
+				5486D6602C394EDD006FD511 /* SubscribeCollectionViewCell.swift in Sources */,
 				545D08802C32C2A4005F19CE /* LimitTableViewCell.swift in Sources */,
 				54BFBE932C2BF45000379920 /* UserModel.swift in Sources */,
 				54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */,
@@ -804,6 +887,7 @@
 				543913C72C296B8B006A2075 /* FinanceViewController.swift in Sources */,
 				54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */,
 				54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */,
+				5486D6562C3941F5006FD511 /* ChangeCurrencyTableViewCell.swift in Sources */,
 				543913E62C2ABCAF006A2075 /* AppColors.swift in Sources */,
 				54B69DFD2C355A2800C2BD4E /* EditSavingViewController.swift in Sources */,
 				545D08722C317A3E005F19CE /* Alerts.swift in Sources */,

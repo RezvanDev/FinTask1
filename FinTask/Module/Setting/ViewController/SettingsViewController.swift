@@ -140,7 +140,8 @@ private extension SettingsViewController {
 //MARK: -- OBJC
 private extension SettingsViewController {
     @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
-        print(#function)
+        let vc = SubscribeViewController()
+        present(vc, animated: true)
     }
 }
 
