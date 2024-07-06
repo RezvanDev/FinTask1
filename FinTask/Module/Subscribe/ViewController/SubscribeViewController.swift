@@ -87,29 +87,30 @@ class SubscribeViewController: UIViewController {
     }()
     private lazy var politicsButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: view.bounds.height - 160, width: 200, height: 50))
-           button.setTitle("Политика \nконфиденциальности", for: .normal)
-           button.titleLabel?.numberOfLines = 2
+        button.setTitle("Политика \nконфиденциальности", for: .normal)
+        button.titleLabel?.numberOfLines = 2
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-           button.titleLabel?.textAlignment = .right
-           button.setTitleColor(.systemGray4, for: .normal)
-           button.addTarget(self, action: #selector(openPrivacyPolicy), for: .touchUpInside)
-           return button
+        button.titleLabel?.textAlignment = .right
+        button.setTitleColor(.systemGray4, for: .normal)
+        button.addTarget(self, action: #selector(openPrivacyPolicy), for: .touchUpInside)
+        return button
     }()
     private lazy var userAgreeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: view.bounds.width - 200, y: view.bounds.height - 160, width: 200, height: 50))
-          button.setTitle("Пользовательское \nсоглашение", for: .normal)
-          button.titleLabel?.numberOfLines = 2
-          button.titleLabel?.textAlignment = .left
+        button.setTitle("Пользовательское \nсоглашение", for: .normal)
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .left
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-          button.setTitleColor(.systemGray4, for: .normal)
-          button.addTarget(self, action: #selector(openUserAgreement), for: .touchUpInside)
-          return button
+        button.setTitleColor(.systemGray4, for: .normal)
+        button.addTarget(self, action: #selector(openUserAgreement), for: .touchUpInside)
+        return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
         setup()
+        SubscriptionManager.shared.fetchProducts()
     }
     
 }
@@ -221,7 +222,7 @@ extension SubscribeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return dataTable?.count ?? 0
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -250,9 +251,26 @@ extension SubscribeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.section)
+        switch indexPath.section {
+        case 0:
+            if let product = SubscriptionManager.shared.products.first(where: { $0.productIdentifier == "com.yourapp.monthly" }) {
+                SubscriptionManager.shared.buyProduct(product)
+            }
+        case 1:
+            if let product = SubscriptionManager.shared.products.first(where: { $0.productIdentifier == "com.yourapp.threemonths" }) {
+                SubscriptionManager.shared.buyProduct(product)
+            }
+            
+        case 2:
+            if let product = SubscriptionManager.shared.products.first(where: { $0.productIdentifier == "com.yourapp.lifetime" }) {
+                SubscriptionManager.shared.buyProduct(product)
+            }
+        default:
+            break
+        }
     }
 }
+
 
 
 
@@ -265,7 +283,7 @@ private extension SubscribeViewController {
     @objc private func openPrivacyPolicy() {
         goToVC(isLoaded: true)
     }
-
+    
     @objc private func openUserAgreement() {
         goToVC(isLoaded: false)
     }
