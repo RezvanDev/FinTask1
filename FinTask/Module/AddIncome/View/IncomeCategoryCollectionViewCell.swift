@@ -18,7 +18,6 @@ class IncomeCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lbl.textAlignment = .center
-        lbl.text = "Развлеченияывфвыфвфыв"
         return lbl
     }()
     private lazy var image: UIImageView = {
@@ -39,9 +38,6 @@ class IncomeCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
         view.layer.cornerRadius = 24
         return view
     }()
-    
-    
-    private var flag = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,8 +72,8 @@ class IncomeCategoryCollectionViewCell: UICollectionViewCell, CellProtocols {
             
             image.centerYAnchor.constraint(equalTo: viewMain.centerYAnchor),
             image.centerXAnchor.constraint(equalTo: viewMain.centerXAnchor),
-            image.heightAnchor.constraint(equalToConstant: 30),
-            image.widthAnchor.constraint(equalToConstant: 30),
+            image.heightAnchor.constraint(equalToConstant: 47),
+            image.widthAnchor.constraint(equalToConstant: 47),
             
             
             title.topAnchor.constraint(equalTo: viewMain.bottomAnchor, constant: 5),
