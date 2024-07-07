@@ -14,7 +14,7 @@ class MonthlyPaymentViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Ежемесячный платеж"
+        lbl.text = String(localized: "Main_Cell_Monthly_Payment")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -22,7 +22,7 @@ class MonthlyPaymentViewController: UIViewController {
     }()
     private lazy var savingNotTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Ежемесячных платежей нет"
+        lbl.text = String(localized: "MonthlyPayment_Not_Montly_Payments")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .medium)

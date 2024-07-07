@@ -17,21 +17,21 @@ class AddCategoryViewController: UIViewController {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
-        button.setTitle("Отмена", for: .normal)
+        button.setTitle(String(localized: "Cancel"), for: .normal)
         button.setTitleColor(.red, for: .normal)
         button.addTarget(self, action: #selector(cancelButtonTap), for: .touchUpInside)
         return button
     }()
     private lazy var saveButton: UIButton = {
         let button = UIButton(frame: CGRect(x: view.bounds.width - 110, y: 0, width: 100, height: 45))
-        button.setTitle("Сохранить", for: .normal)
+        button.setTitle(String(localized: "Save"), for: .normal)
         button.setTitleColor(AppColors.mainGreen, for: .normal)
         button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
         return button
     }()
     private lazy var nameTF: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Название категории"
+        tf.placeholder = String(localized: "AddSaving_Enter_Name")
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.inputAccessoryView = createToolbar()
         tf.borderStyle = .roundedRect
@@ -54,7 +54,7 @@ class AddCategoryViewController: UIViewController {
     }()
     private lazy var iconTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Выбрать иконку"
+        lbl.text = String(localized: "Select_Icon")
         lbl.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lbl.textColor = .black
         return lbl
@@ -79,7 +79,7 @@ class AddCategoryViewController: UIViewController {
     }()
     private lazy var colorTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Выбрать цвет"
+        lbl.text = String(localized: "Choose_Color")
         lbl.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         lbl.textColor = .black
         return lbl
@@ -180,11 +180,11 @@ private extension AddCategoryViewController {
     
     @objc func saveButtonTap() {
         if selectedIcon == nil {
-            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Выберите иконку", presenter: self)
+            Alerts.shared.alertSetColorError(title: String(localized: "Error"), decription: String(localized: "Select_Icon"), presenter: self)
         } else if selectedColor == nil {
-            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Выберите цвет", presenter: self)
+            Alerts.shared.alertSetColorError(title: String(localized: "Error"), decription: String(localized: "Choose_Color"), presenter: self)
         } else if nameTF.text?.trimmingCharacters(in: .whitespaces) == "" || ((nameTF.text?.isEmpty) == nil){
-            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Напишите название", presenter: self)
+            Alerts.shared.alertSetColorError(title: String(localized: "Error"), decription: String(localized: "Write_Name"), presenter: self)
         } else {
             if isIncome {
                 StorageManager.shared.createCategoryIncome(name: nameTF.text!, image: selectedIcon!, color: selectedColor!)

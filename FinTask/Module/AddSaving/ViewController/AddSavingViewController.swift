@@ -15,7 +15,7 @@ class AddSavingViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Добавление накопления"
+        lbl.text = String(localized: "AddSaving_AddSaving")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -42,7 +42,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var nameTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Название"
+        lbl.text = String(localized: "AddSaving_Title")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +50,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var nameTF: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Введите название"
+        tf.placeholder = String(localized: "AddSaving_Enter_Name")
         tf.inputAccessoryView = createToolbar()
         tf.layer.cornerRadius = 20
         tf.delegate = self
@@ -73,7 +73,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var summTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Сумма"
+        lbl.text = String(localized: "The_Amount")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +81,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var summTF: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Введите сумму"
+        tf.placeholder = String(localized: "Alert_Input_Sum")
         tf.inputAccessoryView = createToolbar()
         tf.delegate = self
         tf.layer.cornerRadius = 20
@@ -105,7 +105,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var dateStartTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Дата начала"
+        lbl.text = String(localized: "AddSaving_Date_Start")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -113,7 +113,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var startDateButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Выбрать дату начала", for: .normal)
+        button.setTitle(String(localized: "AddSaving_Select_Stard_Date"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
@@ -134,7 +134,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var dateEndTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Дата конца"
+        lbl.text = String(localized: "AddSaving_End_Date")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -142,7 +142,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var endDateButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Выбрать дату конца", for: .normal)
+        button.setTitle(String(localized: "AddSaving_Select_End_Date"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
@@ -154,7 +154,7 @@ class AddSavingViewController: UIViewController {
     }()
     private lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Добавить", for: .normal)
+        button.setTitle(String(localized: "Add"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
@@ -250,13 +250,13 @@ private extension AddSavingViewController {
     
     func setSavings() {
         if nameTF.text == nil || nameTF.text == "" {
-            Alerts.shared.alertSetSavingError(title: "Ошибка", decription: "Заполните поле название", presenter: self)
+            Alerts.shared.alertSetSavingError(title: String(localized: "Error"), decription: String(localized: "AddSaving_Fill_Name_Field"), presenter: self)
         } else if summTF.text == nil || summTF.text == "" {
-            Alerts.shared.alertSetSavingError(title: "Ошибка", decription: "Заполните поле сумма", presenter: self)
+            Alerts.shared.alertSetSavingError(title: String(localized: "Error"), decription: String(localized: "AddSaving_Fill_Amount_Field"), presenter: self)
         } else if startDate == nil {
-            Alerts.shared.alertSetSavingError(title: "Ошибка", decription: "Заполните дату начала", presenter: self)
+            Alerts.shared.alertSetSavingError(title: String(localized: "Error"), decription: String(localized: "AddSaving_Fill_Start_Date"), presenter: self)
         } else if endDate == nil {
-            Alerts.shared.alertSetSavingError(title: "Ошибка", decription: "Заполните дату конца", presenter: self)
+            Alerts.shared.alertSetSavingError(title: String(localized: "Error"), decription: String(localized: "AddSaving_Fill_End_Date"), presenter: self)
         } else {
             StorageManager.shared.createSaving(name: nameTF.text!, haveAmount: 0, needAmount: Double(summTF.text!) ?? 0, dateStart: startDate!, dateEnd: endDate!)
             closure?(true)
@@ -268,11 +268,11 @@ private extension AddSavingViewController {
 // MARK: -- Objc
 private extension AddSavingViewController {
     @objc func dateStartTap() {
-        showDatePicker(title: "Выберите дату начала", isStart: true)
+        showDatePicker(title: String(localized: "AddSaving_Select_Stard_Date"), isStart: true)
     }
     
     @objc func dateEndTap() {
-        showDatePicker(title: "Выберит дату конца", isStart: false)
+        showDatePicker(title: String(localized: "AddSaving_Select_End_Date"), isStart: false)
     }
     
     @objc func addButtonTap() {
@@ -294,7 +294,7 @@ private extension AddSavingViewController {
         
         alert.view.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
-        let selectAction = UIAlertAction(title: "Выбрать", style: .default) { [weak self] _ in
+        let selectAction = UIAlertAction(title: String(localized: "Choose"), style: .default) { [weak self] _ in
             if isStart {
                 self?.startDate = datePicker.date
                 self?.startDateButton.setTitle(Helpers.shared.formatDate(datePicker.date), for: .normal)
@@ -304,7 +304,7 @@ private extension AddSavingViewController {
             }
         }
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: String(localized: "Error"), style: .cancel, handler: nil)
         
         alert.addAction(selectAction)
         alert.addAction(cancelAction)

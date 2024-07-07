@@ -14,7 +14,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Добавление платежа"
+        lbl.text = String(localized: "AddMontly_Title")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -41,7 +41,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var nameTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Название"
+        lbl.text = String(localized: "AddSaving_Title")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +49,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var nameTF: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Введите название"
+        tf.placeholder = String(localized: "AddSaving_Enter_Name")
         tf.inputAccessoryView = createToolbar()
         tf.layer.cornerRadius = 20
         tf.delegate = self
@@ -72,7 +72,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var summTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Сумма"
+        lbl.text = String(localized: "The_Amount")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +80,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var summTF: UITextField = {
         let tf = UITextField()
-        tf.placeholder = "Введите сумму"
+        tf.placeholder = String(localized: "Alert_Input_Sum")
         tf.inputAccessoryView = createToolbar()
         tf.delegate = self
         tf.layer.cornerRadius = 20
@@ -104,7 +104,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var dateStartTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Дата"
+        lbl.text = String(localized: "Date")
         lbl.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -112,7 +112,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var startDateButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Выбрать дату ежемесячного платежа", for: .normal)
+        button.setTitle(String(localized: "AddMontly_Select_Date_Monly_Payment"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
@@ -124,7 +124,7 @@ class AddMonthlyPaymentViewController: UIViewController {
     }()
     private lazy var addButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Добавить", for: .normal)
+        button.setTitle(String(localized: "Add"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1
@@ -214,11 +214,11 @@ private extension AddMonthlyPaymentViewController {
     
     func setSavings() {
         if nameTF.text == nil || nameTF.text == "" {
-            Alerts.shared.alertSetMonthlyPaymentError(title: "Ошибка", decription: "Заполните поле имя", presenter: self)
+            Alerts.shared.alertSetMonthlyPaymentError(title: String(localized: "Error"), decription: String(localized: "AddSaving_Fill_Name_Field"), presenter: self)
         } else if summTF.text == nil || summTF.text == "" {
-            Alerts.shared.alertSetMonthlyPaymentError(title: "Ошибка", decription: "Заполните поле суммы", presenter: self)
+            Alerts.shared.alertSetMonthlyPaymentError(title: String(localized: "Error"), decription: String(localized: "AddSaving_Fill_Amount_Field"), presenter: self)
         } else if date == nil {
-            Alerts.shared.alertSetMonthlyPaymentError(title: "Ошибка", decription: "Заполните дату", presenter: self)
+            Alerts.shared.alertSetMonthlyPaymentError(title: String(localized: "Error"), decription: String(localized: "AddMontly_Fill_Date"), presenter: self)
         } else {
             StorageManager.shared.createMonthlyPayments(name: nameTF.text!, summ: Double(summTF.text!) ?? 0, date: self.date!)
             closure?(true)
@@ -230,7 +230,7 @@ private extension AddMonthlyPaymentViewController {
 // MARK: -- Objc
 private extension AddMonthlyPaymentViewController {
     @objc func dateStartTap() {
-        showDatePicker(title: "Выберите дату начала")
+        showDatePicker(title: String(localized: "AddSaving_Select_Stard_Date"))
     }
         
     @objc func addButtonTap() {
@@ -250,14 +250,14 @@ private extension AddMonthlyPaymentViewController {
         
         alert.view.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
-        let selectAction = UIAlertAction(title: "Выбрать", style: .default) { [weak self] _ in
+        let selectAction = UIAlertAction(title: String(localized: "Choose"), style: .default) { [weak self] _ in
             
                 self?.date = datePicker.date
                 self?.startDateButton.setTitle(Helpers.shared.formatDate(datePicker.date), for: .normal)
            
         }
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: String(localized: "Cancel"), style: .cancel, handler: nil)
         
         alert.addAction(selectAction)
         alert.addAction(cancelAction)

@@ -21,7 +21,7 @@ class AnalyticViewController: UIViewController {
     
     private lazy var analyticsTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Аналитика"
+        lbl.text = String(localized: "Analytics_Title")
         lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
@@ -40,7 +40,7 @@ class AnalyticViewController: UIViewController {
     }()
     private lazy var filterButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Выбрать интервал", for: .normal)
+        button.setTitle(String(localized: "Analytics_Select_Interval"), for: .normal)
         button.addTarget(self, action: #selector(showTimeIntervalOptions), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -54,7 +54,7 @@ class AnalyticViewController: UIViewController {
         return container
     }()
     private lazy var segmentedControl: UISegmentedControl = {
-        let control = UISegmentedControl(items: ["Расходы", "Доходы"])
+        let control = UISegmentedControl(items: [String(localized: "Main_Cell_Expense"), String(localized: "Main_Cell_Income")])
         control.selectedSegmentIndex = 0
         control.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
         control.translatesAutoresizingMaskIntoConstraints = false
@@ -249,24 +249,24 @@ private extension AnalyticViewController {
     }
     
     @objc private func showTimeIntervalOptions() {
-        let alertController = UIAlertController(title: "Выбрать интервал", message: nil, preferredStyle: .actionSheet)
+        let alertController = UIAlertController(title: String(localized: "Analytics_Select_Interval"), message: nil, preferredStyle: .actionSheet)
         
-        let oneDayAction = UIAlertAction(title: "1 день", style: .default) { _ in
+        let oneDayAction = UIAlertAction(title: String(localized: "Analytics_1_Day"), style: .default) { _ in
             self.selectedTimeInterval = .day
             self.updateChartData()
         }
         
-        let sevenDaysAction = UIAlertAction(title: "7 дней", style: .default) { _ in
+        let sevenDaysAction = UIAlertAction(title: String(localized: "Analytics_7_Day"), style: .default) { _ in
             self.selectedTimeInterval = .week
             self.updateChartData()
         }
         
-        let thirtyDaysAction = UIAlertAction(title: "30 дней", style: .default) { _ in
+        let thirtyDaysAction = UIAlertAction(title: String(localized: "Analytics_30_Day"), style: .default) { _ in
             self.selectedTimeInterval = .month
             self.updateChartData()
         }
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: String(localized: "Cancel"), style: .cancel, handler: nil)
         
         alertController.addAction(oneDayAction)
         alertController.addAction(sevenDaysAction)

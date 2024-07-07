@@ -13,21 +13,21 @@ class Alerts {
     
     func alertSetExpense(title: String, decription: String, presenter: UIViewController) {
         let alert = UIAlertController(title: title, message: decription, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
     }
     
     func alertSetLimits(category: CategoryExpense,presenter: UIViewController, completion: @escaping () -> Void) {
-        let alert = UIAlertController(title: "Установка лимита", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: String(localized: "Alert_Set_Limits"), message: nil, preferredStyle: .alert)
         
         alert.addTextField { textField in
-            textField.placeholder = "Введите лимит"
+            textField.placeholder = String(localized: "Alert_Input_limit")
             textField.keyboardType = .decimalPad
             textField.text = "\(category.limits)"
         }
         
-        let done = UIAlertAction(title: "Добавить", style: .default) { _ in
+        let done = UIAlertAction(title: String(localized: "Add"), style: .default) { _ in
             if let textField = alert.textFields?.first, let text = textField.text {
                 if text == "" {
                     
@@ -43,7 +43,7 @@ class Alerts {
             }
         }
         
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(done)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
@@ -51,21 +51,21 @@ class Alerts {
     
     func alertSetSavingError(title: String, decription: String, presenter: UIViewController) {
         let alert = UIAlertController(title: title, message: decription, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
     }
     
     func alertSetSaving(saving: Saving, presenter: UIViewController, completion: @escaping () -> ()) {
-        let alert = UIAlertController(title: "Добавление суммы", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: String(localized: "Alert_Added_Summ"), message: nil, preferredStyle: .alert)
         
         alert.addTextField { textField in
-            textField.placeholder = "Введите сумму"
+            textField.placeholder = String(localized: "Alert_Input_Sum")
             textField.keyboardType = .decimalPad
             textField.text = "0.0"
         }
         
-        let done = UIAlertAction(title: "Добавить", style: .default) { _ in
+        let done = UIAlertAction(title: String(localized: "Add"), style: .default) { _ in
             if let textField = alert.textFields?.first, let text = textField.text {
                 if text != "" {
                     if let double = Double(text) {
@@ -79,29 +79,29 @@ class Alerts {
             }
         }
         
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(done)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
     }
     
     func alertForSetSaving(presenter: UIViewController) {
-        let alert = UIAlertController(title: "Ошибка", message: "Заполните поле введите сумму", preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let alert = UIAlertController(title: String(localized: "Error"), message: String(localized: "Alert_Input_Field_Sum"), preferredStyle: .alert)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
     }
     
     func alertSetMonthlyPaymentError(title: String, decription: String, presenter: UIViewController) {
         let alert = UIAlertController(title: title, message: decription, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
     }
     
     func alertSetColorError(title: String, decription: String, presenter: UIViewController) {
         let alert = UIAlertController(title: title, message: decription, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "Закрыть", style: .cancel)
+        let cancel = UIAlertAction(title: String(localized: "Close"), style: .cancel)
         alert.addAction(cancel)
         presenter.present(alert, animated: true)
     }

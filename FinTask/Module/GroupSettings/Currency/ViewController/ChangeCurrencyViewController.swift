@@ -14,14 +14,14 @@ class ChangeCurrencyViewController: UIViewController {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
-        button.setTitle("Отмена", for: .normal)
+        button.setTitle(String(localized: "Cancel"), for: .normal)
         button.setTitleColor(.red, for: .normal)
         button.addTarget(self, action: #selector(cancelButtonTap), for: .touchUpInside)
         return button
     }()
     private lazy var saveButton: UIButton = {
         let button = UIButton(frame: CGRect(x: view.bounds.width - 110, y: 0, width: 100, height: 45))
-        button.setTitle("Сохранить", for: .normal)
+        button.setTitle(String(localized: "Save"), for: .normal)
         button.setTitleColor(AppColors.mainGreen, for: .normal)
         button.addTarget(self, action: #selector(saveButtonTap), for: .touchUpInside)
         return button
@@ -93,7 +93,7 @@ private extension ChangeCurrencyViewController {
     
     @objc func saveButtonTap() {
         if selectedCurrency == nil {
-            Alerts.shared.alertSetColorError(title: "Ошибка", decription: "Выберите валюту", presenter: self)
+            Alerts.shared.alertSetColorError(title: String(localized: "Error"), decription: String(localized: "Select_Currency"), presenter: self)
         } else {
             StorageManager.shared.updateCodeCurrencyInWallet(code: selectedCurrency!)
             dismiss(animated: true)

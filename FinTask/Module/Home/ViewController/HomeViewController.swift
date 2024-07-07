@@ -49,7 +49,7 @@ class HomeViewController: UIViewController {
     
     private lazy var mainTextOnViewBackground: UILabel = {
         let label = UILabel()
-        label.text = "Основной счет"
+        label.text = String(localized: "Main_Header_Title")
         label.font = UIFont.systemFont(ofSize: 17, weight: .light)
         
         label.tintColor = .black

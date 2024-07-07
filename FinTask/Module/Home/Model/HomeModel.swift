@@ -21,10 +21,10 @@ class HomeModelCellMockData {
     }
     
     private func getMockData() {
-        homeModelCells.append(HomeModelCell(image: UIImage(resource: .income), title: "Доход"))
-        homeModelCells.append(HomeModelCell(image: UIImage(resource: .expenses), title: "Расход"))
-        homeModelCells.append(HomeModelCell(image: UIImage(resource: .habits), title: "Накопления"))
-        homeModelCells.append(HomeModelCell(image: UIImage(resource: .events), title: "рент"))
+        homeModelCells.append(HomeModelCell(image: UIImage(resource: .income), title: String(localized: "Main_Cell_Income")))
+        homeModelCells.append(HomeModelCell(image: UIImage(resource: .expenses), title: String(localized: "Main_Cell_Expense")))
+        homeModelCells.append(HomeModelCell(image: UIImage(resource: .habits), title: String(localized: "Main_Cell_Savings")))
+        homeModelCells.append(HomeModelCell(image: UIImage(resource: .events), title: String(localized: "Main_Cell_Monthly_Payment")))
     }
 }
 
@@ -44,28 +44,28 @@ class HomeModelDate {
             return "Ошибка вычисления времени"
         }
         
-        return "До конца дня осталось \(hours) \(hourDeclension(for: hours)) \(minutes) \(minuteDeclension(for: minutes))"
+        return "\(String(localized: "Main_Time")) \(hours) \(hourDeclension(for: hours)) \(minutes) \(minuteDeclension(for: minutes))"
     }
     
     private func hourDeclension(for hours: Int) -> String {
         switch hours % 10 {
         case 1:
-            return (hours % 100 == 11) ? "часов" : "час"
+            return (hours % 100 == 11) ? String(localized: "Main_Time_Hour1") : String(localized: "Main_Time_Hour")
         case 2, 3, 4:
-            return (11...14 ~= hours % 100) ? "часов" : "часа"
+            return (11...14 ~= hours % 100) ? String(localized: "Main_Time_Hour1") : String(localized: "Main_Time_Hour2")
         default:
-            return "часов"
+            return String(localized: "Main_Time_Hour1")
         }
     }
     
     private func minuteDeclension(for minutes: Int) -> String {
         switch minutes % 10 {
         case 1:
-            return (minutes % 100 == 11) ? "минут" : "минута"
+            return (minutes % 100 == 11) ? String(localized: "Main_Time_Minute") : String(localized: "Main_Time_Minute1")
         case 2, 3, 4:
-            return (11...14 ~= minutes % 100) ? "минут" : "минуты"
+            return (11...14 ~= minutes % 100) ? String(localized: "Main_Time_Minute") : String(localized: "Main_Time_Minute2")
         default:
-            return "минут"
+            return String(localized: "Main_Time_Minute3")
         }
     }
 }

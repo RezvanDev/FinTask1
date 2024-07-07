@@ -23,7 +23,7 @@ class AddExpenseViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Расход"
+        lbl.text = String(localized: "Main_Cell_Expense")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
@@ -65,7 +65,7 @@ class AddExpenseViewController: UIViewController {
     private lazy var lblForStack: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "Дата"
+        lbl.text = String(localized: "Date")
         return lbl
     }()
     private lazy var datePicker: UIDatePicker = {
@@ -102,7 +102,7 @@ class AddExpenseViewController: UIViewController {
     }()
     private lazy var titleBottomShieldView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Сумма"
+        lbl.text = String(localized: "The_Amount")
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         lbl.textColor = .darkGray
         return lbl
@@ -113,7 +113,7 @@ class AddExpenseViewController: UIViewController {
         tf.delegate = self
         tf.inputAccessoryView = createToolbar()
         tf.keyboardType = .numberPad
-        tf.placeholder = "Cумма трат"
+        tf.placeholder = String(localized: "The_Amount_Expenses")
         return tf
     }()
     private lazy var buttonBottomShieldView: UIButton = {
@@ -320,10 +320,10 @@ private extension AddExpenseViewController {
 private extension AddExpenseViewController {
     func setExpense() {
         if currentCategory == nil {
-            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Выберите категорию траты", presenter: self)
+            Alerts.shared.alertSetExpense(title: String(localized: "Error"), decription: String(localized: "Select_Spending_Category"), presenter: self)
         }
         if tfBottomShieldView.text == "" {
-            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма трат", presenter: self)
+            Alerts.shared.alertSetExpense(title: String(localized: "Error"), decription: String(localized: "Fill_Amount_Expenses_Field"), presenter: self)
         } else {
             StorageManager.shared.createExpense(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: noteTF.text)
             StorageManager.shared.updateWalletCurrentFunds(money:  Double(tfBottomShieldView.text!) ?? 0, isIncome: false)

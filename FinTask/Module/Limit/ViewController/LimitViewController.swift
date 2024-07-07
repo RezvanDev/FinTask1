@@ -13,7 +13,7 @@ class LimitViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Лимиты"
+        lbl.text = String(localized: "Limit_Header")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)

@@ -35,7 +35,7 @@ class CategoryViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.backgroundColor = AppColors.mainGreen
         button.addTarget(self, action: #selector(addButtonTap), for: .touchUpInside)
-        button.setTitle("НОВАЯ КАТЕГОРИЯ", for: .normal)
+        button.setTitle(String(localized: "New_Category"), for: .normal)
         return button
     }()
     
@@ -88,14 +88,14 @@ private extension CategoryViewController {
 // MARK: -- Setup Income
 private extension CategoryViewController {
     func setupIncome() {
-        categoryTitle.text = "Категории доходов"
+        categoryTitle.text = String(localized: "Settings_Income_Categories")
     }
 }
 
 // MARK: -- Setup Expense
 private extension CategoryViewController {
     func setupExpense() {
-        categoryTitle.text = "Категории Расходов"
+        categoryTitle.text = String(localized: "Settings_Expense_Categories")
     }
 }
 
