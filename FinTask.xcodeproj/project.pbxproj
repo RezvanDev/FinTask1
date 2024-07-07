@@ -37,6 +37,7 @@
 		5486D6622C3956E7006FD511 /* SubscribeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */; };
 		5486D6642C397136006FD511 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6632C397136006FD511 /* HelpViewController.swift */; };
 		5486D6662C397488006FD511 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5486D6652C397488006FD511 /* SubscriptionManager.swift */; };
+		5486D66F2C397940006FD511 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5486D66E2C397940006FD511 /* Localizable.xcstrings */; };
 		54B69DD72C32FCBE00C2BD4E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */; };
 		54B69DDA2C32FD1000C2BD4E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */; };
 		54B69DEF2C352C5F00C2BD4E /* SavingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */; };
@@ -124,6 +125,8 @@
 		5486D6612C3956E7006FD511 /* SubscribeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeTableViewCell.swift; sourceTree = "<group>"; };
 		5486D6632C397136006FD511 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		5486D6652C397488006FD511 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		5486D66E2C397940006FD511 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5486D6702C39794C006FD511 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		54B69DD62C32FCBE00C2BD4E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		54B69DD92C32FD1000C2BD4E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		54B69DEE2C352C5F00C2BD4E /* SavingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingViewController.swift; sourceTree = "<group>"; };
@@ -250,6 +253,7 @@
 				541AC7AF2C2835A500AFA81C /* Assets.xcassets */,
 				541AC7B12C2835A500AFA81C /* LaunchScreen.storyboard */,
 				541AC7B42C2835A500AFA81C /* Info.plist */,
+				5486D66E2C397940006FD511 /* Localizable.xcstrings */,
 			);
 			path = FinTask;
 			sourceTree = "<group>";
@@ -810,6 +814,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
@@ -832,6 +837,7 @@
 			files = (
 				541AC7B02C2835A500AFA81C /* Assets.xcassets in Resources */,
 				541AC7B32C2835A500AFA81C /* Base in Resources */,
+				5486D66F2C397940006FD511 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +917,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				541AC7B22C2835A500AFA81C /* Base */,
+				5486D6702C39794C006FD511 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -923,6 +930,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -986,6 +994,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

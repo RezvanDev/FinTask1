@@ -23,7 +23,7 @@ class FinanceViewController: UIViewController {
     
     private lazy var historyTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "История"
+        lbl.text = String(localized: "History_Header")
         lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
@@ -236,9 +236,9 @@ extension FinanceViewController:  UITableViewDelegate, UITableViewDataSource {
         let date = sections[section].date
         
         if Calendar.current.isDateInToday(date) {
-            return "Сегодня"
+            return String(localized: "History_Today")
         } else if Calendar.current.isDateInYesterday(date) {
-            return "Вчера"
+            return String(localized: "History_Yesterday")
         } else {
             return Helpers.shared.formatDate(date)
         }

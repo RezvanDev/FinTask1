@@ -12,16 +12,16 @@ class SettingsViewController: UIViewController{
     private var tapGesture: UITapGestureRecognizer?
     
     private lazy var settingsCell: [(image: UIImage?, title: String)] = [
-        (UIImage(systemName: "square.and.arrow.up"),"Категории расходов"),
-        (UIImage(systemName: "square.and.arrow.down"),"Категории доходов"),
-        (UIImage(systemName: "dollarsign.circle"),"Валюта по умолчанию"),
-        (UIImage(systemName: "envelope.fill"), "Связаться с разработчиком")
+        (UIImage(systemName: "square.and.arrow.up"), String(localized: "Settings_Expense_Categories")),
+        (UIImage(systemName: "square.and.arrow.down"), String(localized: "Settings_Income_Categories")),
+        (UIImage(systemName: "dollarsign.circle"), String(localized: "Settings_Default_Currency")),
+        (UIImage(systemName: "envelope.fill"), String(localized: "Settings_Contact_Developer"))
     ]
     
     private lazy var settingsTitle: UILabel = {
         let lbl = UILabel()
         lbl.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        lbl.text = "Настройки"
+        lbl.text = String(localized: "Settings_Title")
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController{
     
     private lazy var premiumLabel: UILabel = {
         let label = UILabel()
-        label.text = "Купить премиум"
+        label.text = String(localized: "Settings_Buy_Premium")
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         label.textColor = .black
         return label

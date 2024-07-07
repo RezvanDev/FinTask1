@@ -26,13 +26,13 @@ class SubscribeModel {
     }
     
     func downloadData() {
-        carouselData = [Subscribe(image: "unlimitExpense", text: "Безлимитные расходы"),
-                        Subscribe(image: "unlimitIncome", text: "Безлимитные доходы"),
-                        Subscribe(image: "selectedCurrency", text: "Выбор валюты"),
-                        Subscribe(image: "fewWallet", text: "Несколько счетов")]
-        tableData = [SubscribeTable(firstLBL: "ГОДОВАЯ ПОДПИСКА", secondLBL: "US$12,99 в год"),
-                     SubscribeTable(firstLBL: "МЕСЯЧНАЯ ПОДПИСКА", secondLBL: "Всего US$3,99 в месяц"),
-                     SubscribeTable(firstLBL: "НАВСЕГДА", secondLBL: "US$29,99 один раз"),
+        carouselData = [Subscribe(image: "unlimitExpense", text: String(localized: "Subscribe_Data_Expense")),
+                        Subscribe(image: "unlimitIncome", text: String(localized: "Subscribe_Data_Income")),
+                        Subscribe(image: "selectedCurrency", text: String(localized: "Subscribe_Currency_Selection")),
+                        Subscribe(image: "fewWallet", text: String(localized: "Subscribe_Multiple_Accounts"))]
+        tableData = [SubscribeTable(firstLBL: String(localized: "Subscribe_DataFirst_First"), secondLBL: String(localized: "Subscribe_Data_FIrst_Second")),
+                     SubscribeTable(firstLBL: String(localized: "Subscribe_Data_Second_First"), secondLBL: String(localized: "Subscribe_Data_Second_Second")),
+                     SubscribeTable(firstLBL: String(localized: "Subscribe_Data_Third_First"), secondLBL: String(localized: "Subscribe_Data_Third_Second")),
         ]
     }
 }

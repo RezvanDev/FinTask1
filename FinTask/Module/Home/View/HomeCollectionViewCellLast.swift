@@ -14,7 +14,7 @@ class HomeCollectionViewCellLast: UICollectionViewCell, CellProtocols {
     
     private lazy var title: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Ежемесячный платеж"
+        lbl.text = String(localized: "Main_Cell_Monthly_Payment")
         lbl.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         lbl.textColor = .black
         lbl.translatesAutoresizingMaskIntoConstraints = false

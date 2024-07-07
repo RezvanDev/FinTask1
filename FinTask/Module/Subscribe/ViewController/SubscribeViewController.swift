@@ -14,21 +14,21 @@ class SubscribeViewController: UIViewController {
     
     private lazy var cancelButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 45))
-        button.setTitle("Отмена", for: .normal)
+        button.setTitle(String(localized: "Cancel"), for: .normal)
         button.setTitleColor(.red, for: .normal)
         button.addTarget(self, action: #selector(cancelButtonTap), for: .touchUpInside)
         return button
     }()
     private lazy var titleLBL: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Получите доступ ко всем функция в"
+        lbl.text = String(localized: "Subscribe_Title_LBL")
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 15, weight: .light)
         return lbl
     }()
     private lazy var titleLBLChartTwo: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Премиум версии"
+        lbl.text = String(localized: "Subscribe_Title_LBL_Chart_Two")
         lbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         lbl.textColor = .black
         return lbl
@@ -77,7 +77,7 @@ class SubscribeViewController: UIViewController {
     }()
     private lazy var infoText: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Оплата будет произведена с Вашего Apple ID аккаунта. Подписка автоматически обновляется, пока она не будет отменена не позже, чем за 24 часа до конца текущего периода. Оплата за обновление подписки будет произведена втечение 24 часов до конца текущего периода. Вы можете отменить подписку в настройках аккаунта Арр Store после покупки."
+        lbl.text = String(localized: "Subscribe_Info_Text")
         lbl.font = UIFont.systemFont(ofSize: 12, weight: .light)
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.numberOfLines = 0
@@ -87,7 +87,7 @@ class SubscribeViewController: UIViewController {
     }()
     private lazy var politicsButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 0, y: view.bounds.height - 160, width: 200, height: 50))
-        button.setTitle("Политика \nконфиденциальности", for: .normal)
+        button.setTitle("\(String(localized: "Subscribe_Politics")) \n\(String(localized: "Subscribe_Privacy_Politics"))", for: .normal)
         button.titleLabel?.numberOfLines = 2
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         button.titleLabel?.textAlignment = .right
@@ -97,7 +97,7 @@ class SubscribeViewController: UIViewController {
     }()
     private lazy var userAgreeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: view.bounds.width - 200, y: view.bounds.height - 160, width: 200, height: 50))
-        button.setTitle("Пользовательское \nсоглашение", for: .normal)
+        button.setTitle("\(String(localized: "Subscribe_Custom")) \n\(String(localized: "Subscribe_Custom1"))", for: .normal)
         button.titleLabel?.numberOfLines = 2
         button.titleLabel?.textAlignment = .left
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)

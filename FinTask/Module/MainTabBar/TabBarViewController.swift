@@ -10,11 +10,11 @@ import UIKit
 class TabBarViewController: UITabBarController {
     
     private let tabs: [(image: UIImage?, title: String)] = [
-        (UIImage(systemName: "creditcard.and.123"), "Финансы"),
-        (UIImage(systemName: "folder"), "Лимиты"),
-        (UIImage(systemName: "house"), "Главная"),
-        (UIImage(systemName: "eye"), "Аналитика"),
-        (UIImage(systemName: "gearshape"), "Настройки")
+        (UIImage(systemName: "creditcard.and.123"), String(localized: "Tab_Bar_Finance")),
+        (UIImage(systemName: "folder"), String(localized: "Tab_Bar_Limits")),
+        (UIImage(systemName: "house"), String(localized: "Tab_Bar_Home")),
+        (UIImage(systemName: "eye"), String(localized: "Tab_Bar_Analytics")),
+        (UIImage(systemName: "gearshape"), String(localized: "Tab_Bar_Setting"))
     ]
     
     private var tabButtons: [UIButton] = []

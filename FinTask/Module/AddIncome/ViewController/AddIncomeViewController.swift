@@ -23,7 +23,7 @@ class AddIncomeViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Доход"
+        lbl.text = String(localized: "Main_Cell_Income")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .bold)
@@ -65,7 +65,7 @@ class AddIncomeViewController: UIViewController {
     private lazy var lblForStack: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "Дата"
+        lbl.text = String(localized: "Date")
         return lbl
     }()
     private lazy var datePicker: UIDatePicker = {
@@ -102,7 +102,7 @@ class AddIncomeViewController: UIViewController {
     }()
     private lazy var titleBottomShieldView: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Сумма"
+        lbl.text = String(localized: "The_Amount")
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         lbl.textColor = .darkGray
         return lbl
@@ -113,7 +113,7 @@ class AddIncomeViewController: UIViewController {
         tf.delegate = self
         tf.inputAccessoryView = createToolbar()
         tf.keyboardType = .numberPad
-        tf.placeholder = "Cумма прибыли"
+        tf.placeholder = String(localized: "The_Amount_Profit")
         return tf
     }()
     private lazy var buttonBottomShieldView: UIButton = {
@@ -320,10 +320,10 @@ private extension AddIncomeViewController {
 private extension AddIncomeViewController {
     func setIncome() {
         if currentCategory == nil {
-            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Выберите категорию прибыли", presenter: self)
+            Alerts.shared.alertSetExpense(title: String(localized: "Error"), decription: String(localized: "Select_Profit _Category"), presenter: self)
         }
         if tfBottomShieldView.text == "" {
-            Alerts.shared.alertSetExpense(title: "Ошибка", decription: "Заполните поле сумма прибыли", presenter: self)
+            Alerts.shared.alertSetExpense(title: String(localized: "Error"), decription: String(localized: "Fill_Profit_Amount_Field"), presenter: self)
         } else {
             StorageManager.shared.createIncome(for: currentCategory!.id, amount: Double(tfBottomShieldView.text!) ?? 0, date: datePicker.date, note: tfBottomShieldView.text)
             StorageManager.shared.updateWalletCurrentFunds(money: Double(tfBottomShieldView.text!) ?? 0, isIncome: true)

@@ -21,7 +21,7 @@ class EditSavingViewController: UIViewController {
     }()
     private lazy var buttonAppendSumm: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Добавить сумму", for: .normal)
+        button.setTitle(String(localized: "Alert_Added_Summ"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.layer.borderWidth = 1

@@ -27,7 +27,7 @@ class LimitTableViewCell: UITableViewCell, CellProtocols {
     }()
     private lazy var setLimitButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Установить лимит", for: .normal)
+        button.setTitle(String(localized: "Limit_Set_Limit_Button"), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .bold)
         button.setTitleColor(.red, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false

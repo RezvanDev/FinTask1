@@ -14,7 +14,7 @@ class SavingViewController: UIViewController {
     
     private lazy var titleMain: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Накопления"
+        lbl.text = String(localized: "Saving_Title")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -22,7 +22,7 @@ class SavingViewController: UIViewController {
     }()
     private lazy var savingNotTitle: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Накоплений нет"
+        lbl.text = String(localized: "Saving_Dont_Saving")
         lbl.translatesAutoresizingMaskIntoConstraints = false
         lbl.textColor = .black
         lbl.font = UIFont.systemFont(ofSize: 20, weight: .medium)
