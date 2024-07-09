@@ -15,6 +15,12 @@
             "state" : "translated",
             "value" : "Добавить"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "додавати"
+          }
         }
       }
     },
@@ -31,6 +37,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Заполните дату"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вкажіть дату"
           }
         }
       }
@@ -49,6 +61,12 @@
             "state" : "needs_review",
             "value" : "Выбрать дату ежемесячного платежа"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть дату щомісячного платежу"
+          }
         }
       }
     },
@@ -65,6 +83,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Добавление платежа"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додавання платежу"
           }
         }
       }
@@ -83,6 +107,12 @@
             "state" : "needs_review",
             "value" : "Добавление накопления"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додаючи накопичення"
+          }
         }
       }
     },
@@ -99,6 +129,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Дата начала"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата початку"
           }
         }
       }
@@ -117,6 +153,12 @@
             "state" : "needs_review",
             "value" : "Дата конца"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата закінчення"
+          }
         }
       }
     },
@@ -133,6 +175,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Введите название"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть ім'я"
           }
         }
       }
@@ -151,6 +199,12 @@
             "state" : "translated",
             "value" : "Заполните поле суммы"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть поле Сума"
+          }
         }
       }
     },
@@ -167,6 +221,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Заполните дату конца"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вкажіть дату закінчення"
           }
         }
       }
@@ -185,6 +245,12 @@
             "state" : "needs_review",
             "value" : "Заполните поле название"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть поле\"Ім'я\""
+          }
         }
       }
     },
@@ -201,6 +267,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Заполните дату начала"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вкажіть дату початку"
           }
         }
       }
@@ -219,6 +291,12 @@
             "state" : "translated",
             "value" : "Выбрать дату конца"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть дату закінчення"
+          }
         }
       }
     },
@@ -235,6 +313,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выбрать дату начала"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть дату початку"
           }
         }
       }
@@ -253,6 +337,12 @@
             "state" : "needs_review",
             "value" : "Название"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
+          }
         }
       }
     },
@@ -269,6 +359,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Добавление суммы"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додавання суми"
           }
         }
       }
@@ -287,6 +383,12 @@
             "state" : "translated",
             "value" : "Заполните поле введите сумму"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть поле \"Введіть суму\""
+          }
         }
       }
     },
@@ -303,6 +405,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Введите лимит"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть ліміт"
           }
         }
       }
@@ -321,6 +429,12 @@
             "state" : "translated",
             "value" : "Введите сумму"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть суму"
+          }
         }
       }
     },
@@ -338,6 +452,12 @@
             "state" : "translated",
             "value" : "Установка лимита"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Встановлена межа"
+          }
         }
       }
     },
@@ -353,6 +473,12 @@
         "ru" : {
           "stringUnit" : {
             "state" : "needs_review",
+            "value" : "1 день"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "1 день"
           }
         }
@@ -372,6 +498,12 @@
             "state" : "needs_review",
             "value" : "7 дней"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "7 днів"
+          }
         }
       }
     },
@@ -388,6 +520,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "30 дней"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "30 днів"
           }
         }
       }
@@ -406,6 +544,12 @@
             "state" : "needs_review",
             "value" : "Выбрать интервал"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть інтервал"
+          }
         }
       }
     },
@@ -422,6 +566,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Аналитика"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аналітика"
           }
         }
       }
@@ -440,6 +590,12 @@
             "state" : "translated",
             "value" : "Отмена"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відмінивши"
+          }
         }
       }
     },
@@ -455,6 +611,12 @@
         "ru" : {
           "stringUnit" : {
             "state" : "needs_review",
+            "value" : "Банк"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Банк"
           }
         }
@@ -474,6 +636,12 @@
             "state" : "translated",
             "value" : "Бизнес"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бізнес"
+          }
         }
       }
     },
@@ -490,6 +658,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Развлечения"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розвага"
           }
         }
       }
@@ -508,6 +682,12 @@
             "state" : "needs_review",
             "value" : "Фриланс"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Позаштатний"
+          }
         }
       }
     },
@@ -524,6 +704,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Подарок"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подарунок"
           }
         }
       }
@@ -542,6 +728,12 @@
             "state" : "needs_review",
             "value" : "Подарки"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подарункi"
+          }
         }
       }
     },
@@ -555,6 +747,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Еда"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Еда"
@@ -576,6 +774,12 @@
             "state" : "needs_review",
             "value" : "Продукты"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продукція"
+          }
         }
       }
     },
@@ -593,6 +797,12 @@
             "state" : "translated",
             "value" : "Переводы"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переклад"
+          }
         }
       }
     },
@@ -608,6 +818,12 @@
         "ru" : {
           "stringUnit" : {
             "state" : "needs_review",
+            "value" : "Транспорт"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "Транспорт"
           }
         }
@@ -627,6 +843,12 @@
             "state" : "needs_review",
             "value" : "Работа"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Робота"
+          }
         }
       }
     },
@@ -643,6 +865,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Выбрать"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибирати"
           }
         }
       }
@@ -661,6 +889,12 @@
             "state" : "needs_review",
             "value" : "Выберите цвет"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть колір"
+          }
         }
       }
     },
@@ -678,6 +912,12 @@
             "state" : "translated",
             "value" : "Закрыть"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закривати"
+          }
         }
       }
     },
@@ -691,6 +931,12 @@
           }
         },
         "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Дата"
@@ -712,6 +958,12 @@
             "state" : "translated",
             "value" : "Ошибка"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Помилка"
+          }
         }
       }
     },
@@ -728,6 +980,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Заполните поле сумма трат"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть поле cума витрат"
           }
         }
       }
@@ -746,6 +1004,12 @@
             "state" : "translated",
             "value" : "Заполните поле сумма прибыли"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заповніть поле Сума прибутку"
+          }
         }
       }
     },
@@ -762,6 +1026,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "История"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Історія"
           }
         }
       }
@@ -780,6 +1050,12 @@
             "state" : "translated",
             "value" : "Сегодня"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сьогодні"
+          }
         }
       }
     },
@@ -796,6 +1072,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Вчера"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вчора"
           }
         }
       }
@@ -814,6 +1096,12 @@
             "state" : "translated",
             "value" : "Лимиты"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Межа"
+          }
         }
       }
     },
@@ -830,6 +1118,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Установить лимит"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Встановіть ліміт"
           }
         }
       }
@@ -848,6 +1142,12 @@
             "state" : "translated",
             "value" : "Расход"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Витрата"
+          }
         }
       }
     },
@@ -864,6 +1164,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Доход"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дохід"
           }
         }
       }
@@ -882,6 +1188,12 @@
             "state" : "translated",
             "value" : "Ежемесячный платеж"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Щомісячний платіж"
+          }
         }
       }
     },
@@ -898,6 +1210,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Накопления"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заощадження"
           }
         }
       }
@@ -916,6 +1234,12 @@
             "state" : "translated",
             "value" : "Основной счет"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Основний рахунок"
+          }
         }
       }
     },
@@ -932,6 +1256,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "До конца дня осталось"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "До кінця дня ще є час"
           }
         }
       }
@@ -950,6 +1280,12 @@
             "state" : "translated",
             "value" : "час"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "година"
+          }
         }
       }
     },
@@ -966,6 +1302,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "часов"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "години"
           }
         }
       }
@@ -984,6 +1326,12 @@
             "state" : "translated",
             "value" : "часа"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "години"
+          }
         }
       }
     },
@@ -1000,6 +1348,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "минут"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "хвилини"
           }
         }
       }
@@ -1018,6 +1372,12 @@
             "state" : "translated",
             "value" : "минута"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "хвилина"
+          }
         }
       }
     },
@@ -1034,6 +1394,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "минуты"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "хвилини"
           }
         }
       }
@@ -1052,6 +1418,12 @@
             "state" : "translated",
             "value" : "минут"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "хвилини"
+          }
         }
       }
     },
@@ -1068,6 +1440,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Ежемесячных платежей нет"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Щомісячних платежів немає"
           }
         }
       }
@@ -1086,6 +1464,12 @@
             "state" : "needs_review",
             "value" : "НОВАЯ КАТЕГОРИЯ"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "НОВА КАТЕГОРІЯ"
+          }
         }
       }
     },
@@ -1102,6 +1486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сохранить"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігши"
           }
         }
       }
@@ -1120,6 +1510,12 @@
             "state" : "translated",
             "value" : "Накоплений нет"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає ніяких заощаджень"
+          }
         }
       }
     },
@@ -1136,6 +1532,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Накопления"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Економія"
           }
         }
       }
@@ -1154,6 +1556,12 @@
             "state" : "needs_review",
             "value" : "Выберите валюту"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть валюту"
+          }
         }
       }
     },
@@ -1170,6 +1578,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Выберите иконку"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть значок"
           }
         }
       }
@@ -1188,6 +1602,12 @@
             "state" : "translated",
             "value" : "Выберите категорию прибыли"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть категорію прибутку"
+          }
         }
       }
     },
@@ -1204,6 +1624,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Выберите категорию траты"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть категорію витрат"
           }
         }
       }
@@ -1222,6 +1648,12 @@
             "state" : "needs_review",
             "value" : "Купить премиум\\"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Купити преміум-клас"
+          }
         }
       }
     },
@@ -1238,6 +1670,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Связаться с разработчиком"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зв'яжіться з розробником"
           }
         }
       }
@@ -1256,6 +1694,12 @@
             "state" : "translated",
             "value" : "Валюта по умолчанию"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Валюта за замовчуванням"
+          }
         }
       }
     },
@@ -1272,6 +1716,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Категории расходов"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Категорії витрат"
           }
         }
       }
@@ -1290,6 +1740,12 @@
             "state" : "needs_review",
             "value" : "Категории доходов"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Категорії доходів"
+          }
         }
       }
     },
@@ -1306,6 +1762,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройка"
           }
         }
       }
@@ -1324,6 +1786,12 @@
             "state" : "needs_review",
             "value" : "Выбор валюты"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибір валюти"
+          }
         }
       }
     },
@@ -1340,6 +1808,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Пользовательское"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Користувач"
           }
         }
       }
@@ -1358,6 +1832,12 @@
             "state" : "translated",
             "value" : "соглашение"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "угода"
+          }
         }
       }
     },
@@ -1374,6 +1854,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Безлимитные расходы"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необмежені витрати"
           }
         }
       }
@@ -1392,6 +1878,12 @@
             "state" : "needs_review",
             "value" : "US$12,99 в год"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "US$12.99 у рік"
+          }
         }
       }
     },
@@ -1408,6 +1900,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Безлимитные доходы"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необмежений дохід"
           }
         }
       }
@@ -1426,6 +1924,12 @@
             "state" : "needs_review",
             "value" : "MONTHLY SUBSCRIPTION"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ЩОМІСЯЧНА ПІДПИСКА"
+          }
         }
       }
     },
@@ -1442,6 +1946,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Всего US$3,99 в месяц"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всього US$3.99 на місяць"
           }
         }
       }
@@ -1460,6 +1970,12 @@
             "state" : "needs_review",
             "value" : "НАВСЕГДА"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "НАЗАВЖДИ"
+          }
         }
       }
     },
@@ -1476,6 +1992,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "US$29,99 один раз"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "US$29.99 разової"
           }
         }
       }
@@ -1494,6 +2016,12 @@
             "state" : "translated",
             "value" : "ГОДОВАЯ ПОДПИСКА"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "РІЧНА ПІДПИСКА"
+          }
         }
       }
     },
@@ -1510,6 +2038,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Оплата будет произведена с Вашего Apple ID аккаунта. Подписка автоматически обновляется, пока она не будет отменена не позже, чем за 24 часа до конца текущего периода. Оплата за обновление подписки будет произведена втечение 24 часов до конца текущего периода. Вы можете отменить подписку в настройках аккаунта Арр Store после покупки."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оплата буде здійснена з вашого облікового запису Apple ID. Підписка автоматично продовжується до тих пір, поки ви не скасуєте її не пізніше, ніж за 24 години до закінчення поточного періоду. Оплата за продовження підписки буде проведена протягом 24 годин до закінчення поточного періоду. Ви можете скасувати підписку в налаштуваннях облікового запису App Store після покупки."
           }
         }
       }
@@ -1528,6 +2062,12 @@
             "state" : "translated",
             "value" : "Несколько счетов"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кілька облікових записів"
+          }
         }
       }
     },
@@ -1544,6 +2084,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Политика "
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Конфіденційність"
           }
         }
       }
@@ -1562,6 +2108,12 @@
             "state" : "needs_review",
             "value" : "конфиденциальности"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "конфіденційність"
+          }
         }
       }
     },
@@ -1578,6 +2130,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Получите доступ ко всем функция в"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отримайте доступ до всіх функцій в"
           }
         }
       }
@@ -1596,6 +2154,12 @@
             "state" : "translated",
             "value" : "Премиум версии"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Преміум-версії"
+          }
         }
       }
     },
@@ -1612,6 +2176,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Аналитика"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Аналітика"
           }
         }
       }
@@ -1630,6 +2200,12 @@
             "state" : "translated",
             "value" : "Финансы"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фінанси"
+          }
         }
       }
     },
@@ -1646,6 +2222,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Главная"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додому"
           }
         }
       }
@@ -1664,6 +2246,12 @@
             "state" : "translated",
             "value" : "Лимиты"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Межа"
+          }
         }
       }
     },
@@ -1680,6 +2268,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Настройки"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройка"
           }
         }
       }
@@ -1698,6 +2292,12 @@
             "state" : "translated",
             "value" : "Сумма"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума"
+          }
         }
       }
     },
@@ -1714,6 +2314,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сумма трат"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума витрат"
           }
         }
       }
@@ -1732,6 +2338,12 @@
             "state" : "translated",
             "value" : "Сумма прибыли"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розмір прибутку"
+          }
         }
       }
     },
@@ -1748,6 +2360,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Напишите название"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Напишіть своє ім'я"
           }
         }
       }

@@ -6,5 +6,6 @@ target 'FinTask' do
   use_frameworks!
 
   # Pods for FinTask
-pod 'RealmSwift', '~>10'
+pod 'RealmSwift'
+pod 'DGCharts'
 end
