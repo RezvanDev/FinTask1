@@ -60,7 +60,6 @@
 		54B69E272C3700F700C2BD4E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		54B69E2B2C37011400C2BD4E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		54B69E302C37EB2100C2BD4E /* DGChartsDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */; };
-		54B69E332C37EB2900C2BD4E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E322C37EB2900C2BD4E /* RealmSwift */; };
 		54BFBE912C2BF43C00379920 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE902C2BF43C00379920 /* StorageManager.swift */; };
 		54BFBE932C2BF45000379920 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBE922C2BF45000379920 /* UserModel.swift */; };
 		54BFBEB12C2C0BD400379920 /* HomeCollectionViewCellLast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BFBEB02C2C0BD400379920 /* HomeCollectionViewCellLast.swift */; };
@@ -74,8 +73,7 @@
 		54E7D32A2C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */; };
 		54E7D32F2C382CFC0097E0D2 /* IconSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */; };
 		54E7D3322C382D140097E0D2 /* IconSelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */; };
-		54E7D3332C384A590097E0D2 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E322C37EB2900C2BD4E /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		54E7D3342C384A5A0097E0D2 /* DGChartsDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6E71788E0C5E234404CBD7D5 /* Pods_FinTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2258CB062C36998900637949 /* Pods_FinTask.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -85,8 +83,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				54E7D3342C384A5A0097E0D2 /* DGChartsDynamic in Embed Frameworks */,
-				54E7D3332C384A590097E0D2 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +90,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B4FD07B60DCBAD3BF2E265C /* Pods-FinTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinTask.debug.xcconfig"; path = "Target Support Files/Pods-FinTask/Pods-FinTask.debug.xcconfig"; sourceTree = "<group>"; };
 		223E3B222C2A2E6D005B3FD2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2258CB062C36998900637949 /* Pods_FinTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_FinTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2258CB092C36999A00637949 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +157,7 @@
 		54E7D3292C3819500097E0D2 /* ColorSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		54E7D32E2C382CFC0097E0D2 /* IconSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionViewController.swift; sourceTree = "<group>"; };
 		54E7D3312C382D140097E0D2 /* IconSelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAC982C8AC2D78845CCBA318 /* Pods-FinTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinTask.release.xcconfig"; path = "Target Support Files/Pods-FinTask/Pods-FinTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,9 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5423725B2C3AE8F0009450E6 /* FirebaseMessaging in Frameworks */,
-				54B69E332C37EB2900C2BD4E /* RealmSwift in Frameworks */,
 				54B69E302C37EB2100C2BD4E /* DGChartsDynamic in Frameworks */,
 				542372592C3AE8F0009450E6 /* FirebaseAnalytics in Frameworks */,
+				6E71788E0C5E234404CBD7D5 /* Pods_FinTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +237,7 @@
 				541AC7A52C2835A400AFA81C /* FinTask */,
 				541AC7A42C2835A400AFA81C /* Products */,
 				2258CB052C36998900637949 /* Frameworks */,
+				AD6BEF998F0A6D75802A64EA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -776,6 +775,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		AD6BEF998F0A6D75802A64EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B4FD07B60DCBAD3BF2E265C /* Pods-FinTask.debug.xcconfig */,
+				FAC982C8AC2D78845CCBA318 /* Pods-FinTask.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -783,10 +791,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 541AC7B72C2835A500AFA81C /* Build configuration list for PBXNativeTarget "FinTask" */;
 			buildPhases = (
+				3EFE6025BEA89D695C3B5B85 /* [CP] Check Pods Manifest.lock */,
 				541AC79F2C2835A400AFA81C /* Sources */,
 				541AC7A02C2835A400AFA81C /* Frameworks */,
 				541AC7A12C2835A400AFA81C /* Resources */,
 				54BFBEA42C2BFC6900379920 /* Embed Frameworks */,
+				D2D6D6823CCA291C3545A423 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -795,7 +805,6 @@
 			name = FinTask;
 			packageProductDependencies = (
 				54B69E2F2C37EB2100C2BD4E /* DGChartsDynamic */,
-				54B69E322C37EB2900C2BD4E /* RealmSwift */,
 				542372582C3AE8F0009450E6 /* FirebaseAnalytics */,
 				5423725A2C3AE8F0009450E6 /* FirebaseMessaging */,
 			);
@@ -826,11 +835,11 @@
 				en,
 				Base,
 				ru,
+				uk,
 			);
 			mainGroup = 541AC79A2C2835A400AFA81C;
 			packageReferences = (
 				54B69E2E2C37EB2100C2BD4E /* XCRemoteSwiftPackageReference "Charts" */,
-				54B69E312C37EB2900C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */,
 				542372572C3AE8F0009450E6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 541AC7A42C2835A400AFA81C /* Products */;
@@ -855,6 +864,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EFE6025BEA89D695C3B5B85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FinTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2D6D6823CCA291C3545A423 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinTask/Pods-FinTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FinTask/Pods-FinTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FinTask/Pods-FinTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		541AC79F2C2835A400AFA81C /* Sources */ = {
@@ -976,7 +1027,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1040,7 +1091,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1061,6 +1112,7 @@
 		};
 		541AC7B82C2835A500AFA81C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B4FD07B60DCBAD3BF2E265C /* Pods-FinTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1096,6 +1148,7 @@
 		};
 		541AC7B92C2835A500AFA81C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAC982C8AC2D78845CCBA318 /* Pods-FinTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1169,14 +1222,6 @@
 				minimumVersion = 5.1.0;
 			};
 		};
-		54B69E312C37EB2900C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1194,11 +1239,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54B69E2E2C37EB2100C2BD4E /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGChartsDynamic;
-		};
-		54B69E322C37EB2900C2BD4E /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 54B69E312C37EB2900C2BD4E /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
